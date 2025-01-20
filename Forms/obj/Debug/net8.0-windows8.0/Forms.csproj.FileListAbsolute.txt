@@ -76,15 +76,6 @@ D:\Programming\Projects\Filling-Station-Management\Forms\bin\Debug\net8.0-window
 D:\Programming\Projects\Filling-Station-Management\Forms\bin\Debug\net8.0-windows8.0\Forms.runtimeconfig.json
 D:\Programming\Projects\Filling-Station-Management\Forms\bin\Debug\net8.0-windows8.0\Forms.dll
 D:\Programming\Projects\Filling-Station-Management\Forms\bin\Debug\net8.0-windows8.0\Forms.pdb
-D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmDashboard.resources
-D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmInventory.resources
-D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmInventoryAdd.resources
-D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmLogin.resources
-D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmSalesReport.resources
-D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmStock.resources
-D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmUpdateInventory.resources
-D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmUserAdd.resources
-D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmUserList.resources
 D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.Properties.Resources.resources
 D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.csproj.GenerateResource.cache
 D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.GeneratedMSBuildEditorConfig.editorconfig
@@ -97,4 +88,16 @@ D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-window
 D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.pdb
 D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.genruntimeconfig.cache
 D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\ref\Forms.dll
+<<<<<<< HEAD
 D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.sourcelink.json
+=======
+D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FormAdminSalesReport.resources
+D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FormAdminDashboard.resources
+D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FormAdminInventory.resources
+D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FormLogin.resources
+>>>>>>> 814dfc63d9886a394801f5e62d73f207a182a614
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FormAdminDashboard.resources
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FormAdminInventory.resources
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FormAdminSalesReport.resources
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FormLogin.resources
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FormUserList.resources
