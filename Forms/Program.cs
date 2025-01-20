@@ -14,7 +14,7 @@ namespace Forms
             Application.SetCompatibleTextRenderingDefault(false);
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormAdminDashboard());
+            Application.Run(new Form1());
         }
     }
 }
