@@ -34,11 +34,12 @@ namespace Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             panel1 = new Panel();
+            label4 = new Label();
+            textBox1 = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label1 = new Label();
             btnLogin = new Button();
-            txtPassword = new TextBox();
             txtUsername = new TextBox();
             pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
@@ -49,86 +50,101 @@ namespace Forms
             // 
             panel1.BackColor = Color.FromArgb(229, 224, 255);
             panel1.BackgroundImageLayout = ImageLayout.Zoom;
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(textBox1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnLogin);
-            panel1.Controls.Add(txtPassword);
             panel1.Controls.Add(txtUsername);
             panel1.Cursor = Cursors.IBeam;
-            panel1.Location = new Point(349, 0);
+            panel1.Location = new Point(474, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(334, 463);
+            panel1.Size = new Size(480, 589);
             panel1.TabIndex = 2;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Red;
+            label4.Location = new Point(61, 507);
+            label4.Name = "label4";
+            label4.Size = new Size(359, 20);
+            label4.TabIndex = 11;
+            label4.Text = "**Please contact with an admin for Login Credentials.";
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = SystemColors.Info;
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(43, 257);
+            textBox1.Margin = new Padding(10, 19, 89, 3);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = " Enter Your Password";
+            textBox1.Size = new Size(397, 29);
+            textBox1.TabIndex = 10;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Segoe UI", 9F, FontStyle.Bold);
+            label2.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(48, 214);
+            label2.Location = new Point(40, 230);
+            label2.Margin = new Padding(0);
             label2.Name = "label2";
-            label2.Size = new Size(59, 15);
+            label2.Size = new Size(82, 21);
             label2.TabIndex = 9;
             label2.Text = "Password";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(48, 141);
+            label3.Location = new Point(40, 166);
             label3.Name = "label3";
-            label3.Size = new Size(36, 15);
+            label3.Size = new Size(59, 21);
             label3.TabIndex = 7;
-            label3.Text = "Email";
+            label3.Text = "Phone";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new System.Drawing.Font("Segoe UI Black", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(48, 72);
+            label1.Location = new Point(30, 52);
             label1.Name = "label1";
-            label1.Size = new Size(81, 32);
+            label1.Size = new Size(160, 65);
             label1.TabIndex = 2;
-            label1.Text = "log In";
+            label1.Text = "Login";
             // 
             // btnLogin
             // 
             btnLogin.BackColor = Color.RoyalBlue;
             btnLogin.Cursor = Cursors.Hand;
             btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = SystemColors.Control;
-            btnLogin.Location = new Point(48, 287);
+            btnLogin.Location = new Point(43, 313);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(224, 43);
+            btnLogin.Size = new Size(396, 44);
             btnLogin.TabIndex = 6;
             btnLogin.Text = "LOGIN";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
-            // txtPassword
-            // 
-            txtPassword.BackColor = SystemColors.Info;
-            txtPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPassword.Location = new Point(48, 232);
-            txtPassword.Name = "txtPassword";
-            txtPassword.PlaceholderText = "enter your Password";
-            txtPassword.Size = new Size(224, 29);
-            txtPassword.TabIndex = 5;
-            txtPassword.UseSystemPasswordChar = true;
-            // 
             // txtUsername
             // 
             txtUsername.BackColor = SystemColors.Info;
+            txtUsername.BorderStyle = BorderStyle.FixedSingle;
             txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUsername.Location = new Point(48, 156);
+            txtUsername.Location = new Point(43, 187);
             txtUsername.Margin = new Padding(10, 19, 89, 3);
             txtUsername.Name = "txtUsername";
-            txtUsername.PlaceholderText = "enter your username";
-            txtUsername.Size = new Size(224, 29);
+            txtUsername.PlaceholderText = " e.g. +8801610137675";
+            txtUsername.Size = new Size(397, 29);
             txtUsername.TabIndex = 3;
             // 
             // pictureBox1
@@ -136,7 +152,7 @@ namespace Forms
             pictureBox1.Image = Properties.Resources.Online_Registration_Illustration_vector_concept_generated;
             pictureBox1.Location = new Point(-1, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(352, 422);
+            pictureBox1.Size = new Size(475, 637);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -146,7 +162,7 @@ namespace Forms
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(684, 418);
+            ClientSize = new Size(951, 585);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -167,9 +183,10 @@ namespace Forms
         private TextBox txtUsername;
         private Label label1;
         private Button btnLogin;
-        private TextBox txtPassword;
         private Label label3;
         private Label label2;
         private PictureBox pictureBox1;
+        private TextBox textBox1;
+        private Label label4;
     }
 }

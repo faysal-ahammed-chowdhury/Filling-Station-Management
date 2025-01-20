@@ -520,7 +520,7 @@
             BackColor = Color.Gainsboro;
             BackgroundImageLayout = ImageLayout.Stretch;
             CancelButton = btnLogOut;
-            ClientSize = new Size(870, 659);
+            ClientSize = new Size(870, 650);
             Controls.Add(panel7);
             Controls.Add(panel6);
             Controls.Add(panel5);

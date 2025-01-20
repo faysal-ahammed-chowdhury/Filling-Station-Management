@@ -12,7 +12,5 @@ namespace Forms
             new FrmDashboard(this).Visible = true;
             this.Hide();
         }
-
-        
     }
 }
