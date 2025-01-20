@@ -41,6 +41,8 @@ namespace Forms
             label1 = new Label();
             btnLogin = new Button();
             txtUsername = new TextBox();
+            label5 = new Label();
+            label6 = new Label();
             pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -48,7 +50,7 @@ namespace Forms
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(229, 224, 255);
+            panel1.BackColor = Color.FromArgb(196, 232, 255);
             panel1.BackgroundImageLayout = ImageLayout.Zoom;
             panel1.Controls.Add(label4);
             panel1.Controls.Add(textBox1);
@@ -60,7 +62,7 @@ namespace Forms
             panel1.Cursor = Cursors.IBeam;
             panel1.Location = new Point(474, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(480, 589);
+            panel1.Size = new Size(480, 621);
             panel1.TabIndex = 2;
             // 
             // label4
@@ -122,7 +124,7 @@ namespace Forms
             // 
             // btnLogin
             // 
-            btnLogin.BackColor = Color.RoyalBlue;
+            btnLogin.BackColor = Color.FromArgb(49, 108, 181);
             btnLogin.Cursor = Cursors.Hand;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -147,14 +149,34 @@ namespace Forms
             txtUsername.Size = new Size(397, 29);
             txtUsername.TabIndex = 3;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Segoe UI Black", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(38, 303);
+            label5.Name = "label5";
+            label5.Size = new Size(398, 86);
+            label5.TabIndex = 3;
+            label5.Text = "Chowdhury";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Segoe UI Black", 39.85F, FontStyle.Bold);
+            label6.Location = new Point(36, 402);
+            label6.Name = "label6";
+            label6.Size = new Size(403, 72);
+            label6.TabIndex = 4;
+            label6.Text = "Filling Station";
+            // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Online_Registration_Illustration_vector_concept_generated;
-            pictureBox1.Location = new Point(-1, 0);
+            pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(131, 112);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(475, 637);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 3;
+            pictureBox1.Size = new Size(212, 174);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
             // FrmLogin
@@ -162,8 +184,10 @@ namespace Forms
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(951, 585);
+            ClientSize = new Size(954, 616);
             Controls.Add(pictureBox1);
+            Controls.Add(label6);
+            Controls.Add(label5);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             ImeMode = ImeMode.Off;
@@ -176,6 +200,7 @@ namespace Forms
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -185,8 +210,10 @@ namespace Forms
         private Button btnLogin;
         private Label label3;
         private Label label2;
-        private PictureBox pictureBox1;
         private TextBox textBox1;
         private Label label4;
+        private Label label5;
+        private Label label6;
+        private PictureBox pictureBox1;
     }
 }
