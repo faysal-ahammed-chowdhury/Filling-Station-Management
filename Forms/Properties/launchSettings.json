@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Forms": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false,
+      "hotReloadEnabled": true,
+      "nativeDebugging": false,
+      "jsWebView2Debugging": false
+    }
+  }
+}

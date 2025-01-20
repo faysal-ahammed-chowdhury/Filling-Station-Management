@@ -1,0 +1,41 @@
+D:\C# project\Filling Station\AdminForm\bin\Debug\net8.0-windows\AdminForm.exe
+D:\C# project\Filling Station\AdminForm\bin\Debug\net8.0-windows\AdminForm.deps.json
+D:\C# project\Filling Station\AdminForm\bin\Debug\net8.0-windows\AdminForm.runtimeconfig.json
+D:\C# project\Filling Station\AdminForm\bin\Debug\net8.0-windows\AdminForm.dll
+D:\C# project\Filling Station\AdminForm\bin\Debug\net8.0-windows\AdminForm.pdb
+D:\C# project\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.FrmDeshboard.resources
+D:\C# project\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.FrmInventory.resources
+D:\C# project\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.FrmLogin.resources
+D:\C# project\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.Properties.Resources.resources
+D:\C# project\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.csproj.GenerateResource.cache
+D:\C# project\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.GeneratedMSBuildEditorConfig.editorconfig
+D:\C# project\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.AssemblyInfoInputs.cache
+D:\C# project\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.AssemblyInfo.cs
+D:\C# project\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.csproj.CoreCompileInputs.cache
+D:\C# project\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.dll
+D:\C# project\Filling Station\AdminForm\obj\Debug\net8.0-windows\refint\AdminForm.dll
+D:\C# project\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.pdb
+D:\C# project\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.genruntimeconfig.cache
+D:\C# project\Filling Station\AdminForm\obj\Debug\net8.0-windows\ref\AdminForm.dll
+D:\code of c#\Filling Station\AdminForm\bin\Debug\net8.0-windows\AdminForm.exe
+D:\code of c#\Filling Station\AdminForm\bin\Debug\net8.0-windows\AdminForm.dll
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.FrmDashboard.resources
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.FrmEmployeeList.resources
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.FrmInventory.resources
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.FrmLogin.resources
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.FrmSalesReport.resources
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.FrmUpdateInventory.resources
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.Properties.Resources.resources
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.csproj.GenerateResource.cache
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.GeneratedMSBuildEditorConfig.editorconfig
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.AssemblyInfoInputs.cache
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.AssemblyInfo.cs
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.csproj.CoreCompileInputs.cache
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.dll
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\refint\AdminForm.dll
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.pdb
+D:\code of c#\Filling Station\AdminForm\bin\Debug\net8.0-windows\AdminForm.deps.json
+D:\code of c#\Filling Station\AdminForm\bin\Debug\net8.0-windows\AdminForm.runtimeconfig.json
+D:\code of c#\Filling Station\AdminForm\bin\Debug\net8.0-windows\AdminForm.pdb
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\AdminForm.genruntimeconfig.cache
+D:\code of c#\Filling Station\AdminForm\obj\Debug\net8.0-windows\ref\AdminForm.dll

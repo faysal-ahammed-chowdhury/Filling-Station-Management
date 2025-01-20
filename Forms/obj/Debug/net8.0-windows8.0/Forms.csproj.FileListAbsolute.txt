@@ -1,0 +1,73 @@
+D:\Project\Filling Station\AdminForm\bin\Debug\net8.0-windows8.0\Forms.exe
+D:\Project\Filling Station\AdminForm\bin\Debug\net8.0-windows8.0\Forms.deps.json
+D:\Project\Filling Station\AdminForm\bin\Debug\net8.0-windows8.0\Forms.runtimeconfig.json
+D:\Project\Filling Station\AdminForm\bin\Debug\net8.0-windows8.0\Forms.dll
+D:\Project\Filling Station\AdminForm\bin\Debug\net8.0-windows8.0\Forms.pdb
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.FrmDashboard.resources
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.FrmInventory.resources
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.FrmInventoryAdd.resources
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.FrmLogin.resources
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.FrmSalesReport.resources
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.FrmUpdateInventory.resources
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.FrmUserAdd.resources
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.FrmUserList.resources
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.Properties.Resources.resources
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.csproj.GenerateResource.cache
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.AssemblyInfoInputs.cache
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.AssemblyInfo.cs
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.csproj.CoreCompileInputs.cache
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.dll
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\refint\Forms.dll
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.pdb
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\Forms.genruntimeconfig.cache
+D:\Project\Filling Station\AdminForm\obj\Debug\net8.0-windows8.0\ref\Forms.dll
+D:\Project\Filling Station\Forms\bin\Debug\net8.0-windows8.0\Forms.exe
+D:\Project\Filling Station\Forms\bin\Debug\net8.0-windows8.0\Forms.deps.json
+D:\Project\Filling Station\Forms\bin\Debug\net8.0-windows8.0\Forms.runtimeconfig.json
+D:\Project\Filling Station\Forms\bin\Debug\net8.0-windows8.0\Forms.dll
+D:\Project\Filling Station\Forms\bin\Debug\net8.0-windows8.0\Forms.pdb
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmDashboard.resources
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmInventory.resources
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmInventoryAdd.resources
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmLogin.resources
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmSalesReport.resources
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmUpdateInventory.resources
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmUserAdd.resources
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmUserList.resources
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.Properties.Resources.resources
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.csproj.GenerateResource.cache
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.AssemblyInfoInputs.cache
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.AssemblyInfo.cs
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.csproj.CoreCompileInputs.cache
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.dll
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\refint\Forms.dll
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.pdb
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\Forms.genruntimeconfig.cache
+D:\Project\Filling Station\Forms\obj\Debug\net8.0-windows8.0\ref\Forms.dll
+D:\Project\Filling Station Management\Forms\bin\Debug\net8.0-windows8.0\Forms.exe
+D:\Project\Filling Station Management\Forms\bin\Debug\net8.0-windows8.0\Forms.dll
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmDashboard.resources
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmInventory.resources
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmInventoryAdd.resources
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmLogin.resources
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmSalesReport.resources
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmUpdateInventory.resources
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmUserAdd.resources
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmUserList.resources
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.Properties.Resources.resources
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.csproj.GenerateResource.cache
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.AssemblyInfoInputs.cache
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.AssemblyInfo.cs
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.csproj.CoreCompileInputs.cache
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.dll
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\refint\Forms.dll
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.pdb
+D:\Project\Filling Station Management\Forms\bin\Debug\net8.0-windows8.0\Forms.deps.json
+D:\Project\Filling Station Management\Forms\bin\Debug\net8.0-windows8.0\Forms.runtimeconfig.json
+D:\Project\Filling Station Management\Forms\bin\Debug\net8.0-windows8.0\Forms.pdb
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.genruntimeconfig.cache
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\ref\Forms.dll
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.FrmStock.resources
