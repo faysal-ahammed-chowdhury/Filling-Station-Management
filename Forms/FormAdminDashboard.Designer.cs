@@ -275,7 +275,7 @@
             panel3.Controls.Add(label4);
             panel3.Controls.Add(lblTotalProfit);
             panel3.Controls.Add(label2);
-            panel3.Location = new Point(208, 83);
+            panel3.Location = new Point(209, 83);
             panel3.Name = "panel3";
             panel3.Size = new Size(222, 161);
             panel3.TabIndex = 4;
@@ -330,7 +330,7 @@
             panel4.Controls.Add(label3);
             panel4.Controls.Add(pictureBox6);
             panel4.Controls.Add(lbltotalUser);
-            panel4.Location = new Point(464, 83);
+            panel4.Location = new Point(465, 83);
             panel4.Name = "panel4";
             panel4.Size = new Size(222, 161);
             panel4.TabIndex = 5;
@@ -374,7 +374,7 @@
             panel5.Controls.Add(label5);
             panel5.Controls.Add(pictureBox7);
             panel5.Controls.Add(label6);
-            panel5.Location = new Point(720, 83);
+            panel5.Location = new Point(721, 83);
             panel5.Name = "panel5";
             panel5.Size = new Size(222, 161);
             panel5.TabIndex = 6;
