@@ -1,0 +1,124 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Project\\Filling Station Management\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{66C3A576-757C-40E7-869E-18AB16D6268F}|Forms\\Forms.csproj|d:\\project\\filling station management\\forms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66C3A576-757C-40E7-869E-18AB16D6268F}|Forms\\Forms.csproj|solutionrelative:forms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C3A576-757C-40E7-869E-18AB16D6268F}|Forms\\Forms.csproj|d:\\project\\filling station management\\forms\\frminventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66C3A576-757C-40E7-869E-18AB16D6268F}|Forms\\Forms.csproj|solutionrelative:forms\\frminventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C3A576-757C-40E7-869E-18AB16D6268F}|Forms\\Forms.csproj|d:\\project\\filling station management\\forms\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66C3A576-757C-40E7-869E-18AB16D6268F}|Forms\\Forms.csproj|solutionrelative:forms\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C3A576-757C-40E7-869E-18AB16D6268F}|Forms\\Forms.csproj|D:\\Project\\Filling Station Management\\forms\\frmsalesreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{66C3A576-757C-40E7-869E-18AB16D6268F}|Forms\\Forms.csproj|solutionrelative:forms\\frmsalesreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C3A576-757C-40E7-869E-18AB16D6268F}|Forms\\Forms.csproj|d:\\project\\filling station management\\forms\\frmsalesreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66C3A576-757C-40E7-869E-18AB16D6268F}|Forms\\Forms.csproj|solutionrelative:forms\\frmsalesreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C3A576-757C-40E7-869E-18AB16D6268F}|Forms\\Forms.csproj|D:\\Project\\Filling Station Management\\forms\\frminventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{66C3A576-757C-40E7-869E-18AB16D6268F}|Forms\\Forms.csproj|solutionrelative:forms\\frminventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Project\\Filling Station Management\\Forms\\Program.cs",
+              "RelativeDocumentMoniker": "Forms\\Program.cs",
+              "ToolTip": "D:\\Project\\Filling Station Management\\Forms\\Program.cs",
+              "RelativeToolTip": "Forms\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T16:17:26.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmInventory.cs",
+              "DocumentMoniker": "D:\\Project\\Filling Station Management\\Forms\\FrmInventory.cs",
+              "RelativeDocumentMoniker": "Forms\\FrmInventory.cs",
+              "ToolTip": "D:\\Project\\Filling Station Management\\Forms\\FrmInventory.cs",
+              "RelativeToolTip": "Forms\\FrmInventory.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAkwDkAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:55:40.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmDashboard.cs",
+              "DocumentMoniker": "D:\\Project\\Filling Station Management\\Forms\\FrmDashboard.cs",
+              "RelativeDocumentMoniker": "Forms\\FrmDashboard.cs",
+              "ToolTip": "D:\\Project\\Filling Station Management\\Forms\\FrmDashboard.cs",
+              "RelativeToolTip": "Forms\\FrmDashboard.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAADwvwsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:27:53.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmSalesReport.cs [Design]",
+              "DocumentMoniker": "D:\\Project\\Filling Station Management\\Forms\\FrmSalesReport.cs",
+              "RelativeDocumentMoniker": "Forms\\FrmSalesReport.cs",
+              "ToolTip": "D:\\Project\\Filling Station Management\\Forms\\FrmSalesReport.cs [Design]",
+              "RelativeToolTip": "Forms\\FrmSalesReport.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:28:17.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FrmSalesReport.cs",
+              "DocumentMoniker": "D:\\Project\\Filling Station Management\\Forms\\FrmSalesReport.cs",
+              "RelativeDocumentMoniker": "Forms\\FrmSalesReport.cs",
+              "ToolTip": "D:\\Project\\Filling Station Management\\Forms\\FrmSalesReport.cs",
+              "RelativeToolTip": "Forms\\FrmSalesReport.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAASwBYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:48:23.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FrmInventory.cs [Design]",
+              "DocumentMoniker": "D:\\Project\\Filling Station Management\\Forms\\FrmInventory.cs",
+              "RelativeDocumentMoniker": "Forms\\FrmInventory.cs",
+              "ToolTip": "D:\\Project\\Filling Station Management\\Forms\\FrmInventory.cs [Design]",
+              "RelativeToolTip": "Forms\\FrmInventory.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T05:11:13.927Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

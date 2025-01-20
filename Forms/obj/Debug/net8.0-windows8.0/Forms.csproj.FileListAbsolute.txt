@@ -97,3 +97,4 @@ D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-window
 D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.pdb
 D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\Forms.genruntimeconfig.cache
 D:\Programming\Projects\Filling-Station-Management\Forms\obj\Debug\net8.0-windows8.0\ref\Forms.dll
+D:\Project\Filling Station Management\Forms\obj\Debug\net8.0-windows8.0\Forms.sourcelink.json
