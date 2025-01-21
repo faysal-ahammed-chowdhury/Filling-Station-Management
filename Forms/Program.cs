@@ -16,7 +16,7 @@ namespace Forms
             Application.SetCompatibleTextRenderingDefault(false);
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormLogin());
+            Application.Run(new FormCreateOrder());
 
             //try
             //{

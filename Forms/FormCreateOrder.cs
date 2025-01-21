@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Forms
 {
-    public partial class FormOrderPlace : Form
+    public partial class FormCreateOrder : Form
     {
-        public FormOrderPlace()
+        public FormCreateOrder()
         {
             InitializeComponent();
         }

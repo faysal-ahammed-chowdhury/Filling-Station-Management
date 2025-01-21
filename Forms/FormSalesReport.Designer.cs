@@ -1,6 +1,6 @@
 ﻿namespace Forms
 {
-    partial class FormAdminSalesReport
+    partial class FormSalesReport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdminSalesReport));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSalesReport));
             panel8 = new Panel();
             label2 = new Label();
             label3 = new Label();
@@ -585,7 +585,7 @@
             btnExpense.TextAlign = ContentAlignment.MiddleLeft;
             btnExpense.UseVisualStyleBackColor = false;
             // 
-            // FormAdminSalesReport
+            // FormSalesReport
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -600,7 +600,7 @@
             Controls.Add(panel9);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            Name = "FormAdminSalesReport";
+            Name = "FormSalesReport";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sales Reports";
             panel8.ResumeLayout(false);

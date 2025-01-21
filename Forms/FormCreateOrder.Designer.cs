@@ -1,6 +1,6 @@
 ﻿namespace Forms
 {
-    partial class FormOrderPlace
+    partial class FormCreateOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOrderPlace));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCreateOrder));
             btnExpense = new Button();
             pictureBox5 = new PictureBox();
             btnOrder = new Button();
@@ -454,7 +454,7 @@
             panel5.Size = new Size(732, 56);
             panel5.TabIndex = 37;
             // 
-            // FormOrderPlace
+            // FormCreateOrder
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -467,7 +467,7 @@
             Controls.Add(panel12);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "FormOrderPlace";
+            Name = "FormCreateOrder";
             Text = "Create New Order";
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             panel2.ResumeLayout(false);
