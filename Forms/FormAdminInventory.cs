@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,11 +21,16 @@ namespace Forms
             this.PopulateGridView();
         }
 
-        public void PopulateGridView()
+        public void PopulateGridView(string query = "SELECT * FROM Inventories")
         {
             try
             {
-                string query = "SELECT * FROM Inventories";
+                if (query == "SELECT * FROM Inventories" && !this.txtSearch.Text.IsNullOrEmpty())
+                {
+                    string name = this.txtSearch.Text;
+                    query = $"SELECT * FROM Inventories WHERE FuelName LIKE '{name}%';";
+                    this.PopulateGridView(query);
+                }
                 DataSet ds = this.Da.ExecuteQuery(query);
                 this.dgvInventory.AutoGenerateColumns = false;
                 this.dgvInventory.DataSource = ds.Tables[0];
@@ -32,6 +38,29 @@ namespace Forms
             catch (Exception ex)
             {
                 MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public void DeleteInventory(string inventoryId)
+        {
+            string fuelName = this.dgvInventory.CurrentRow.Cells[1].Value.ToString();
+
+            DialogResult result = MessageBox.Show("Are you sure you want to delete " + fuelName + "?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            string sql = $"DELETE FROM Inventories WHERE InventoryId = '{inventoryId}'";
+            int cnt = this.Da.ExecuteDMLQuery(sql);
+            if (cnt == 1)
+            {
+                MessageBox.Show($"{fuelName} has been removed properly", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                this.PopulateGridView();
+            }
+            else
+            {
+                MessageBox.Show($"{fuelName} has not been removed properly", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -45,8 +74,6 @@ namespace Forms
                 if (this.dgvInventory.SelectedRows.Count > 0)
                 {
                     string inventoryId = this.dgvInventory.CurrentRow.Cells[0].Value.ToString();
-                    string fuelName = this.dgvInventory.CurrentRow.Cells[1].Value.ToString();
-
                     this.Visible = false;
                     new FormEditInventory(inventoryId, this).Show();
                 }
@@ -60,25 +87,7 @@ namespace Forms
                 if (this.dgvInventory.SelectedRows.Count > 0)
                 {
                     string inventoryId = this.dgvInventory.CurrentRow.Cells[0].Value.ToString();
-                    string fuelName = this.dgvInventory.CurrentRow.Cells[1].Value.ToString();
-
-                    DialogResult result = MessageBox.Show("Are you sure you want to delete " + fuelName + "?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.No)
-                    {
-                        return;
-                    }
-
-                    string sql = $"DELETE FROM Inventories WHERE InventoryId = '{inventoryId}'";
-                    int cnt = this.Da.ExecuteDMLQuery(sql);
-                    if (cnt == 1)
-                    {
-                        MessageBox.Show($"{fuelName} has been removed properly", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
-                        this.PopulateGridView();
-                    }
-                    else
-                    {
-                        MessageBox.Show($"{fuelName} has not been removed properly", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    this.DeleteInventory(inventoryId);
                 }
             }
         }
@@ -92,6 +101,11 @@ namespace Forms
         {
             this.Visible = false;
             new FormAddInventory(this).Show();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            this.PopulateGridView();
         }
     }
 }

@@ -227,9 +227,10 @@
             txtSearch.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSearch.Location = new Point(11, 22);
             txtSearch.Name = "txtSearch";
-            txtSearch.PlaceholderText = "Serach ";
+            txtSearch.PlaceholderText = "Serach by Fuel Name";
             txtSearch.Size = new Size(417, 27);
             txtSearch.TabIndex = 0;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // pictureBox2
             // 

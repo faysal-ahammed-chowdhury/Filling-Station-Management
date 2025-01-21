@@ -14,19 +14,19 @@ namespace Forms
     public partial class FormEditInventory : Form
     {
         private DataAccess Da { get; set; }
-        private FormAdminInventory FormAdminInventory { get; set; }
+        private FormAdminInventory FrmAdminInv { get; set; }
         public FormEditInventory()
         {
             InitializeComponent();
             this.Da = new DataAccess();
         }
-        public FormEditInventory(string inventoryId, FormAdminInventory formAdminInventory) : this()
+        public FormEditInventory(string inventoryId, FormAdminInventory frmAdminInv) : this()
         {
-            this.FormAdminInventory = formAdminInventory;
-            this.ShowData(inventoryId);
+            this.FrmAdminInv = frmAdminInv;
+            this.ShowInventory(inventoryId);
         }
 
-        private void ShowData(string inventoryId)
+        private void ShowInventory(string inventoryId)
         {
             try
             {
@@ -97,8 +97,8 @@ namespace Forms
                 }
 
                 this.Visible = false;
-                this.FormAdminInventory.PopulateGridView();
-                this.FormAdminInventory.Visible = true;
+                FrmAdminInv.PopulateGridView();
+                this.FrmAdminInv.Visible = true;
             }
             catch (Exception ex)
             {
@@ -109,8 +109,8 @@ namespace Forms
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            this.FormAdminInventory.PopulateGridView();
-            this.FormAdminInventory.Visible = true;
+            FrmAdminInv.PopulateGridView();
+            this.FrmAdminInv.Visible = true;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
