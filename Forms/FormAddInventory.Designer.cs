@@ -50,6 +50,8 @@
             label1 = new Label();
             panel2 = new Panel();
             panel6 = new Panel();
+            btnClear = new Button();
+            btnCancel = new Button();
             txtStockQuantity = new TextBox();
             asrer = new Label();
             txtPricePerLitre = new TextBox();
@@ -342,6 +344,8 @@
             // panel6
             // 
             panel6.BackColor = Color.White;
+            panel6.Controls.Add(btnClear);
+            panel6.Controls.Add(btnCancel);
             panel6.Controls.Add(txtStockQuantity);
             panel6.Controls.Add(asrer);
             panel6.Controls.Add(txtPricePerLitre);
@@ -355,6 +359,32 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(733, 533);
             panel6.TabIndex = 29;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.Gray;
+            btnClear.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClear.ForeColor = Color.White;
+            btnClear.Location = new Point(443, 245);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(114, 42);
+            btnClear.TabIndex = 10;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = Color.FromArgb(255, 50, 49);
+            btnCancel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancel.ForeColor = Color.White;
+            btnCancel.Location = new Point(309, 245);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(114, 42);
+            btnCancel.TabIndex = 9;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // txtStockQuantity
             // 
@@ -437,7 +467,7 @@
             bntAdd.BackColor = Color.FromArgb(49, 108, 181);
             bntAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bntAdd.ForeColor = Color.White;
-            bntAdd.Location = new Point(305, 203);
+            bntAdd.Location = new Point(179, 245);
             bntAdd.Name = "bntAdd";
             bntAdd.Size = new Size(114, 42);
             bntAdd.TabIndex = 0;
@@ -507,5 +537,7 @@
         private Label sd;
         private TextBox txtFuelName;
         private Label label5;
+        private Button btnClear;
+        private Button btnCancel;
     }
 }

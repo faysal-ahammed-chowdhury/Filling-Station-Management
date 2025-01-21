@@ -14,16 +14,15 @@ namespace Forms
     public partial class FormEditInventory : Form
     {
         private DataAccess Da { get; set; }
+        private FormAdminInventory FormAdminInventory { get; set; }
         public FormEditInventory()
         {
             InitializeComponent();
             this.Da = new DataAccess();
         }
-        public FormEditInventory(string inventoryId)
+        public FormEditInventory(string inventoryId, FormAdminInventory formAdminInventory) : this()
         {
-            InitializeComponent();
-            this.Da = new DataAccess();
-
+            this.FormAdminInventory = formAdminInventory;
             this.ShowData(inventoryId);
         }
 
@@ -88,7 +87,7 @@ namespace Forms
                 //MessageBox.Show(sql);
                 var count = this.Da.ExecuteDMLQuery(sql);
                 int cnt = this.Da.ExecuteDMLQuery(sql);
-                if (cnt > 0)
+                if (cnt == 1)
                 {
                     MessageBox.Show($"{fuelName} updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
                 }
@@ -96,11 +95,29 @@ namespace Forms
                 {
                     MessageBox.Show($"{fuelName} did not updated", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
+                this.Visible = false;
+                this.FormAdminInventory.PopulateGridView();
+                this.FormAdminInventory.Visible = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            this.FormAdminInventory.PopulateGridView();
+            this.FormAdminInventory.Visible = true;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            this.txtFuelName.Clear();
+            this.txtPricePerLitre.Clear();
+            this.txtStockQuantity.Clear();
         }
     }
 }

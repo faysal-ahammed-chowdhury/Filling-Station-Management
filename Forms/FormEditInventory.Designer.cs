@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel6 = new Panel();
+            btnClear = new Button();
+            btnCancel = new Button();
             txtStockQuantity = new TextBox();
             asrer = new Label();
             txtPricePerLitre = new TextBox();
@@ -75,6 +77,8 @@
             // panel6
             // 
             panel6.BackColor = Color.White;
+            panel6.Controls.Add(btnClear);
+            panel6.Controls.Add(btnCancel);
             panel6.Controls.Add(txtStockQuantity);
             panel6.Controls.Add(asrer);
             panel6.Controls.Add(txtPricePerLitre);
@@ -88,6 +92,32 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(733, 533);
             panel6.TabIndex = 33;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.Gray;
+            btnClear.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClear.ForeColor = Color.White;
+            btnClear.Location = new Point(428, 253);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(114, 42);
+            btnClear.TabIndex = 35;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = Color.FromArgb(255, 50, 49);
+            btnCancel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancel.ForeColor = Color.White;
+            btnCancel.Location = new Point(294, 253);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(114, 42);
+            btnCancel.TabIndex = 34;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // txtStockQuantity
             // 
@@ -170,7 +200,7 @@
             bntSave.BackColor = Color.FromArgb(49, 108, 181);
             bntSave.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bntSave.ForeColor = Color.White;
-            bntSave.Location = new Point(304, 201);
+            bntSave.Location = new Point(156, 253);
             bntSave.Name = "bntSave";
             bntSave.Size = new Size(114, 42);
             bntSave.TabIndex = 0;
@@ -455,6 +485,7 @@
             Controls.Add(panel1);
             Controls.Add(panel2);
             Name = "FormEditInventory";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Edit Inventory";
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
@@ -506,5 +537,7 @@
         private Panel panel1;
         private Label label3;
         private Panel panel2;
+        private Button btnClear;
+        private Button btnCancel;
     }
 }

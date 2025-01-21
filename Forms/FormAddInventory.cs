@@ -14,10 +14,15 @@ namespace Forms
     public partial class FormAddInventory : Form
     {
         private DataAccess Da { get; set; }
+        private FormAdminInventory FormAdminInventory { get; set; }
         public FormAddInventory()
         {
             InitializeComponent();
             this.Da = new DataAccess();
+        }
+        public FormAddInventory(FormAdminInventory formAdminInventory) : this()
+        {
+            this.FormAdminInventory = formAdminInventory;
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -52,6 +57,9 @@ namespace Forms
                 if (cnt > 0)
                 {
                     MessageBox.Show($"{fuelName} added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    this.Visible = false;
+                    FormAdminInventory.PopulateGridView();
+                    FormAdminInventory.Visible = true;
                 }
                 else
                 {
@@ -62,6 +70,20 @@ namespace Forms
             {
                 MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            FormAdminInventory.PopulateGridView();
+            FormAdminInventory.Visible = true;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            this.txtFuelName.Clear();
+            this.txtPricePerLitre.Clear();
+            this.txtStockQuantity.Clear();
         }
     }
 }
