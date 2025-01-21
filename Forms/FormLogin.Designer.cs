@@ -35,12 +35,12 @@ namespace Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             panel1 = new Panel();
             label4 = new Label();
-            textBox1 = new TextBox();
+            txtPassword = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label1 = new Label();
             btnLogin = new Button();
-            txtUsername = new TextBox();
+            txtPhone = new TextBox();
             label5 = new Label();
             label6 = new Label();
             pictureBox1 = new PictureBox();
@@ -53,12 +53,12 @@ namespace Forms
             panel1.BackColor = Color.FromArgb(196, 232, 255);
             panel1.BackgroundImageLayout = ImageLayout.Zoom;
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtPassword);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnLogin);
-            panel1.Controls.Add(txtUsername);
+            panel1.Controls.Add(txtPhone);
             panel1.Cursor = Cursors.IBeam;
             panel1.Location = new Point(474, 0);
             panel1.Name = "panel1";
@@ -76,17 +76,17 @@ namespace Forms
             label4.TabIndex = 11;
             label4.Text = "**Please contact with an admin for Login Credentials.";
             // 
-            // textBox1
+            // txtPassword
             // 
-            textBox1.BackColor = SystemColors.Info;
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(43, 257);
-            textBox1.Margin = new Padding(10, 19, 89, 3);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = " Enter Your Password";
-            textBox1.Size = new Size(397, 29);
-            textBox1.TabIndex = 10;
+            txtPassword.BackColor = SystemColors.Info;
+            txtPassword.BorderStyle = BorderStyle.FixedSingle;
+            txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPassword.Location = new Point(43, 257);
+            txtPassword.Margin = new Padding(10, 19, 89, 3);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PlaceholderText = " Enter Your Password";
+            txtPassword.Size = new Size(397, 29);
+            txtPassword.TabIndex = 10;
             // 
             // label2
             // 
@@ -135,18 +135,19 @@ namespace Forms
             btnLogin.TabIndex = 6;
             btnLogin.Text = "LOGIN";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
-            // txtUsername
+            // txtPhone
             // 
-            txtUsername.BackColor = SystemColors.Info;
-            txtUsername.BorderStyle = BorderStyle.FixedSingle;
-            txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUsername.Location = new Point(43, 187);
-            txtUsername.Margin = new Padding(10, 19, 89, 3);
-            txtUsername.Name = "txtUsername";
-            txtUsername.PlaceholderText = " e.g. +8801610137675";
-            txtUsername.Size = new Size(397, 29);
-            txtUsername.TabIndex = 3;
+            txtPhone.BackColor = SystemColors.Info;
+            txtPhone.BorderStyle = BorderStyle.FixedSingle;
+            txtPhone.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPhone.Location = new Point(43, 187);
+            txtPhone.Margin = new Padding(10, 19, 89, 3);
+            txtPhone.Name = "txtPhone";
+            txtPhone.PlaceholderText = " e.g. +8801610137675";
+            txtPhone.Size = new Size(397, 29);
+            txtPhone.TabIndex = 3;
             // 
             // label5
             // 
@@ -206,12 +207,12 @@ namespace Forms
 
         #endregion
         private Panel panel1;
-        private TextBox txtUsername;
+        private TextBox txtPhone;
         private Label label1;
         private Button btnLogin;
         private Label label3;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox txtPassword;
         private Label label4;
         private Label label5;
         private Label label6;

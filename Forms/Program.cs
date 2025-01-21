@@ -1,3 +1,5 @@
+using System.Data;
+
 namespace Forms
 {
     internal static class Program
@@ -14,7 +16,21 @@ namespace Forms
             Application.SetCompatibleTextRenderingDefault(false);
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormExpense());
+            Application.Run(new FormLogin());
+
+            //try
+            //{
+            //    DataAccess da = new DataAccess();
+
+            //    string query = "select * from users";
+            //    DataSet ds = da.ExecuteQuery(query);
+
+            //    MessageBox.Show(ds.Tables[0].Rows[0][0].ToString());
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("hello");
+            //}
         }
     }
 }
