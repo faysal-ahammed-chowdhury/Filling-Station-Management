@@ -6,16 +6,17 @@ namespace Forms
     public partial class FormLogin : Form
     {
 
-        private DataAccess da = new DataAccess();
+        private DataAccess Da { get; set; }
         public FormLogin()
         {
             InitializeComponent();
+            this.Da = new DataAccess();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string phone = txtPhone.Text;
-            string pass = txtPassword.Text;
+            string phone = this.txtPhone.Text;
+            string pass = this.txtPassword.Text;
 
             if (phone.IsNullOrEmpty() || pass.IsNullOrEmpty())
             {
@@ -25,7 +26,7 @@ namespace Forms
             try
             {
                 string query = $"SELECT * FROM Users WHERE Phone = '{phone}' and Password = '{pass}'";
-                DataSet ds = da.ExecuteQuery(query);
+                DataSet ds = this.Da.ExecuteQuery(query);
                 bool isFound =  Convert.ToBoolean(ds.Tables[0].Rows.Count);
                 if (isFound)
                 {
