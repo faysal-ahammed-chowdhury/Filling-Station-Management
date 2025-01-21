@@ -53,6 +53,10 @@
             panel1 = new Panel();
             label2 = new Label();
             label3 = new Label();
+            pictureBox6 = new PictureBox();
+            btnOrder = new Button();
+            pictureBox5 = new PictureBox();
+            btnExpense = new Button();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -64,6 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -121,7 +127,7 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.HighlightText;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(11, 30);
+            dataGridView1.Location = new Point(22, 7);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(708, 387);
             dataGridView1.TabIndex = 0;
@@ -201,6 +207,10 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(196, 232, 255);
+            panel3.Controls.Add(pictureBox6);
+            panel3.Controls.Add(btnOrder);
+            panel3.Controls.Add(pictureBox5);
+            panel3.Controls.Add(btnExpense);
             panel3.Controls.Add(pictureBox8);
             panel3.Controls.Add(btnOverview);
             panel3.Controls.Add(pictureBox2);
@@ -356,6 +366,55 @@
             label3.TabIndex = 0;
             label3.Text = "Welcome, Faysal";
             // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Properties.Resources.order_now_9226478;
+            pictureBox6.Location = new Point(13, 296);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(36, 33);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 23;
+            pictureBox6.TabStop = false;
+            // 
+            // btnOrder
+            // 
+            btnOrder.BackColor = Color.FromArgb(196, 232, 255);
+            btnOrder.Cursor = Cursors.Hand;
+            btnOrder.FlatStyle = FlatStyle.Popup;
+            btnOrder.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnOrder.ForeColor = Color.Black;
+            btnOrder.Location = new Point(55, 296);
+            btnOrder.Name = "btnOrder";
+            btnOrder.Size = new Size(124, 33);
+            btnOrder.TabIndex = 22;
+            btnOrder.Text = "Orders";
+            btnOrder.TextAlign = ContentAlignment.MiddleLeft;
+            btnOrder.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.increase2;
+            pictureBox5.Location = new Point(13, 248);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(36, 33);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 21;
+            pictureBox5.TabStop = false;
+            // 
+            // btnExpense
+            // 
+            btnExpense.Cursor = Cursors.Hand;
+            btnExpense.FlatStyle = FlatStyle.Popup;
+            btnExpense.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExpense.ForeColor = Color.Black;
+            btnExpense.Location = new Point(55, 246);
+            btnExpense.Name = "btnExpense";
+            btnExpense.Size = new Size(124, 33);
+            btnExpense.TabIndex = 20;
+            btnExpense.Text = "Expense list";
+            btnExpense.TextAlign = ContentAlignment.MiddleLeft;
+            btnExpense.UseVisualStyleBackColor = false;
+            // 
             // FormAdminInventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -387,6 +446,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
         }
 
@@ -415,5 +476,9 @@
         private Panel panel1;
         private Label label2;
         private Label label3;
+        private PictureBox pictureBox6;
+        private Button btnOrder;
+        private PictureBox pictureBox5;
+        private Button btnExpense;
     }
 }

@@ -66,6 +66,10 @@
             btnViewSales = new Button();
             label9 = new Label();
             dataGridView2 = new DataGridView();
+            pictureBox9 = new PictureBox();
+            btnOrder = new Button();
+            pictureBox10 = new PictureBox();
+            btnExpense = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -83,11 +87,17 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(196, 232, 255);
+            panel1.Controls.Add(pictureBox9);
+            panel1.Controls.Add(btnOrder);
+            panel1.Controls.Add(pictureBox10);
+            panel1.Controls.Add(btnExpense);
             panel1.Controls.Add(pictureBox8);
             panel1.Controls.Add(btnOverview);
             panel1.Controls.Add(pictureBox2);
@@ -500,6 +510,55 @@
             dataGridView2.Size = new Size(702, 131);
             dataGridView2.TabIndex = 0;
             // 
+            // pictureBox9
+            // 
+            pictureBox9.Image = Properties.Resources.order_now_9226478;
+            pictureBox9.Location = new Point(13, 295);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(36, 33);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 23;
+            pictureBox9.TabStop = false;
+            // 
+            // btnOrder
+            // 
+            btnOrder.BackColor = Color.FromArgb(196, 232, 255);
+            btnOrder.Cursor = Cursors.Hand;
+            btnOrder.FlatStyle = FlatStyle.Popup;
+            btnOrder.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnOrder.ForeColor = Color.Black;
+            btnOrder.Location = new Point(55, 295);
+            btnOrder.Name = "btnOrder";
+            btnOrder.Size = new Size(124, 33);
+            btnOrder.TabIndex = 22;
+            btnOrder.Text = "Orders";
+            btnOrder.TextAlign = ContentAlignment.MiddleLeft;
+            btnOrder.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.Image = Properties.Resources.increase2;
+            pictureBox10.Location = new Point(13, 247);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(36, 33);
+            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox10.TabIndex = 21;
+            pictureBox10.TabStop = false;
+            // 
+            // btnExpense
+            // 
+            btnExpense.Cursor = Cursors.Hand;
+            btnExpense.FlatStyle = FlatStyle.Popup;
+            btnExpense.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExpense.ForeColor = Color.Black;
+            btnExpense.Location = new Point(55, 245);
+            btnExpense.Name = "btnExpense";
+            btnExpense.Size = new Size(124, 33);
+            btnExpense.TabIndex = 20;
+            btnExpense.Text = "Expense list";
+            btnExpense.TextAlign = ContentAlignment.MiddleLeft;
+            btnExpense.UseVisualStyleBackColor = false;
+            // 
             // FormAdminDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -545,6 +604,8 @@
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ResumeLayout(false);
         }
 
@@ -586,5 +647,9 @@
         private DataGridView dataGridView2;
         private PictureBox pictureBox8;
         protected Button btnOverview;
+        private PictureBox pictureBox9;
+        private Button btnOrder;
+        private PictureBox pictureBox10;
+        private Button btnExpense;
     }
 }

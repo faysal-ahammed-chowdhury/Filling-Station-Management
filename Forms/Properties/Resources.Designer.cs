@@ -453,6 +453,16 @@ namespace Forms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap order_now_9226478 {
+            get {
+                object obj = ResourceManager.GetObject("order-now_9226478", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap remove_11695444 {
             get {
                 object obj = ResourceManager.GetObject("remove_11695444", resourceCulture);

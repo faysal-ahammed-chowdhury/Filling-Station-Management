@@ -66,6 +66,10 @@
             cmbFilter = new ComboBox();
             btnAddNewStock = new Button();
             txtSearch = new TextBox();
+            pictureBox5 = new PictureBox();
+            btnOrder = new Button();
+            pictureBox6 = new PictureBox();
+            btnExpense = new Button();
             panel8.SuspendLayout();
             panel9.SuspendLayout();
             panel3.SuspendLayout();
@@ -80,6 +84,8 @@
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // panel8
@@ -270,6 +276,10 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(196, 232, 255);
+            panel1.Controls.Add(pictureBox6);
+            panel1.Controls.Add(btnExpense);
+            panel1.Controls.Add(pictureBox5);
+            panel1.Controls.Add(btnOrder);
             panel1.Controls.Add(pictureBox8);
             panel1.Controls.Add(btnOverview);
             panel1.Controls.Add(pictureBox2);
@@ -526,6 +536,55 @@
             txtSearch.Size = new Size(417, 27);
             txtSearch.TabIndex = 0;
             // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.order_now_9226478;
+            pictureBox5.Location = new Point(13, 304);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(36, 33);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 17;
+            pictureBox5.TabStop = false;
+            // 
+            // btnOrder
+            // 
+            btnOrder.BackColor = Color.FromArgb(196, 232, 255);
+            btnOrder.Cursor = Cursors.Hand;
+            btnOrder.FlatStyle = FlatStyle.Popup;
+            btnOrder.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnOrder.ForeColor = Color.Black;
+            btnOrder.Location = new Point(55, 304);
+            btnOrder.Name = "btnOrder";
+            btnOrder.Size = new Size(124, 33);
+            btnOrder.TabIndex = 16;
+            btnOrder.Text = "Orders";
+            btnOrder.TextAlign = ContentAlignment.MiddleLeft;
+            btnOrder.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Properties.Resources.increase2;
+            pictureBox6.Location = new Point(13, 246);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(36, 33);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 19;
+            pictureBox6.TabStop = false;
+            // 
+            // btnExpense
+            // 
+            btnExpense.Cursor = Cursors.Hand;
+            btnExpense.FlatStyle = FlatStyle.Popup;
+            btnExpense.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExpense.ForeColor = Color.Black;
+            btnExpense.Location = new Point(55, 244);
+            btnExpense.Name = "btnExpense";
+            btnExpense.Size = new Size(124, 33);
+            btnExpense.TabIndex = 18;
+            btnExpense.Text = "Expense list";
+            btnExpense.TextAlign = ContentAlignment.MiddleLeft;
+            btnExpense.UseVisualStyleBackColor = false;
+            // 
             // FormAdminSalesReport
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -565,6 +624,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel12.ResumeLayout(false);
             panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
         }
 
@@ -608,5 +669,9 @@
         private ComboBox cmbFilter;
         private Button btnAddNewStock;
         private TextBox txtSearch;
+        private PictureBox pictureBox5;
+        private Button btnOrder;
+        private PictureBox pictureBox6;
+        private Button btnExpense;
     }
 }
