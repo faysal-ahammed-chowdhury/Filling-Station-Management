@@ -34,7 +34,7 @@
             label1 = new Label();
             panel6 = new Panel();
             label8 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvInventory = new DataGridView();
             panel12 = new Panel();
             cmbFilter = new ComboBox();
             btnAddNewStock = new Button();
@@ -42,6 +42,10 @@
             pictureBox2 = new PictureBox();
             btnLogOut = new Button();
             panel3 = new Panel();
+            pictureBox6 = new PictureBox();
+            btnOrder = new Button();
+            pictureBox5 = new PictureBox();
+            btnExpense = new Button();
             pictureBox8 = new PictureBox();
             btnOverview = new Button();
             pictureBox4 = new PictureBox();
@@ -53,23 +57,25 @@
             panel1 = new Panel();
             label2 = new Label();
             label3 = new Label();
-            pictureBox6 = new PictureBox();
-            btnOrder = new Button();
-            pictureBox5 = new PictureBox();
-            btnExpense = new Button();
+            InventoryID = new DataGridViewTextBoxColumn();
+            FuelName = new DataGridViewTextBoxColumn();
+            PricePerLitre = new DataGridViewTextBoxColumn();
+            StockQuantity = new DataGridViewTextBoxColumn();
+            EditAction = new DataGridViewButtonColumn();
+            DeleteAction = new DataGridViewButtonColumn();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -107,7 +113,7 @@
             // 
             panel6.BackColor = Color.White;
             panel6.Controls.Add(label8);
-            panel6.Controls.Add(dataGridView1);
+            panel6.Controls.Add(dgvInventory);
             panel6.Location = new Point(209, 165);
             panel6.Name = "panel6";
             panel6.Size = new Size(733, 445);
@@ -123,14 +129,19 @@
             label8.TabIndex = 1;
             label8.Text = "List of Inventories";
             // 
-            // dataGridView1
+            // dgvInventory
             // 
-            dataGridView1.BackgroundColor = SystemColors.HighlightText;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(22, 7);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(708, 387);
-            dataGridView1.TabIndex = 0;
+            dgvInventory.AllowUserToAddRows = false;
+            dgvInventory.AllowUserToDeleteRows = false;
+            dgvInventory.BackgroundColor = SystemColors.HighlightText;
+            dgvInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvInventory.Columns.AddRange(new DataGridViewColumn[] { InventoryID, FuelName, PricePerLitre, StockQuantity, EditAction, DeleteAction });
+            dgvInventory.Location = new Point(11, 46);
+            dgvInventory.Name = "dgvInventory";
+            dgvInventory.ReadOnly = true;
+            dgvInventory.Size = new Size(708, 387);
+            dgvInventory.TabIndex = 0;
+            dgvInventory.CellContentClick += dgvInventory_CellContentClick;
             // 
             // panel12
             // 
@@ -226,6 +237,55 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(190, 602);
             panel3.TabIndex = 22;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Properties.Resources.order_now_9226478;
+            pictureBox6.Location = new Point(13, 296);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(36, 33);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 23;
+            pictureBox6.TabStop = false;
+            // 
+            // btnOrder
+            // 
+            btnOrder.BackColor = Color.FromArgb(196, 232, 255);
+            btnOrder.Cursor = Cursors.Hand;
+            btnOrder.FlatStyle = FlatStyle.Popup;
+            btnOrder.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnOrder.ForeColor = Color.Black;
+            btnOrder.Location = new Point(55, 296);
+            btnOrder.Name = "btnOrder";
+            btnOrder.Size = new Size(124, 33);
+            btnOrder.TabIndex = 22;
+            btnOrder.Text = "Orders";
+            btnOrder.TextAlign = ContentAlignment.MiddleLeft;
+            btnOrder.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.increase2;
+            pictureBox5.Location = new Point(13, 248);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(36, 33);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 21;
+            pictureBox5.TabStop = false;
+            // 
+            // btnExpense
+            // 
+            btnExpense.Cursor = Cursors.Hand;
+            btnExpense.FlatStyle = FlatStyle.Popup;
+            btnExpense.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExpense.ForeColor = Color.Black;
+            btnExpense.Location = new Point(55, 246);
+            btnExpense.Name = "btnExpense";
+            btnExpense.Size = new Size(124, 33);
+            btnExpense.TabIndex = 20;
+            btnExpense.Text = "Expense list";
+            btnExpense.TextAlign = ContentAlignment.MiddleLeft;
+            btnExpense.UseVisualStyleBackColor = false;
             // 
             // pictureBox8
             // 
@@ -366,54 +426,57 @@
             label3.TabIndex = 0;
             label3.Text = "Welcome, Faysal";
             // 
-            // pictureBox6
+            // InventoryID
             // 
-            pictureBox6.Image = Properties.Resources.order_now_9226478;
-            pictureBox6.Location = new Point(13, 296);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(36, 33);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 23;
-            pictureBox6.TabStop = false;
+            InventoryID.DataPropertyName = "InventoryId";
+            InventoryID.HeaderText = "Inventory ID";
+            InventoryID.Name = "InventoryID";
+            InventoryID.ReadOnly = true;
             // 
-            // btnOrder
+            // FuelName
             // 
-            btnOrder.BackColor = Color.FromArgb(196, 232, 255);
-            btnOrder.Cursor = Cursors.Hand;
-            btnOrder.FlatStyle = FlatStyle.Popup;
-            btnOrder.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnOrder.ForeColor = Color.Black;
-            btnOrder.Location = new Point(55, 296);
-            btnOrder.Name = "btnOrder";
-            btnOrder.Size = new Size(124, 33);
-            btnOrder.TabIndex = 22;
-            btnOrder.Text = "Orders";
-            btnOrder.TextAlign = ContentAlignment.MiddleLeft;
-            btnOrder.UseVisualStyleBackColor = false;
+            FuelName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            FuelName.DataPropertyName = "FuelName";
+            FuelName.HeaderText = "Fuel Name";
+            FuelName.Name = "FuelName";
+            FuelName.ReadOnly = true;
             // 
-            // pictureBox5
+            // PricePerLitre
             // 
-            pictureBox5.Image = Properties.Resources.increase2;
-            pictureBox5.Location = new Point(13, 248);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(36, 33);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 21;
-            pictureBox5.TabStop = false;
+            PricePerLitre.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            PricePerLitre.DataPropertyName = "PricePerLitre";
+            PricePerLitre.HeaderText = "Price (Per Litre)";
+            PricePerLitre.Name = "PricePerLitre";
+            PricePerLitre.ReadOnly = true;
             // 
-            // btnExpense
+            // StockQuantity
             // 
-            btnExpense.Cursor = Cursors.Hand;
-            btnExpense.FlatStyle = FlatStyle.Popup;
-            btnExpense.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnExpense.ForeColor = Color.Black;
-            btnExpense.Location = new Point(55, 246);
-            btnExpense.Name = "btnExpense";
-            btnExpense.Size = new Size(124, 33);
-            btnExpense.TabIndex = 20;
-            btnExpense.Text = "Expense list";
-            btnExpense.TextAlign = ContentAlignment.MiddleLeft;
-            btnExpense.UseVisualStyleBackColor = false;
+            StockQuantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            StockQuantity.DataPropertyName = "StockQuantity";
+            StockQuantity.HeaderText = "Stock Quantity";
+            StockQuantity.Name = "StockQuantity";
+            StockQuantity.ReadOnly = true;
+            // 
+            // EditAction
+            // 
+            EditAction.HeaderText = "Edit Action";
+            EditAction.Name = "EditAction";
+            EditAction.ReadOnly = true;
+            EditAction.Resizable = DataGridViewTriState.True;
+            EditAction.SortMode = DataGridViewColumnSortMode.Automatic;
+            EditAction.Text = "Edit";
+            EditAction.UseColumnTextForButtonValue = true;
+            // 
+            // DeleteAction
+            // 
+            DeleteAction.HeaderText = "Delete Action";
+            DeleteAction.Name = "DeleteAction";
+            DeleteAction.ReadOnly = true;
+            DeleteAction.Resizable = DataGridViewTriState.True;
+            DeleteAction.SortMode = DataGridViewColumnSortMode.Automatic;
+            DeleteAction.Text = "Delete";
+            DeleteAction.UseColumnTextForButtonValue = true;
+            DeleteAction.Width = 116;
             // 
             // FormAdminInventory
             // 
@@ -435,19 +498,19 @@
             panel2.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvInventory).EndInit();
             panel12.ResumeLayout(false);
             panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
         }
 
@@ -457,7 +520,7 @@
         private Label label1;
         private Panel panel6;
         private Label label8;
-        private DataGridView dataGridView1;
+        private DataGridView dgvInventory;
         private Panel panel12;
         private Button btnAddNewStock;
         private TextBox txtSearch;
@@ -480,5 +543,11 @@
         private Button btnOrder;
         private PictureBox pictureBox5;
         private Button btnExpense;
+        private DataGridViewTextBoxColumn InventoryID;
+        private DataGridViewTextBoxColumn FuelName;
+        private DataGridViewTextBoxColumn PricePerLitre;
+        private DataGridViewTextBoxColumn StockQuantity;
+        private DataGridViewButtonColumn EditAction;
+        private DataGridViewButtonColumn DeleteAction;
     }
 }
