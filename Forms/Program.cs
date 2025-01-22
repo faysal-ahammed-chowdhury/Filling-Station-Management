@@ -17,10 +17,11 @@ namespace Forms
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             ApplicationConfiguration.Initialize();
             //Application.Run(new FormLogin());
-            Application.Run(new FormAdminInventory());
+            //Application.Run(new FormAdminInventory());
             //Application.Run(new FormEditInventory("i-005"));
             //Application.Run(new FormAddInventory());
-            //Application.Run(new FormExpense());
+            Application.Run(new FormExpense());
+            //Application.Run(new FormAddExpense("U-001"));
 
             //try
             //{

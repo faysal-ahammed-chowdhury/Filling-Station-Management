@@ -86,8 +86,8 @@ namespace Forms
                     
                     this.Visible = false;
                     this.ClearAll();
-                    FrmAdminInv.ClearAll();
-                    FrmAdminInv.Visible = true;
+                    this.FrmAdminInv.ClearAll();
+                    this.FrmAdminInv.Visible = true;
                 }
                 else
                 {
@@ -104,7 +104,7 @@ namespace Forms
         {
             this.ClearAll();
             this.Visible = false;
-            FrmAdminInv.PopulateGridViewOnAction();
+            this.FrmAdminInv.PopulateGridViewOnAction();
             this.FrmAdminInv.Visible = true;
         }
 

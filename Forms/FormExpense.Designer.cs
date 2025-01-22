@@ -38,14 +38,21 @@
             btnAdd = new Button();
             label9 = new Label();
             dgvExpense = new DataGridView();
+            ExpenseId = new DataGridViewTextBoxColumn();
+            Amount = new DataGridViewTextBoxColumn();
+            Category = new DataGridViewTextBoxColumn();
+            Description = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            TIme = new DataGridViewTextBoxColumn();
+            CreatedBy = new DataGridViewTextBoxColumn();
+            EditAction = new DataGridViewButtonColumn();
+            DeleteAction = new DataGridViewButtonColumn();
             panel6 = new Panel();
             label1 = new Label();
             label14 = new Label();
             panel2 = new Panel();
             pictureBox8 = new PictureBox();
             panel1 = new Panel();
-            pictureBox6 = new PictureBox();
-            btnOrder = new Button();
             pictureBox5 = new PictureBox();
             btnExpense = new Button();
             btnOverview = new Button();
@@ -73,22 +80,12 @@
             label8 = new Label();
             label11 = new Label();
             panel4 = new Panel();
-            ExpenseId = new DataGridViewTextBoxColumn();
-            Amount = new DataGridViewTextBoxColumn();
-            Category = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
-            Date = new DataGridViewTextBoxColumn();
-            TIme = new DataGridViewTextBoxColumn();
-            CreatedBy = new DataGridViewTextBoxColumn();
-            EditAction = new DataGridViewButtonColumn();
-            DeleteAction = new DataGridViewButtonColumn();
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvExpense).BeginInit();
             panel6.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -179,6 +176,7 @@
             btnAdd.TabIndex = 3;
             btnAdd.Text = "Add New Stock";
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // label9
             // 
@@ -204,6 +202,81 @@
             dgvExpense.Size = new Size(708, 272);
             dgvExpense.TabIndex = 0;
             dgvExpense.CellContentClick += dgvExpense_CellContentClick;
+            // 
+            // ExpenseId
+            // 
+            ExpenseId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ExpenseId.DataPropertyName = "ExpenseId";
+            ExpenseId.HeaderText = "Expense ID";
+            ExpenseId.Name = "ExpenseId";
+            ExpenseId.ReadOnly = true;
+            // 
+            // Amount
+            // 
+            Amount.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Amount.DataPropertyName = "Amount";
+            Amount.HeaderText = "Amount";
+            Amount.Name = "Amount";
+            Amount.ReadOnly = true;
+            // 
+            // Category
+            // 
+            Category.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Category.DataPropertyName = "Category";
+            Category.HeaderText = "Category";
+            Category.Name = "Category";
+            Category.ReadOnly = true;
+            // 
+            // Description
+            // 
+            Description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Description.DataPropertyName = "Description";
+            Description.HeaderText = "Description";
+            Description.Name = "Description";
+            Description.ReadOnly = true;
+            // 
+            // Date
+            // 
+            Date.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Date.DataPropertyName = "Date";
+            Date.HeaderText = "Date";
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            // 
+            // TIme
+            // 
+            TIme.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            TIme.DataPropertyName = "TIme";
+            TIme.HeaderText = "TIme";
+            TIme.Name = "TIme";
+            TIme.ReadOnly = true;
+            // 
+            // CreatedBy
+            // 
+            CreatedBy.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            CreatedBy.DataPropertyName = "CreatedByName";
+            CreatedBy.HeaderText = "Created By";
+            CreatedBy.Name = "CreatedBy";
+            CreatedBy.ReadOnly = true;
+            // 
+            // EditAction
+            // 
+            EditAction.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            EditAction.HeaderText = "";
+            EditAction.Name = "EditAction";
+            EditAction.ReadOnly = true;
+            EditAction.Text = "Edit";
+            EditAction.UseColumnTextForButtonValue = true;
+            // 
+            // DeleteAction
+            // 
+            DeleteAction.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DeleteAction.HeaderText = "";
+            DeleteAction.Name = "DeleteAction";
+            DeleteAction.ReadOnly = true;
+            DeleteAction.Resizable = DataGridViewTriState.True;
+            DeleteAction.Text = "Delete";
+            DeleteAction.UseColumnTextForButtonValue = true;
             // 
             // panel6
             // 
@@ -261,8 +334,6 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(196, 232, 255);
-            panel1.Controls.Add(pictureBox6);
-            panel1.Controls.Add(btnOrder);
             panel1.Controls.Add(pictureBox5);
             panel1.Controls.Add(btnExpense);
             panel1.Controls.Add(pictureBox8);
@@ -280,31 +351,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(190, 602);
             panel1.TabIndex = 35;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Image = Properties.Resources.order_now_9226478;
-            pictureBox6.Location = new Point(13, 304);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(36, 33);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 19;
-            pictureBox6.TabStop = false;
-            // 
-            // btnOrder
-            // 
-            btnOrder.BackColor = Color.FromArgb(196, 232, 255);
-            btnOrder.Cursor = Cursors.Hand;
-            btnOrder.FlatStyle = FlatStyle.Popup;
-            btnOrder.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnOrder.ForeColor = Color.Black;
-            btnOrder.Location = new Point(55, 304);
-            btnOrder.Name = "btnOrder";
-            btnOrder.Size = new Size(124, 33);
-            btnOrder.TabIndex = 18;
-            btnOrder.Text = "Orders";
-            btnOrder.TextAlign = ContentAlignment.MiddleLeft;
-            btnOrder.UseVisualStyleBackColor = false;
             // 
             // pictureBox5
             // 
@@ -636,81 +682,6 @@
             panel4.Size = new Size(172, 120);
             panel4.TabIndex = 34;
             // 
-            // ExpenseId
-            // 
-            ExpenseId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ExpenseId.DataPropertyName = "ExpenseId";
-            ExpenseId.HeaderText = "Expense ID";
-            ExpenseId.Name = "ExpenseId";
-            ExpenseId.ReadOnly = true;
-            // 
-            // Amount
-            // 
-            Amount.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Amount.DataPropertyName = "Amount";
-            Amount.HeaderText = "Amount";
-            Amount.Name = "Amount";
-            Amount.ReadOnly = true;
-            // 
-            // Category
-            // 
-            Category.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Category.DataPropertyName = "Category";
-            Category.HeaderText = "Category";
-            Category.Name = "Category";
-            Category.ReadOnly = true;
-            // 
-            // Description
-            // 
-            Description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Description.DataPropertyName = "Description";
-            Description.HeaderText = "Description";
-            Description.Name = "Description";
-            Description.ReadOnly = true;
-            // 
-            // Date
-            // 
-            Date.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Date.DataPropertyName = "Date";
-            Date.HeaderText = "Date";
-            Date.Name = "Date";
-            Date.ReadOnly = true;
-            // 
-            // TIme
-            // 
-            TIme.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            TIme.DataPropertyName = "TIme";
-            TIme.HeaderText = "TIme";
-            TIme.Name = "TIme";
-            TIme.ReadOnly = true;
-            // 
-            // CreatedBy
-            // 
-            CreatedBy.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            CreatedBy.DataPropertyName = "CreatedByName";
-            CreatedBy.HeaderText = "Created By";
-            CreatedBy.Name = "CreatedBy";
-            CreatedBy.ReadOnly = true;
-            // 
-            // EditAction
-            // 
-            EditAction.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            EditAction.HeaderText = "";
-            EditAction.Name = "EditAction";
-            EditAction.ReadOnly = true;
-            EditAction.Text = "Edit";
-            EditAction.UseColumnTextForButtonValue = true;
-            // 
-            // DeleteAction
-            // 
-            DeleteAction.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            DeleteAction.HeaderText = "";
-            DeleteAction.Name = "DeleteAction";
-            DeleteAction.ReadOnly = true;
-            DeleteAction.Resizable = DataGridViewTriState.True;
-            DeleteAction.Text = "Delete";
-            DeleteAction.UseColumnTextForButtonValue = true;
-            // 
             // FormExpense
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -737,7 +708,6 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -793,8 +763,6 @@
         private Label label8;
         private Label label11;
         private Panel panel4;
-        private PictureBox pictureBox6;
-        private Button btnOrder;
         private DateTimePicker dtpEndDate;
         private DateTimePicker dtpStartDate;
         private Label label7;

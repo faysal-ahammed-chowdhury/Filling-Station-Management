@@ -53,6 +53,13 @@ namespace Forms
             this.PopulateGridView(query);
         }
 
+        public void ClearAll()
+        {
+            this.txtSearch.Clear();
+            this.ShowInitialInfo();
+            this.PopulateGridView();
+        }
+
         public DataTable GetExpenses(string startDate, string endDate)
         {
             string query = $"SELECT * FROM Expenses WHERE DateTime BETWEEN '{startDate}' AND '{endDate}';";
@@ -104,7 +111,7 @@ namespace Forms
 
         public void ShowInitialInfo()
         {
-            this.dtpStartDate.Text = (new DateTime(DateTime.Now.Year - 10, 1, 1)).ToString();
+            this.dtpStartDate.Text = (new DateTime(2015, 1, 1)).ToString();
             this.dtpEndDate.Text = DateTime.Now.ToString();
 
             try
@@ -113,42 +120,33 @@ namespace Forms
                 DataTable dt = this.GetTodaysExpenses();
                 decimal tot = 0;
                 foreach (DataRow dr in dt.Rows)
-                {
                     tot += Convert.ToDecimal(dr[1]);
-                }
                 this.lblThisDay.Text = $"{tot.ToString("F2")} TK";
 
                 // this week
                 dt = this.GetThisWeeksExpenses();
                 tot = 0;
                 foreach (DataRow dr in dt.Rows)
-                {
                     tot += Convert.ToDecimal(dr[1]);
-                }
                 this.lblThisWeeK.Text = $"{tot.ToString("F2")} TK";
 
                 // this month
                 dt = this.GetThisMonthsExpenses();
                 tot = 0;
                 foreach (DataRow dr in dt.Rows)
-                {
                     tot += Convert.ToDecimal(dr[1]);
-                }
                 this.lblThisMonth.Text = $"{tot.ToString("F2")} TK";
 
                 // this year
                 dt = this.GetThisYearsExpenses();
                 tot = 0;
                 foreach (DataRow dr in dt.Rows)
-                {
                     tot += Convert.ToDecimal(dr[1]);
-                }
                 this.lblThisYear.Text = $"{tot.ToString("F2")} TK";
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
         }
 
@@ -197,6 +195,12 @@ namespace Forms
         private void FormExpense_Load(object sender, EventArgs e)
         {
             this.dgvExpense.ClearSelection();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormAddExpense("U-001", this).Show(); // change here later
         }
     }
 }
