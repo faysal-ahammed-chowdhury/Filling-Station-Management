@@ -31,6 +31,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdminDashboard));
             panel1 = new Panel();
+            pictureBox9 = new PictureBox();
+            btnOrder = new Button();
+            pictureBox10 = new PictureBox();
+            btnExpense = new Button();
             pictureBox8 = new PictureBox();
             btnOverview = new Button();
             pictureBox2 = new PictureBox();
@@ -42,7 +46,6 @@
             btnEmpolyeeList = new Button();
             btnSalesrep = new Button();
             panel2 = new Panel();
-            lblUserName = new Label();
             label1 = new Label();
             panel3 = new Panel();
             pictureBox5 = new PictureBox();
@@ -66,11 +69,10 @@
             btnViewSales = new Button();
             label9 = new Label();
             dataGridView2 = new DataGridView();
-            pictureBox9 = new PictureBox();
-            btnOrder = new Button();
-            pictureBox10 = new PictureBox();
-            btnExpense = new Button();
+            label10 = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -87,8 +89,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -113,6 +113,55 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(190, 602);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Image = Properties.Resources.order_now_9226478;
+            pictureBox9.Location = new Point(13, 295);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(36, 33);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 23;
+            pictureBox9.TabStop = false;
+            // 
+            // btnOrder
+            // 
+            btnOrder.BackColor = Color.FromArgb(196, 232, 255);
+            btnOrder.Cursor = Cursors.Hand;
+            btnOrder.FlatStyle = FlatStyle.Popup;
+            btnOrder.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnOrder.ForeColor = Color.Black;
+            btnOrder.Location = new Point(55, 295);
+            btnOrder.Name = "btnOrder";
+            btnOrder.Size = new Size(124, 33);
+            btnOrder.TabIndex = 22;
+            btnOrder.Text = "Orders";
+            btnOrder.TextAlign = ContentAlignment.MiddleLeft;
+            btnOrder.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.Image = Properties.Resources.increase2;
+            pictureBox10.Location = new Point(13, 247);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(36, 33);
+            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox10.TabIndex = 21;
+            pictureBox10.TabStop = false;
+            // 
+            // btnExpense
+            // 
+            btnExpense.Cursor = Cursors.Hand;
+            btnExpense.FlatStyle = FlatStyle.Popup;
+            btnExpense.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExpense.ForeColor = Color.Black;
+            btnExpense.Location = new Point(55, 245);
+            btnExpense.Name = "btnExpense";
+            btnExpense.Size = new Size(124, 33);
+            btnExpense.TabIndex = 20;
+            btnExpense.Text = "Expense list";
+            btnExpense.TextAlign = ContentAlignment.MiddleLeft;
+            btnExpense.UseVisualStyleBackColor = false;
             // 
             // pictureBox8
             // 
@@ -248,7 +297,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(lblUserName);
+            panel2.Controls.Add(label10);
             panel2.Controls.Add(label1);
             panel2.ForeColor = Color.Navy;
             panel2.Location = new Point(208, 12);
@@ -256,23 +305,12 @@
             panel2.Size = new Size(734, 56);
             panel2.TabIndex = 3;
             // 
-            // lblUserName
-            // 
-            lblUserName.AutoSize = true;
-            lblUserName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUserName.ForeColor = Color.Black;
-            lblUserName.Location = new Point(587, 20);
-            lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(133, 21);
-            lblUserName.TabIndex = 1;
-            lblUserName.Text = "Change Password";
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(12, 16);
+            label1.Location = new Point(513, 16);
             label1.Name = "label1";
             label1.Size = new Size(206, 29);
             label1.TabIndex = 0;
@@ -510,54 +548,16 @@
             dataGridView2.Size = new Size(702, 131);
             dataGridView2.TabIndex = 0;
             // 
-            // pictureBox9
+            // label10
             // 
-            pictureBox9.Image = Properties.Resources.order_now_9226478;
-            pictureBox9.Location = new Point(13, 295);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(36, 33);
-            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox9.TabIndex = 23;
-            pictureBox9.TabStop = false;
-            // 
-            // btnOrder
-            // 
-            btnOrder.BackColor = Color.FromArgb(196, 232, 255);
-            btnOrder.Cursor = Cursors.Hand;
-            btnOrder.FlatStyle = FlatStyle.Popup;
-            btnOrder.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnOrder.ForeColor = Color.Black;
-            btnOrder.Location = new Point(55, 295);
-            btnOrder.Name = "btnOrder";
-            btnOrder.Size = new Size(124, 33);
-            btnOrder.TabIndex = 22;
-            btnOrder.Text = "Orders";
-            btnOrder.TextAlign = ContentAlignment.MiddleLeft;
-            btnOrder.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox10
-            // 
-            pictureBox10.Image = Properties.Resources.increase2;
-            pictureBox10.Location = new Point(13, 247);
-            pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(36, 33);
-            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox10.TabIndex = 21;
-            pictureBox10.TabStop = false;
-            // 
-            // btnExpense
-            // 
-            btnExpense.Cursor = Cursors.Hand;
-            btnExpense.FlatStyle = FlatStyle.Popup;
-            btnExpense.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnExpense.ForeColor = Color.Black;
-            btnExpense.Location = new Point(55, 245);
-            btnExpense.Name = "btnExpense";
-            btnExpense.Size = new Size(124, 33);
-            btnExpense.TabIndex = 20;
-            btnExpense.Text = "Expense list";
-            btnExpense.TextAlign = ContentAlignment.MiddleLeft;
-            btnExpense.UseVisualStyleBackColor = false;
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial Black", 20F, FontStyle.Bold);
+            label10.ForeColor = Color.Navy;
+            label10.Location = new Point(10, 8);
+            label10.Name = "label10";
+            label10.Size = new Size(278, 38);
+            label10.TabIndex = 2;
+            label10.Text = "Admin Dashboard";
             // 
             // FormAdminDashboard
             // 
@@ -580,8 +580,10 @@
             Name = "FormAdminDashboard";
             SizeGripStyle = SizeGripStyle.Show;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Dashboard";
+            Text = "Admin Dashboard";
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -604,8 +606,6 @@
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ResumeLayout(false);
         }
 
@@ -622,7 +622,6 @@
         private PictureBox pictureBox3;
         private Panel panel2;
         private Label label1;
-        private Label lblUserName;
         private Panel panel3;
         private Label lblTotalProfit;
         private Label label2;
@@ -651,5 +650,6 @@
         private Button btnOrder;
         private PictureBox pictureBox10;
         private Button btnExpense;
+        private Label label10;
     }
 }

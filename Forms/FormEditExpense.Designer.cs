@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label3 = new Label();
             label8 = new Label();
             label7 = new Label();
             dtpTime = new DateTimePicker();
@@ -46,22 +45,8 @@
             txtExpenseId = new TextBox();
             label4 = new Label();
             bntSave = new Button();
-            label2 = new Label();
-            panel1 = new Panel();
             panel6.SuspendLayout();
-            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(12, 14);
-            label3.Name = "label3";
-            label3.Size = new Size(206, 29);
-            label3.TabIndex = 0;
-            label3.Text = "Welcome, Faysal";
             // 
             // label8
             // 
@@ -147,7 +132,7 @@
             panel6.Controls.Add(txtExpenseId);
             panel6.Controls.Add(label4);
             panel6.Controls.Add(bntSave);
-            panel6.Location = new Point(112, 81);
+            panel6.Location = new Point(114, 48);
             panel6.Name = "panel6";
             panel6.Size = new Size(733, 533);
             panel6.TabIndex = 36;
@@ -260,48 +245,21 @@
             bntSave.UseVisualStyleBackColor = false;
             bntSave.Click += bntSave_Click;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(587, 18);
-            label2.Name = "label2";
-            label2.Size = new Size(133, 21);
-            label2.TabIndex = 1;
-            label2.Text = "Change Password";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label3);
-            panel1.ForeColor = Color.Navy;
-            panel1.Location = new Point(112, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(733, 56);
-            panel1.TabIndex = 35;
-            // 
             // FormEditExpense
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(954, 616);
             Controls.Add(panel6);
-            Controls.Add(panel1);
             Name = "FormEditExpense";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Edit Expense";
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Label label3;
         private Label label8;
         private Label label7;
         private DateTimePicker dtpTime;
@@ -319,7 +277,5 @@
         private TextBox txtExpenseId;
         private Label label4;
         private Button bntSave;
-        private Label label2;
-        private Panel panel1;
     }
 }

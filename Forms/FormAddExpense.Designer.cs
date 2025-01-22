@@ -41,20 +41,16 @@
             lblUserName = new Label();
             label1 = new Label();
             label4 = new Label();
-            label2 = new Label();
             panel6 = new Panel();
+            label8 = new Label();
             label7 = new Label();
             dtpTime = new DateTimePicker();
             label6 = new Label();
             dtpDate = new DateTimePicker();
             chkCurrentTime = new CheckBox();
             cboCategory = new ComboBox();
-            panel1 = new Panel();
-            label3 = new Label();
-            label8 = new Label();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnClear
@@ -196,17 +192,6 @@
             label4.TabIndex = 1;
             label4.Text = "Expense ID:";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(587, 18);
-            label2.Name = "label2";
-            label2.Size = new Size(133, 21);
-            label2.TabIndex = 1;
-            label2.Text = "Change Password";
-            // 
             // panel6
             // 
             panel6.BackColor = Color.White;
@@ -227,10 +212,20 @@
             panel6.Controls.Add(txtExpenseId);
             panel6.Controls.Add(label4);
             panel6.Controls.Add(bntAdd);
-            panel6.Location = new Point(119, 81);
+            panel6.Location = new Point(119, 43);
             panel6.Name = "panel6";
             panel6.Size = new Size(733, 533);
             panel6.TabIndex = 33;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(27, 19);
+            label8.Name = "label8";
+            label8.Size = new Size(324, 45);
+            label8.TabIndex = 17;
+            label8.Text = "Create New Expense";
             // 
             // label7
             // 
@@ -302,38 +297,6 @@
             cboCategory.Size = new Size(287, 29);
             cboCategory.TabIndex = 11;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label3);
-            panel1.ForeColor = Color.Navy;
-            panel1.Location = new Point(119, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(733, 56);
-            panel1.TabIndex = 32;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(12, 14);
-            label3.Name = "label3";
-            label3.Size = new Size(206, 29);
-            label3.TabIndex = 0;
-            label3.Text = "Welcome, Faysal";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(27, 19);
-            label8.Name = "label8";
-            label8.Size = new Size(324, 45);
-            label8.TabIndex = 17;
-            label8.Text = "Create New Expense";
-            // 
             // FormAddExpense
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -341,7 +304,6 @@
             ClientSize = new Size(954, 616);
             Controls.Add(panel2);
             Controls.Add(panel6);
-            Controls.Add(panel1);
             Name = "FormAddExpense";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Create Expense";
@@ -349,8 +311,6 @@
             panel2.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -369,10 +329,7 @@
         private Label lblUserName;
         private Label label1;
         private Label label4;
-        private Label label2;
         private Panel panel6;
-        private Panel panel1;
-        private Label label3;
         private DateTimePicker dtpDate;
         private CheckBox chkCurrentTime;
         private ComboBox cboCategory;

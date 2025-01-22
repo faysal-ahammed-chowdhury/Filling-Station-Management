@@ -48,7 +48,6 @@
             EditAction = new DataGridViewButtonColumn();
             DeleteAction = new DataGridViewButtonColumn();
             panel6 = new Panel();
-            label1 = new Label();
             label14 = new Label();
             panel2 = new Panel();
             pictureBox8 = new PictureBox();
@@ -101,7 +100,7 @@
             // 
             txtSearch.BackColor = SystemColors.Info;
             txtSearch.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSearch.Location = new Point(10, 33);
+            txtSearch.Location = new Point(11, 29);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Serach by Category";
             txtSearch.Size = new Size(267, 27);
@@ -170,7 +169,7 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(283, 33);
+            btnAdd.Location = new Point(284, 29);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(129, 29);
             btnAdd.TabIndex = 3;
@@ -181,10 +180,11 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(11, 7);
+            label9.Font = new Font("Arial Black", 20F, FontStyle.Bold);
+            label9.ForeColor = Color.Navy;
+            label9.Location = new Point(9, 9);
             label9.Name = "label9";
-            label9.Size = new Size(109, 20);
+            label9.Size = new Size(262, 38);
             label9.TabIndex = 1;
             label9.Text = "Expense History";
             // 
@@ -282,30 +282,19 @@
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Controls.Add(label9);
             panel6.Controls.Add(dgvExpense);
             panel6.Location = new Point(210, 295);
             panel6.Name = "panel6";
             panel6.Size = new Size(733, 314);
             panel6.TabIndex = 37;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(587, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(133, 21);
-            label1.TabIndex = 1;
-            label1.Text = "Change Password";
-            // 
             // label14
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.Black;
-            label14.Location = new Point(12, 16);
+            label14.Location = new Point(513, 12);
+            label14.MaximumSize = new Size(270, 30);
             label14.Name = "label14";
             label14.Size = new Size(206, 29);
             label14.TabIndex = 0;
@@ -314,7 +303,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(label1);
+            panel2.Controls.Add(label9);
             panel2.Controls.Add(label14);
             panel2.ForeColor = Color.Navy;
             panel2.Location = new Point(210, 7);
@@ -704,7 +693,6 @@
             panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvExpense).EndInit();
             panel6.ResumeLayout(false);
-            panel6.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
@@ -732,7 +720,6 @@
         private Label label9;
         private DataGridView dgvExpense;
         private Panel panel6;
-        private Label label1;
         private Label label14;
         private Panel panel2;
         private PictureBox pictureBox8;

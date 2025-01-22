@@ -43,12 +43,8 @@
             bntSave = new Button();
             lblUserName = new Label();
             label1 = new Label();
-            label2 = new Label();
-            panel1 = new Panel();
-            label3 = new Label();
             panel2 = new Panel();
             panel6.SuspendLayout();
-            panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -67,7 +63,7 @@
             panel6.Controls.Add(txtInventoryId);
             panel6.Controls.Add(label4);
             panel6.Controls.Add(bntSave);
-            panel6.Location = new Point(118, 81);
+            panel6.Location = new Point(118, 50);
             panel6.Name = "panel6";
             panel6.Size = new Size(733, 533);
             panel6.TabIndex = 33;
@@ -219,39 +215,6 @@
             label1.TabIndex = 0;
             label1.Text = "Welcome to Admin Dashboard\r\n";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(586, 16);
-            label2.Name = "label2";
-            label2.Size = new Size(133, 21);
-            label2.TabIndex = 1;
-            label2.Text = "Change Password";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label3);
-            panel1.ForeColor = Color.Navy;
-            panel1.Location = new Point(118, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(733, 56);
-            panel1.TabIndex = 32;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(11, 12);
-            label3.Name = "label3";
-            label3.Size = new Size(206, 29);
-            label3.TabIndex = 0;
-            label3.Text = "Welcome, Faysal";
-            // 
             // panel2
             // 
             panel2.BackColor = Color.White;
@@ -269,15 +232,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(954, 616);
             Controls.Add(panel6);
-            Controls.Add(panel1);
             Controls.Add(panel2);
             Name = "FormEditInventory";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Edit Inventory";
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -297,9 +257,6 @@
         private Button bntSave;
         private Label lblUserName;
         private Label label1;
-        private Label label2;
-        private Panel panel1;
-        private Label label3;
         private Panel panel2;
         private Button btnClear;
         private Button btnCancel;

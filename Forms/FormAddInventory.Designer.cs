@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label3 = new Label();
-            panel1 = new Panel();
-            label2 = new Label();
             lblUserName = new Label();
             label1 = new Label();
             panel2 = new Panel();
             panel6 = new Panel();
+            label8 = new Label();
             btnClear = new Button();
             btnCancel = new Button();
             txtStockQuantity = new TextBox();
@@ -46,44 +44,9 @@
             txtInventoryId = new TextBox();
             label4 = new Label();
             bntAdd = new Button();
-            label8 = new Label();
-            panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
             SuspendLayout();
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(12, 14);
-            label3.Name = "label3";
-            label3.Size = new Size(206, 29);
-            label3.TabIndex = 0;
-            label3.Text = "Welcome, Faysal";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label3);
-            panel1.ForeColor = Color.Navy;
-            panel1.Location = new Point(120, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(733, 56);
-            panel1.TabIndex = 28;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(587, 18);
-            label2.Name = "label2";
-            label2.Size = new Size(133, 21);
-            label2.TabIndex = 1;
-            label2.Text = "Change Password";
             // 
             // lblUserName
             // 
@@ -131,10 +94,20 @@
             panel6.Controls.Add(txtInventoryId);
             panel6.Controls.Add(label4);
             panel6.Controls.Add(bntAdd);
-            panel6.Location = new Point(120, 81);
+            panel6.Location = new Point(115, 47);
             panel6.Name = "panel6";
             panel6.Size = new Size(733, 533);
             panel6.TabIndex = 29;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(29, 18);
+            label8.Name = "label8";
+            label8.Size = new Size(347, 45);
+            label8.TabIndex = 18;
+            label8.Text = "Create New Inventory";
             // 
             // btnClear
             // 
@@ -253,29 +226,16 @@
             bntAdd.UseVisualStyleBackColor = false;
             bntAdd.Click += btnAdd_Click;
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(29, 18);
-            label8.Name = "label8";
-            label8.Size = new Size(347, 45);
-            label8.TabIndex = 18;
-            label8.Text = "Create New Inventory";
-            // 
             // FormAddInventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(954, 616);
             Controls.Add(panel6);
-            Controls.Add(panel1);
             Controls.Add(panel2);
             Name = "FormAddInventory";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Add New Inventory";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel6.ResumeLayout(false);
@@ -284,10 +244,6 @@
         }
 
         #endregion
-
-        private Label label3;
-        private Panel panel1;
-        private Label label2;
         private Label lblUserName;
         private Label label1;
         private Panel panel2;

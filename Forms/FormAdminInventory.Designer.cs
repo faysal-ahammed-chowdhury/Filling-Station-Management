@@ -33,7 +33,6 @@
             lblUserName = new Label();
             label1 = new Label();
             panel6 = new Panel();
-            label8 = new Label();
             dgvInventory = new DataGridView();
             InventoryID = new DataGridViewTextBoxColumn();
             FuelName = new DataGridViewTextBoxColumn();
@@ -58,8 +57,8 @@
             btnEmpolyeeList = new Button();
             btnSalesrep = new Button();
             panel1 = new Panel();
-            label2 = new Label();
             label3 = new Label();
+            label4 = new Label();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
@@ -108,22 +107,11 @@
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Controls.Add(label8);
             panel6.Controls.Add(dgvInventory);
-            panel6.Location = new Point(209, 165);
+            panel6.Location = new Point(209, 150);
             panel6.Name = "panel6";
-            panel6.Size = new Size(733, 445);
+            panel6.Size = new Size(733, 460);
             panel6.TabIndex = 14;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(11, 7);
-            label8.Name = "label8";
-            label8.Size = new Size(121, 20);
-            label8.TabIndex = 1;
-            label8.Text = "List of Inventories";
             // 
             // dgvInventory
             // 
@@ -132,11 +120,11 @@
             dgvInventory.BackgroundColor = SystemColors.HighlightText;
             dgvInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvInventory.Columns.AddRange(new DataGridViewColumn[] { InventoryID, FuelName, PricePerLitre, StockQuantity, EditAction, DeleteAction });
-            dgvInventory.Location = new Point(11, 46);
+            dgvInventory.Location = new Point(11, 16);
             dgvInventory.Name = "dgvInventory";
             dgvInventory.ReadOnly = true;
             dgvInventory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvInventory.Size = new Size(708, 387);
+            dgvInventory.Size = new Size(708, 432);
             dgvInventory.TabIndex = 0;
             dgvInventory.CellContentClick += dgvInventory_CellContentClick;
             // 
@@ -408,7 +396,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.ForeColor = Color.Navy;
             panel1.Location = new Point(209, 8);
@@ -416,27 +404,26 @@
             panel1.Size = new Size(733, 56);
             panel1.TabIndex = 23;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(587, 20);
-            label2.Name = "label2";
-            label2.Size = new Size(133, 21);
-            label2.TabIndex = 1;
-            label2.Text = "Change Password";
-            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(12, 16);
+            label3.Location = new Point(513, 12);
             label3.Name = "label3";
             label3.Size = new Size(206, 29);
             label3.TabIndex = 0;
             label3.Text = "Welcome, Faysal";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(11, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(167, 37);
+            label4.TabIndex = 24;
+            label4.Text = "Inventories";
             // 
             // FormAdminInventory
             // 
@@ -458,7 +445,6 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel6.ResumeLayout(false);
-            panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInventory).EndInit();
             panel12.ResumeLayout(false);
             panel12.PerformLayout();
@@ -479,7 +465,6 @@
         private Label lblUserName;
         private Label label1;
         private Panel panel6;
-        private Label label8;
         private DataGridView dgvInventory;
         private Panel panel12;
         private Button btnAdd;
@@ -496,7 +481,6 @@
         private Button btnEmpolyeeList;
         private Button btnSalesrep;
         private Panel panel1;
-        private Label label2;
         private Label label3;
         private PictureBox pictureBox5;
         private Button btnExpense;
@@ -506,5 +490,6 @@
         private DataGridViewTextBoxColumn StockQuantity;
         private DataGridViewButtonColumn EditAction;
         private DataGridViewButtonColumn DeleteAction;
+        private Label label4;
     }
 }
