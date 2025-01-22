@@ -46,6 +46,7 @@
             btnEmpolyeeList = new Button();
             btnSalesrep = new Button();
             panel2 = new Panel();
+            label10 = new Label();
             label1 = new Label();
             panel3 = new Panel();
             pictureBox5 = new PictureBox();
@@ -69,7 +70,6 @@
             btnViewSales = new Button();
             label9 = new Label();
             dataGridView2 = new DataGridView();
-            label10 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
@@ -305,14 +305,25 @@
             panel2.Size = new Size(734, 56);
             panel2.TabIndex = 3;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial Black", 20F, FontStyle.Bold);
+            label10.ForeColor = Color.Navy;
+            label10.Location = new Point(10, 8);
+            label10.Name = "label10";
+            label10.Size = new Size(278, 38);
+            label10.TabIndex = 2;
+            label10.Text = "Admin Dashboard";
+            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Arial", 13F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(513, 16);
+            label1.Location = new Point(559, 19);
             label1.Name = "label1";
-            label1.Size = new Size(206, 29);
+            label1.Size = new Size(159, 21);
             label1.TabIndex = 0;
             label1.Text = "Welcome, Faysal";
             // 
@@ -547,17 +558,6 @@
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(702, 131);
             dataGridView2.TabIndex = 0;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Arial Black", 20F, FontStyle.Bold);
-            label10.ForeColor = Color.Navy;
-            label10.Location = new Point(10, 8);
-            label10.Name = "label10";
-            label10.Size = new Size(278, 38);
-            label10.TabIndex = 2;
-            label10.Text = "Admin Dashboard";
             // 
             // FormAdminDashboard
             // 

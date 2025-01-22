@@ -291,12 +291,12 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.Font = new Font("Arial", 13F, FontStyle.Bold);
             label14.ForeColor = Color.Black;
-            label14.Location = new Point(513, 12);
+            label14.Location = new Point(560, 18);
             label14.MaximumSize = new Size(270, 30);
             label14.Name = "label14";
-            label14.Size = new Size(206, 29);
+            label14.Size = new Size(159, 21);
             label14.TabIndex = 0;
             label14.Text = "Welcome, Faysal";
             // 

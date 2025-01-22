@@ -57,8 +57,8 @@
             btnEmpolyeeList = new Button();
             btnSalesrep = new Button();
             panel1 = new Panel();
-            label3 = new Label();
             label4 = new Label();
+            label3 = new Label();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
@@ -404,17 +404,6 @@
             panel1.Size = new Size(733, 56);
             panel1.TabIndex = 23;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(513, 12);
-            label3.Name = "label3";
-            label3.Size = new Size(206, 29);
-            label3.TabIndex = 0;
-            label3.Text = "Welcome, Faysal";
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -424,6 +413,17 @@
             label4.Size = new Size(167, 37);
             label4.TabIndex = 24;
             label4.Text = "Inventories";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 13F, FontStyle.Bold);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(560, 19);
+            label3.Name = "label3";
+            label3.Size = new Size(159, 21);
+            label3.TabIndex = 0;
+            label3.Text = "Welcome, Faysal";
             // 
             // FormAdminInventory
             // 
