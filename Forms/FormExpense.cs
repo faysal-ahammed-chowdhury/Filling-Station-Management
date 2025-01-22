@@ -165,5 +165,38 @@ namespace Forms
         {
             this.PopulateGridViewOnAction();
         }
+
+        private void dgvExpense_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // edit
+            if (e.RowIndex >= 0 && dgvExpense.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dgvExpense.Columns[e.ColumnIndex].Name == "EditAction")
+            {
+                // edit operations
+                MessageBox.Show("Edit Form");
+                //if (this.dgvInventory.SelectedRows.Count > 0)
+                //{
+                //    string inventoryId = this.dgvInventory.CurrentRow.Cells[0].Value.ToString();
+                //    this.Visible = false;
+                //    new FormEditInventory(inventoryId, this).Show();
+                //}
+            }
+
+            // delete
+            if (e.RowIndex >= 0 && dgvExpense.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dgvExpense.Columns[e.ColumnIndex].Name == "DeleteAction")
+            {
+                // delete operations
+                MessageBox.Show(this.dgvExpense.CurrentRow.Cells[0].Value.ToString());
+                //if (this.dgvExpense.SelectedRows.Count > 0)
+                //{
+                //    string inventoryId = this.dgvExpense.CurrentRow.Cells[0].Value.ToString();
+                //    this.DeleteInventory(inventoryId);
+                //}
+            }
+        }
+
+        private void FormExpense_Load(object sender, EventArgs e)
+        {
+            this.dgvExpense.ClearSelection();
+        }
     }
 }
