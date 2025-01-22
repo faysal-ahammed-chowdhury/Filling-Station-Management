@@ -41,6 +41,12 @@ namespace Forms
             }
         }
 
+        public void ClearAll()
+        {
+            this.txtSearch.Clear();
+            this.PopulateGridView();
+        }
+
         public void DeleteInventory(string inventoryId)
         {
             string fuelName = this.dgvInventory.CurrentRow.Cells[1].Value.ToString();

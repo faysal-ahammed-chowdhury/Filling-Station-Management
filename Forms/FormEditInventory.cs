@@ -51,6 +51,13 @@ namespace Forms
             }
         }
 
+        public void ClearAll()
+        {
+            this.txtFuelName.Clear();
+            this.txtPricePerLitre.Clear();
+            this.txtStockQuantity.Clear();
+        }
+
         private void bntSave_Click(object sender, EventArgs e)
         {
             string id = this.txtInventoryId.Text;
@@ -97,7 +104,8 @@ namespace Forms
                 }
 
                 this.Visible = false;
-                FrmAdminInv.PopulateGridView();
+                this.ClearAll();
+                FrmAdminInv.ClearAll();
                 this.FrmAdminInv.Visible = true;
             }
             catch (Exception ex)
@@ -108,6 +116,7 @@ namespace Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            this.ClearAll();
             this.Visible = false;
             FrmAdminInv.PopulateGridView();
             this.FrmAdminInv.Visible = true;
@@ -115,9 +124,7 @@ namespace Forms
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            this.txtFuelName.Clear();
-            this.txtPricePerLitre.Clear();
-            this.txtStockQuantity.Clear();
+            this.ClearAll();
         }
     }
 }

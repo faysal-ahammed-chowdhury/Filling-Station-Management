@@ -19,11 +19,37 @@ namespace Forms
         {
             InitializeComponent();
             this.Da = new DataAccess();
+            this.GenerateId();
         }
         public FormAddInventory(FormAdminInventory frmAdminInv) : this()
         {
             this.FrmAdminInv = frmAdminInv;
         }
+
+        public void GenerateId()
+        {
+            try
+            {
+                DataTable dt =  this.Da.ExecuteQueryTable("SELECT MAX(InventoryId) FROM Inventories");
+                string[] temp = dt.Rows[0][0].ToString().Split("-");
+                int id = Convert.ToInt32(temp[1]) + 1;
+                this.txtInventoryId.Text = $"I-{id.ToString("D3")}";
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public void ClearAll()
+        {
+            this.GenerateId();
+            this.txtFuelName.Clear();
+            this.txtPricePerLitre.Clear();
+            this.txtStockQuantity.Clear();
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string id = this.txtInventoryId.Text;
@@ -57,8 +83,10 @@ namespace Forms
                 if (cnt > 0)
                 {
                     MessageBox.Show($"{fuelName} added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    
                     this.Visible = false;
-                    FrmAdminInv.PopulateGridView();
+                    this.ClearAll();
+                    FrmAdminInv.ClearAll();
                     FrmAdminInv.Visible = true;
                 }
                 else
@@ -74,16 +102,15 @@ namespace Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            this.ClearAll();
             this.Visible = false;
             FrmAdminInv.PopulateGridView();
-            FrmAdminInv.Visible = true;
+            this.FrmAdminInv.Visible = true;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            this.txtFuelName.Clear();
-            this.txtPricePerLitre.Clear();
-            this.txtStockQuantity.Clear();
+            this.ClearAll();
         }
     }
 }

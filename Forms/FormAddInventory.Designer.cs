@@ -449,6 +449,7 @@
             txtInventoryId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtInventoryId.Location = new Point(31, 65);
             txtInventoryId.Name = "txtInventoryId";
+            txtInventoryId.ReadOnly = true;
             txtInventoryId.Size = new Size(287, 29);
             txtInventoryId.TabIndex = 2;
             // 
