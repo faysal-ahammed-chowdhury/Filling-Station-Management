@@ -25,12 +25,6 @@ namespace Forms
         {
             try
             {
-                if (query == "SELECT * FROM Inventories" && !this.txtSearch.Text.IsNullOrEmpty())
-                {
-                    string name = this.txtSearch.Text;
-                    query = $"SELECT * FROM Inventories WHERE FuelName LIKE '{name}%';";
-                    this.PopulateGridView(query);
-                }
                 DataSet ds = this.Da.ExecuteQuery(query);
                 this.dgvInventory.AutoGenerateColumns = false;
                 this.dgvInventory.DataSource = ds.Tables[0];
@@ -39,6 +33,17 @@ namespace Forms
             {
                 MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        public void PopulateGridViewOnAction()
+        {
+            string part = "";
+            if (!this.txtSearch.Text.IsNullOrEmpty())
+            {
+                part = $"WHERE FuelName LIKE '%{this.txtSearch.Text}%'";
+            }
+            string query = $"SELECT * FROM Inventories {part}";
+            this.PopulateGridView(query);
         }
 
         public void ClearAll()
@@ -62,7 +67,7 @@ namespace Forms
             if (cnt == 1)
             {
                 MessageBox.Show($"{fuelName} has been removed properly", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
-                this.PopulateGridView();
+                this.PopulateGridViewOnAction();
             }
             else
             {
@@ -111,7 +116,7 @@ namespace Forms
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            this.PopulateGridView();
+            this.PopulateGridViewOnAction();
         }
     }
 }

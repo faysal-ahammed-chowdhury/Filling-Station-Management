@@ -118,7 +118,7 @@ namespace Forms
         {
             this.ClearAll();
             this.Visible = false;
-            FrmAdminInv.PopulateGridView();
+            FrmAdminInv.PopulateGridViewOnAction();
             this.FrmAdminInv.Visible = true;
         }
 
