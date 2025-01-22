@@ -491,11 +491,11 @@
             // 
             lblThisYear.AutoSize = true;
             lblThisYear.BackColor = Color.White;
-            lblThisYear.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblThisYear.Font = new Font("Arial", 19F);
             lblThisYear.ForeColor = Color.Black;
             lblThisYear.Location = new Point(9, 66);
             lblThisYear.Name = "lblThisYear";
-            lblThisYear.Size = new Size(140, 33);
+            lblThisYear.Size = new Size(124, 31);
             lblThisYear.TabIndex = 8;
             lblThisYear.Text = "00.00  TK";
             // 
@@ -538,11 +538,11 @@
             // 
             lblThisWeeK.AutoSize = true;
             lblThisWeeK.BackColor = Color.White;
-            lblThisWeeK.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblThisWeeK.Font = new Font("Arial", 19F);
             lblThisWeeK.ForeColor = Color.Black;
             lblThisWeeK.Location = new Point(9, 66);
             lblThisWeeK.Name = "lblThisWeeK";
-            lblThisWeeK.Size = new Size(140, 33);
+            lblThisWeeK.Size = new Size(124, 31);
             lblThisWeeK.TabIndex = 8;
             lblThisWeeK.Text = "00.00  TK";
             // 
@@ -583,11 +583,11 @@
             // lblThisDay
             // 
             lblThisDay.AutoSize = true;
-            lblThisDay.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblThisDay.Font = new Font("Arial", 19F);
             lblThisDay.ForeColor = Color.White;
             lblThisDay.Location = new Point(10, 66);
             lblThisDay.Name = "lblThisDay";
-            lblThisDay.Size = new Size(140, 33);
+            lblThisDay.Size = new Size(124, 31);
             lblThisDay.TabIndex = 5;
             lblThisDay.Text = "00.00  TK";
             // 
@@ -629,11 +629,11 @@
             // 
             lblThisMonth.AutoSize = true;
             lblThisMonth.BackColor = Color.White;
-            lblThisMonth.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblThisMonth.Font = new Font("Arial", 19F);
             lblThisMonth.ForeColor = Color.Black;
             lblThisMonth.Location = new Point(9, 66);
             lblThisMonth.Name = "lblThisMonth";
-            lblThisMonth.Size = new Size(140, 33);
+            lblThisMonth.Size = new Size(124, 31);
             lblThisMonth.TabIndex = 8;
             lblThisMonth.Text = "00.00  TK";
             // 

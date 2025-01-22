@@ -440,7 +440,7 @@
             MaximizeBox = false;
             Name = "FormAdminInventory";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Inventory";
+            Text = "Inventories";
             Load += FormAdminInventory_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
