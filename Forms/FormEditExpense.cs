@@ -11,33 +11,52 @@ using System.Windows.Forms;
 
 namespace Forms
 {
-    public partial class FormAddExpense : Form
+    public partial class FormEditExpense : Form
     {
         private DataAccess Da { get; set; }
-        private string UserId { get; set; }
         private FormExpense FrmExp { get; set; }
-        public FormAddExpense()
+        public FormEditExpense()
         {
             InitializeComponent();
             this.Da = new DataAccess();
-            this.GenerateId();
         }
 
-        public FormAddExpense(string userId, FormExpense frmExp) : this()
+        public FormEditExpense(string expenseId, FormExpense frmExp) : this()
         {
-            this.UserId = userId;
             this.FrmExp = frmExp;
+            this.ShowExpense(expenseId);
         }
 
-        public void GenerateId()
+        public void ClearAll()
+        {
+            this.txtAmount.Clear();
+            this.txtDescription.Clear();
+            this.cboCategory.SelectedIndex = -1;
+            this.dtpDate.Text = DateTime.Now.ToString("dd:mm:yy").ToString();
+            this.dtpTime.Text = DateTime.Now.ToString("hh:mm:ss tt").ToString();
+        }
+
+        private void ShowExpense(string expenseId)
         {
             try
             {
-                DataTable dt = this.Da.ExecuteQueryTable("SELECT MAX(ExpenseId) FROM Expenses");
-                string[] temp = dt.Rows[0][0].ToString().Split("-");
-                int id = Convert.ToInt32(temp[1]) + 1;
-                this.txtExpenseId.Text = $"EXP-{id.ToString("D3")}";
-
+                string query = $"SELECT * FROM Expenses WHERE ExpenseId = '{expenseId}'";
+                DataTable dt = this.Da.ExecuteQueryTable(query);
+                if (dt.Rows.Count > 0)
+                {
+                    // done
+                    this.txtExpenseId.Text = dt.Rows[0][0].ToString();
+                    this.txtAmount.Text = dt.Rows[0][1].ToString();
+                    this.cboCategory.Text = dt.Rows[0][2].ToString();
+                    this.txtDescription.Text = dt.Rows[0][4].ToString();
+                    DateTime fullDateTime = Convert.ToDateTime(dt.Rows[0]["DateTime"]);
+                    this.dtpDate.Text = fullDateTime.ToString("dd-MM-yyyy");
+                    this.dtpTime.Text = fullDateTime.ToString("hh:mm tt");
+                }
+                else
+                {
+                    // not found
+                }
             }
             catch (Exception ex)
             {
@@ -45,36 +64,7 @@ namespace Forms
             }
         }
 
-        public void ClearAll()
-        {
-            this.GenerateId();
-            this.txtAmount.Clear();
-            this.cboCategory.SelectedIndex = -1;
-            this.txtDescription.Clear();
-            this.chkCurrentTime.Checked = true;
-            this.dtpDate.Enabled = false;
-            this.dtpTime.Enabled = false;
-            this.dtpDate.Text = DateTime.Now.ToString("dd-MM-yyyy").ToString();
-            this.dtpTime.Text = DateTime.Now.ToString("hh:mm:ss tt").ToString();
-        }
-
-        private void chkCurrentTime_CheckedChanged(object sender, EventArgs e)
-        {
-            if (this.chkCurrentTime.Checked == true)
-            {
-                this.dtpDate.Enabled = false;
-                this.dtpTime.Enabled = false;
-            }
-            else
-            {
-                this.dtpDate.Enabled = true;
-                this.dtpTime.Enabled = true;
-                this.dtpDate.Text = DateTime.Now.ToString("dd-MM-yyyy").ToString();
-                this.dtpTime.Text = DateTime.Now.ToString("hh:mm:ss tt").ToString();
-            }
-        }
-
-        private void bntAdd_Click(object sender, EventArgs e)
+        private void bntSave_Click(object sender, EventArgs e)
         {
             string id = this.txtExpenseId.Text;
             string description = this.txtDescription.Text;
@@ -101,22 +91,24 @@ namespace Forms
                 return;
             }
 
-            string dateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            if (!this.chkCurrentTime.Checked)
-            {
-                string date = dtpDate.Value.ToString("yyyy-MM-dd");
-                string time = dtpTime.Value.ToString("HH:mm:ss");
-                dateTime = $"{date} {time}";
-            }
+            string date = dtpDate.Value.ToString("yyyy-MM-dd");
+            string time = dtpTime.Value.ToString("HH:mm:ss");
+            string dateTime = $"{date} {time}";
 
 
             try
             {
-                string sql = $"INSERT INTO Expenses VALUES ('{id}', '{amount}', '{category}', '{dateTime}', '{description}', '{this.UserId}')";
+                string sql = $@"UPDATE Expenses 
+                                SET ExpenseId = '{id}',
+                                Amount = '{amount}',
+                                Category = '{category}',
+                                DateTime = '{dateTime}',
+                                Description = '{description}'
+                                WHERE ExpenseId = '{id}'";
                 int cnt = this.Da.ExecuteDMLQuery(sql);
                 if (cnt > 0)
                 {
-                    MessageBox.Show($"{id} added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    MessageBox.Show($"{id} updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
 
                     this.Visible = false;
                     this.ClearAll();
@@ -125,7 +117,7 @@ namespace Forms
                 }
                 else
                 {
-                    MessageBox.Show($"{id} did not added", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"{id} did not updated", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)

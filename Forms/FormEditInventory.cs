@@ -92,21 +92,19 @@ namespace Forms
                                 PricePerLitre = '{pricePerLitre}'
                                 WHERE InventoryId = '{id}'";
                 //MessageBox.Show(sql);
-                var count = this.Da.ExecuteDMLQuery(sql);
                 int cnt = this.Da.ExecuteDMLQuery(sql);
                 if (cnt == 1)
                 {
                     MessageBox.Show($"{fuelName} updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    this.Visible = false;
+                    this.ClearAll();
+                    this.FrmAdminInv.ClearAll();
+                    this.FrmAdminInv.Visible = true;
                 }
                 else
                 {
                     MessageBox.Show($"{fuelName} did not updated", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
-                this.Visible = false;
-                this.ClearAll();
-                FrmAdminInv.ClearAll();
-                this.FrmAdminInv.Visible = true;
             }
             catch (Exception ex)
             {
@@ -118,7 +116,7 @@ namespace Forms
         {
             this.ClearAll();
             this.Visible = false;
-            FrmAdminInv.PopulateGridViewOnAction();
+            this.FrmAdminInv.PopulateGridViewOnAction();
             this.FrmAdminInv.Visible = true;
         }
 

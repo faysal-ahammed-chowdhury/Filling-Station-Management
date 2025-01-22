@@ -10,6 +10,9 @@
     <Compile Update="FormCreateOrder.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormEditExpense.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormEditInventory.cs">
       <SubType>Form</SubType>
     </Compile>

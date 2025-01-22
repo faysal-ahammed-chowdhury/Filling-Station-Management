@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel6 = new Panel();
+            label8 = new Label();
             btnClear = new Button();
             btnCancel = new Button();
             txtStockQuantity = new TextBox();
@@ -46,7 +47,6 @@
             panel1 = new Panel();
             label3 = new Label();
             panel2 = new Panel();
-            label8 = new Label();
             panel6.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -71,6 +71,16 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(733, 533);
             panel6.TabIndex = 33;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(33, 30);
+            label8.Name = "label8";
+            label8.Size = new Size(232, 45);
+            label8.TabIndex = 36;
+            label8.Text = "Edit Inventory";
             // 
             // btnClear
             // 
@@ -158,6 +168,7 @@
             // txtInventoryId
             // 
             txtInventoryId.BackColor = SystemColors.ScrollBar;
+            txtInventoryId.Enabled = false;
             txtInventoryId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtInventoryId.Location = new Point(36, 155);
             txtInventoryId.Name = "txtInventoryId";
@@ -251,16 +262,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(653, 56);
             panel2.TabIndex = 30;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(33, 30);
-            label8.Name = "label8";
-            label8.Size = new Size(232, 45);
-            label8.TabIndex = 36;
-            label8.Text = "Edit Inventory";
             // 
             // FormEditInventory
             // 

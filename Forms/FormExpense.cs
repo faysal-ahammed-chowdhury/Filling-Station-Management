@@ -108,7 +108,6 @@ namespace Forms
             return GetExpenses(startDate, endDate);
         }
 
-
         public void ShowInitialInfo()
         {
             this.dtpStartDate.Text = (new DateTime(2015, 1, 1)).ToString();
@@ -150,6 +149,28 @@ namespace Forms
             }
         }
 
+        public void DeleteExpense(string expenseId)
+        {
+
+            DialogResult result = MessageBox.Show("Are you sure you want to delete " + expenseId + "?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            string sql = $"DELETE FROM Expenses WHERE ExpenseId = '{expenseId}'";
+            int cnt = this.Da.ExecuteDMLQuery(sql);
+            if (cnt == 1)
+            {
+                MessageBox.Show($"{expenseId} has been removed properly", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                this.ClearAll();
+            }
+            else
+            {
+                MessageBox.Show($"{expenseId} has not been removed properly", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             this.PopulateGridViewOnAction();
@@ -170,25 +191,25 @@ namespace Forms
             if (e.RowIndex >= 0 && dgvExpense.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dgvExpense.Columns[e.ColumnIndex].Name == "EditAction")
             {
                 // edit operations
-                MessageBox.Show("Edit Form");
-                //if (this.dgvInventory.SelectedRows.Count > 0)
-                //{
-                //    string inventoryId = this.dgvInventory.CurrentRow.Cells[0].Value.ToString();
-                //    this.Visible = false;
-                //    new FormEditInventory(inventoryId, this).Show();
-                //}
+                //MessageBox.Show("Edit Form");
+                if (this.dgvExpense.SelectedRows.Count > 0)
+                {
+                    string expenseId = this.dgvExpense.CurrentRow.Cells[0].Value.ToString();
+                    this.Visible = false;
+                    new FormEditExpense(expenseId, this).Show();
+                }
             }
 
             // delete
             if (e.RowIndex >= 0 && dgvExpense.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dgvExpense.Columns[e.ColumnIndex].Name == "DeleteAction")
             {
                 // delete operations
-                MessageBox.Show(this.dgvExpense.CurrentRow.Cells[0].Value.ToString());
-                //if (this.dgvExpense.SelectedRows.Count > 0)
-                //{
-                //    string inventoryId = this.dgvExpense.CurrentRow.Cells[0].Value.ToString();
-                //    this.DeleteInventory(inventoryId);
-                //}
+                //MessageBox.Show(this.dgvExpense.CurrentRow.Cells[0].Value.ToString());
+                if (this.dgvExpense.SelectedRows.Count > 0)
+                {
+                    string expenseId = this.dgvExpense.CurrentRow.Cells[0].Value.ToString();
+                    this.DeleteExpense(expenseId);
+                }
             }
         }
 

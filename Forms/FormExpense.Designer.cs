@@ -199,6 +199,7 @@
             dgvExpense.Location = new Point(11, 30);
             dgvExpense.Name = "dgvExpense";
             dgvExpense.ReadOnly = true;
+            dgvExpense.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvExpense.Size = new Size(708, 272);
             dgvExpense.TabIndex = 0;
             dgvExpense.CellContentClick += dgvExpense_CellContentClick;
