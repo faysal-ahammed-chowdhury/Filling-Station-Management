@@ -29,18 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormExpense));
-            cmbFilter = new ComboBox();
             txtSearch = new TextBox();
             panel12 = new Panel();
-            btnAddNewStock = new Button();
+            label7 = new Label();
+            label3 = new Label();
+            dtpEndDate = new DateTimePicker();
+            dtpStartDate = new DateTimePicker();
+            btnAdd = new Button();
             label9 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvExpense = new DataGridView();
+            ExpenseId = new DataGridViewTextBoxColumn();
+            Amount = new DataGridViewTextBoxColumn();
+            Category = new DataGridViewTextBoxColumn();
+            Description = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            TIme = new DataGridViewTextBoxColumn();
+            CreatedBy = new DataGridViewTextBoxColumn();
             panel6 = new Panel();
             label1 = new Label();
             label14 = new Label();
             panel2 = new Panel();
             pictureBox8 = new PictureBox();
             panel1 = new Panel();
+            pictureBox6 = new PictureBox();
+            btnOrder = new Button();
             pictureBox5 = new PictureBox();
             btnExpense = new Button();
             btnOverview = new Button();
@@ -52,30 +64,29 @@
             btnLogOut = new Button();
             btnEmpolyeeList = new Button();
             btnSalesrep = new Button();
-            label12 = new Label();
+            lblThisYear = new Label();
             label13 = new Label();
             panel8 = new Panel();
             label2 = new Label();
-            label3 = new Label();
+            lblThisWeeK = new Label();
             label5 = new Label();
             panel9 = new Panel();
             label4 = new Label();
-            lblPriceOfPatrol = new Label();
+            lblThisDay = new Label();
             label10 = new Label();
             panel3 = new Panel();
             label6 = new Label();
-            label7 = new Label();
+            lblThisMonth = new Label();
             label8 = new Label();
             label11 = new Label();
             panel4 = new Panel();
-            pictureBox6 = new PictureBox();
-            btnOrder = new Button();
             panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvExpense).BeginInit();
             panel6.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -85,55 +96,87 @@
             panel9.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
-            // 
-            // cmbFilter
-            // 
-            cmbFilter.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbFilter.FormattingEnabled = true;
-            cmbFilter.Items.AddRange(new object[] { "Current Day", "This Month", "This Year" });
-            cmbFilter.Location = new Point(605, 21);
-            cmbFilter.Name = "cmbFilter";
-            cmbFilter.Size = new Size(114, 29);
-            cmbFilter.Sorted = true;
-            cmbFilter.TabIndex = 4;
             // 
             // txtSearch
             // 
             txtSearch.BackColor = SystemColors.Info;
             txtSearch.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSearch.Location = new Point(11, 22);
+            txtSearch.Location = new Point(10, 33);
             txtSearch.Name = "txtSearch";
-            txtSearch.PlaceholderText = "Serach ";
-            txtSearch.Size = new Size(417, 27);
+            txtSearch.PlaceholderText = "Serach by Category";
+            txtSearch.Size = new Size(267, 27);
             txtSearch.TabIndex = 0;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // panel12
             // 
             panel12.BackColor = Color.White;
-            panel12.Controls.Add(cmbFilter);
-            panel12.Controls.Add(btnAddNewStock);
+            panel12.Controls.Add(label7);
+            panel12.Controls.Add(label3);
+            panel12.Controls.Add(dtpEndDate);
+            panel12.Controls.Add(dtpStartDate);
+            panel12.Controls.Add(btnAdd);
             panel12.Controls.Add(txtSearch);
-            panel12.Location = new Point(210, 209);
+            panel12.Location = new Point(210, 204);
             panel12.Name = "panel12";
-            panel12.Size = new Size(733, 65);
+            panel12.Size = new Size(733, 85);
             panel12.TabIndex = 38;
             // 
-            // btnAddNewStock
+            // label7
             // 
-            btnAddNewStock.BackColor = Color.FromArgb(49, 108, 181);
-            btnAddNewStock.BackgroundImageLayout = ImageLayout.Zoom;
-            btnAddNewStock.Cursor = Cursors.Hand;
-            btnAddNewStock.FlatStyle = FlatStyle.Flat;
-            btnAddNewStock.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAddNewStock.ForeColor = Color.White;
-            btnAddNewStock.Location = new Point(470, 21);
-            btnAddNewStock.Name = "btnAddNewStock";
-            btnAddNewStock.Size = new Size(129, 29);
-            btnAddNewStock.TabIndex = 3;
-            btnAddNewStock.Text = "Add New Stock";
-            btnAddNewStock.UseVisualStyleBackColor = false;
+            label7.AutoSize = true;
+            label7.BorderStyle = BorderStyle.FixedSingle;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(431, 48);
+            label7.Name = "label7";
+            label7.Size = new Size(30, 23);
+            label7.TabIndex = 7;
+            label7.Text = "To:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BorderStyle = BorderStyle.FixedSingle;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(431, 12);
+            label3.Name = "label3";
+            label3.Size = new Size(52, 23);
+            label3.TabIndex = 6;
+            label3.Text = "From:";
+            // 
+            // dtpEndDate
+            // 
+            dtpEndDate.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpEndDate.Location = new Point(491, 48);
+            dtpEndDate.Name = "dtpEndDate";
+            dtpEndDate.Size = new Size(228, 25);
+            dtpEndDate.TabIndex = 5;
+            dtpEndDate.ValueChanged += dtpEndDate_ValueChanged;
+            // 
+            // dtpStartDate
+            // 
+            dtpStartDate.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpStartDate.Location = new Point(491, 12);
+            dtpStartDate.Name = "dtpStartDate";
+            dtpStartDate.Size = new Size(228, 25);
+            dtpStartDate.TabIndex = 4;
+            dtpStartDate.ValueChanged += dtpStartDate_ValueChanged;
+            // 
+            // btnAdd
+            // 
+            btnAdd.BackColor = Color.FromArgb(49, 108, 181);
+            btnAdd.BackgroundImageLayout = ImageLayout.Zoom;
+            btnAdd.Cursor = Cursors.Hand;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(283, 33);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(129, 29);
+            btnAdd.TabIndex = 3;
+            btnAdd.Text = "Add New Stock";
+            btnAdd.UseVisualStyleBackColor = false;
             // 
             // label9
             // 
@@ -145,20 +188,75 @@
             label9.TabIndex = 1;
             label9.Text = "Expense History";
             // 
-            // dataGridView1
+            // dgvExpense
             // 
-            dataGridView1.BackgroundColor = SystemColors.HighlightText;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(11, 30);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(708, 272);
-            dataGridView1.TabIndex = 0;
+            dgvExpense.AllowUserToAddRows = false;
+            dgvExpense.AllowUserToDeleteRows = false;
+            dgvExpense.AllowUserToOrderColumns = true;
+            dgvExpense.BackgroundColor = SystemColors.HighlightText;
+            dgvExpense.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvExpense.Columns.AddRange(new DataGridViewColumn[] { ExpenseId, Amount, Category, Description, Date, TIme, CreatedBy });
+            dgvExpense.Location = new Point(11, 30);
+            dgvExpense.Name = "dgvExpense";
+            dgvExpense.ReadOnly = true;
+            dgvExpense.Size = new Size(708, 272);
+            dgvExpense.TabIndex = 0;
+            // 
+            // ExpenseId
+            // 
+            ExpenseId.DataPropertyName = "ExpenseId";
+            ExpenseId.HeaderText = "Expense ID";
+            ExpenseId.Name = "ExpenseId";
+            ExpenseId.ReadOnly = true;
+            // 
+            // Amount
+            // 
+            Amount.DataPropertyName = "Amount";
+            Amount.HeaderText = "Amount";
+            Amount.Name = "Amount";
+            Amount.ReadOnly = true;
+            // 
+            // Category
+            // 
+            Category.DataPropertyName = "Category";
+            Category.HeaderText = "Category";
+            Category.Name = "Category";
+            Category.ReadOnly = true;
+            // 
+            // Description
+            // 
+            Description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Description.DataPropertyName = "Description";
+            Description.HeaderText = "Description";
+            Description.Name = "Description";
+            Description.ReadOnly = true;
+            // 
+            // Date
+            // 
+            Date.DataPropertyName = "Date";
+            Date.HeaderText = "Date";
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            // 
+            // TIme
+            // 
+            TIme.DataPropertyName = "TIme";
+            TIme.HeaderText = "TIme";
+            TIme.Name = "TIme";
+            TIme.ReadOnly = true;
+            // 
+            // CreatedBy
+            // 
+            CreatedBy.DataPropertyName = "CreatedByName";
+            CreatedBy.HeaderText = "Created By";
+            CreatedBy.Name = "CreatedBy";
+            CreatedBy.ReadOnly = true;
             // 
             // panel6
             // 
             panel6.BackColor = Color.White;
             panel6.Controls.Add(label9);
-            panel6.Controls.Add(dataGridView1);
+            panel6.Controls.Add(dgvExpense);
             panel6.Location = new Point(210, 295);
             panel6.Name = "panel6";
             panel6.Size = new Size(733, 314);
@@ -229,6 +327,31 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(190, 602);
             panel1.TabIndex = 35;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Properties.Resources.order_now_9226478;
+            pictureBox6.Location = new Point(13, 304);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(36, 33);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 19;
+            pictureBox6.TabStop = false;
+            // 
+            // btnOrder
+            // 
+            btnOrder.BackColor = Color.FromArgb(196, 232, 255);
+            btnOrder.Cursor = Cursors.Hand;
+            btnOrder.FlatStyle = FlatStyle.Popup;
+            btnOrder.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnOrder.ForeColor = Color.Black;
+            btnOrder.Location = new Point(55, 304);
+            btnOrder.Name = "btnOrder";
+            btnOrder.Size = new Size(124, 33);
+            btnOrder.TabIndex = 18;
+            btnOrder.Text = "Orders";
+            btnOrder.TextAlign = ContentAlignment.MiddleLeft;
+            btnOrder.UseVisualStyleBackColor = false;
             // 
             // pictureBox5
             // 
@@ -375,17 +498,17 @@
             btnSalesrep.TextAlign = ContentAlignment.MiddleLeft;
             btnSalesrep.UseVisualStyleBackColor = false;
             // 
-            // label12
+            // lblThisYear
             // 
-            label12.AutoSize = true;
-            label12.BackColor = Color.White;
-            label12.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.ForeColor = Color.Black;
-            label12.Location = new Point(12, 66);
-            label12.Name = "label12";
-            label12.Size = new Size(135, 33);
-            label12.TabIndex = 8;
-            label12.Text = "00.00  Tk";
+            lblThisYear.AutoSize = true;
+            lblThisYear.BackColor = Color.White;
+            lblThisYear.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblThisYear.ForeColor = Color.Black;
+            lblThisYear.Location = new Point(9, 66);
+            lblThisYear.Name = "lblThisYear";
+            lblThisYear.Size = new Size(140, 33);
+            lblThisYear.TabIndex = 8;
+            lblThisYear.Text = "00.00  TK";
             // 
             // label13
             // 
@@ -393,17 +516,17 @@
             label13.BackColor = Color.White;
             label13.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label13.ForeColor = Color.Black;
-            label13.Location = new Point(12, 21);
+            label13.Location = new Point(10, 21);
             label13.Name = "label13";
-            label13.Size = new Size(40, 20);
+            label13.Size = new Size(89, 20);
             label13.TabIndex = 7;
-            label13.Text = "Sales";
+            label13.Text = "Total Expense";
             // 
             // panel8
             // 
             panel8.BackColor = Color.White;
             panel8.Controls.Add(label2);
-            panel8.Controls.Add(label3);
+            panel8.Controls.Add(lblThisWeeK);
             panel8.Controls.Add(label5);
             panel8.Location = new Point(397, 74);
             panel8.Name = "panel8";
@@ -418,21 +541,21 @@
             label2.ForeColor = Color.Black;
             label2.Location = new Point(12, 41);
             label2.Name = "label2";
-            label2.Size = new Size(115, 17);
+            label2.Size = new Size(114, 17);
             label2.TabIndex = 9;
-            label2.Text = "Since this Month";
+            label2.Text = "Since this Week";
             // 
-            // label3
+            // lblThisWeeK
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.White;
-            label3.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(12, 66);
-            label3.Name = "label3";
-            label3.Size = new Size(135, 33);
-            label3.TabIndex = 8;
-            label3.Text = "00.00  Tk";
+            lblThisWeeK.AutoSize = true;
+            lblThisWeeK.BackColor = Color.White;
+            lblThisWeeK.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblThisWeeK.ForeColor = Color.Black;
+            lblThisWeeK.Location = new Point(9, 66);
+            lblThisWeeK.Name = "lblThisWeeK";
+            lblThisWeeK.Size = new Size(140, 33);
+            lblThisWeeK.TabIndex = 8;
+            lblThisWeeK.Text = "00.00  TK";
             // 
             // label5
             // 
@@ -440,7 +563,7 @@
             label5.BackColor = Color.White;
             label5.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(12, 21);
+            label5.Location = new Point(10, 21);
             label5.Name = "label5";
             label5.Size = new Size(93, 20);
             label5.TabIndex = 7;
@@ -450,7 +573,7 @@
             // 
             panel9.BackColor = Color.FromArgb(49, 108, 181);
             panel9.Controls.Add(label4);
-            panel9.Controls.Add(lblPriceOfPatrol);
+            panel9.Controls.Add(lblThisDay);
             panel9.Controls.Add(label10);
             panel9.Location = new Point(211, 75);
             panel9.Name = "panel9";
@@ -464,27 +587,27 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(13, 41);
             label4.Name = "label4";
-            label4.Size = new Size(105, 17);
+            label4.Size = new Size(87, 17);
             label4.TabIndex = 6;
-            label4.Text = "Since this Year";
+            label4.Text = "Since Today";
             // 
-            // lblPriceOfPatrol
+            // lblThisDay
             // 
-            lblPriceOfPatrol.AutoSize = true;
-            lblPriceOfPatrol.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPriceOfPatrol.ForeColor = Color.White;
-            lblPriceOfPatrol.Location = new Point(13, 66);
-            lblPriceOfPatrol.Name = "lblPriceOfPatrol";
-            lblPriceOfPatrol.Size = new Size(135, 33);
-            lblPriceOfPatrol.TabIndex = 5;
-            lblPriceOfPatrol.Text = "00.00  Tk";
+            lblThisDay.AutoSize = true;
+            lblThisDay.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblThisDay.ForeColor = Color.White;
+            lblThisDay.Location = new Point(10, 66);
+            lblThisDay.Name = "lblThisDay";
+            lblThisDay.Size = new Size(140, 33);
+            lblThisDay.TabIndex = 5;
+            lblThisDay.Text = "00.00  TK";
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(13, 21);
+            label10.Location = new Point(11, 21);
             label10.Name = "label10";
             label10.Size = new Size(89, 20);
             label10.TabIndex = 0;
@@ -494,7 +617,7 @@
             // 
             panel3.BackColor = Color.White;
             panel3.Controls.Add(label6);
-            panel3.Controls.Add(label7);
+            panel3.Controls.Add(lblThisMonth);
             panel3.Controls.Add(label8);
             panel3.Location = new Point(583, 74);
             panel3.Name = "panel3";
@@ -513,17 +636,17 @@
             label6.TabIndex = 9;
             label6.Text = "Since this Month";
             // 
-            // label7
+            // lblThisMonth
             // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.White;
-            label7.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.Black;
-            label7.Location = new Point(12, 66);
-            label7.Name = "label7";
-            label7.Size = new Size(135, 33);
-            label7.TabIndex = 8;
-            label7.Text = "00.00  Tk";
+            lblThisMonth.AutoSize = true;
+            lblThisMonth.BackColor = Color.White;
+            lblThisMonth.Font = new Font("Arial", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblThisMonth.ForeColor = Color.Black;
+            lblThisMonth.Location = new Point(9, 66);
+            lblThisMonth.Name = "lblThisMonth";
+            lblThisMonth.Size = new Size(140, 33);
+            lblThisMonth.TabIndex = 8;
+            lblThisMonth.Text = "00.00  TK";
             // 
             // label8
             // 
@@ -531,11 +654,11 @@
             label8.BackColor = Color.White;
             label8.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(12, 21);
+            label8.Location = new Point(10, 21);
             label8.Name = "label8";
-            label8.Size = new Size(66, 20);
+            label8.Size = new Size(89, 20);
             label8.TabIndex = 7;
-            label8.Text = "Total Cost";
+            label8.Text = "Total Expense";
             // 
             // label11
             // 
@@ -545,45 +668,20 @@
             label11.ForeColor = Color.Black;
             label11.Location = new Point(12, 41);
             label11.Name = "label11";
-            label11.Size = new Size(102, 17);
+            label11.Size = new Size(105, 17);
             label11.TabIndex = 9;
-            label11.Text = "Since this Day";
+            label11.Text = "Since this Year";
             // 
             // panel4
             // 
             panel4.BackColor = Color.White;
             panel4.Controls.Add(label11);
-            panel4.Controls.Add(label12);
+            panel4.Controls.Add(lblThisYear);
             panel4.Controls.Add(label13);
             panel4.Location = new Point(769, 74);
             panel4.Name = "panel4";
             panel4.Size = new Size(172, 120);
             panel4.TabIndex = 34;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Image = Properties.Resources.order_now_9226478;
-            pictureBox6.Location = new Point(13, 304);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(36, 33);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 19;
-            pictureBox6.TabStop = false;
-            // 
-            // btnOrder
-            // 
-            btnOrder.BackColor = Color.FromArgb(196, 232, 255);
-            btnOrder.Cursor = Cursors.Hand;
-            btnOrder.FlatStyle = FlatStyle.Popup;
-            btnOrder.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnOrder.ForeColor = Color.Black;
-            btnOrder.Location = new Point(55, 304);
-            btnOrder.Name = "btnOrder";
-            btnOrder.Size = new Size(124, 33);
-            btnOrder.TabIndex = 18;
-            btnOrder.Text = "Orders";
-            btnOrder.TextAlign = ContentAlignment.MiddleLeft;
-            btnOrder.UseVisualStyleBackColor = false;
             // 
             // FormExpense
             // 
@@ -603,13 +701,14 @@
             Text = "List of Expense";
             panel12.ResumeLayout(false);
             panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvExpense).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -623,18 +722,15 @@
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ComboBox cmbFilter;
         private TextBox txtSearch;
         private Panel panel12;
-        private Button btnAddNewStock;
+        private Button btnAdd;
         private Label label9;
-        private DataGridView dataGridView1;
+        private DataGridView dgvExpense;
         private Panel panel6;
         private Label label1;
         private Label label14;
@@ -652,23 +748,34 @@
         private Button btnLogOut;
         private Button btnEmpolyeeList;
         private Button btnSalesrep;
-        private Label label12;
+        private Label lblThisYear;
         private Label label13;
         private Panel panel8;
         private Label label2;
-        private Label label3;
+        private Label lblThisWeeK;
         private Label label5;
         private Panel panel9;
         private Label label4;
-        private Label lblPriceOfPatrol;
+        private Label lblThisDay;
         private Label label10;
         private Panel panel3;
         private Label label6;
-        private Label label7;
+        private Label lblThisMonth;
         private Label label8;
         private Label label11;
         private Panel panel4;
         private PictureBox pictureBox6;
         private Button btnOrder;
+        private DateTimePicker dtpEndDate;
+        private DateTimePicker dtpStartDate;
+        private Label label7;
+        private Label label3;
+        private DataGridViewTextBoxColumn ExpenseId;
+        private DataGridViewTextBoxColumn Amount;
+        private DataGridViewTextBoxColumn Category;
+        private DataGridViewTextBoxColumn Description;
+        private DataGridViewTextBoxColumn Date;
+        private DataGridViewTextBoxColumn TIme;
+        private DataGridViewTextBoxColumn CreatedBy;
     }
 }

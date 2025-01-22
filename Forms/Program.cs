@@ -18,7 +18,8 @@ namespace Forms
             ApplicationConfiguration.Initialize();
             //Application.Run(new FormEditInventory("i-005"));
             //Application.Run(new FormAddInventory());
-            Application.Run(new FormAdminInventory());
+            //Application.Run(new FormAdminInventory());
+            Application.Run(new FormExpense());
 
             //try
             //{

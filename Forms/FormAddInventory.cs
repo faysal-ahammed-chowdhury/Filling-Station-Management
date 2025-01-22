@@ -33,7 +33,7 @@ namespace Forms
                 DataTable dt =  this.Da.ExecuteQueryTable("SELECT MAX(InventoryId) FROM Inventories");
                 string[] temp = dt.Rows[0][0].ToString().Split("-");
                 int id = Convert.ToInt32(temp[1]) + 1;
-                this.txtInventoryId.Text = $"I-{id.ToString("D3")}";
+                this.txtInventoryId.Text = $"INV-{id.ToString("D3")}";
 
             }
             catch (Exception ex)
