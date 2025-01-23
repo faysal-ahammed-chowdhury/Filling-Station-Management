@@ -58,11 +58,11 @@ namespace Forms
             string name = this.txtName.Text;
             string phone = this.txtPhone.Text;
             string password = this.txtPassword.Text;
-            bool typeChecked = chkEmp.Checked || chkAdmin.Checked;
+            bool typeChecked = this.chkEmp.Checked || this.chkAdmin.Checked;
             string role = "";
-            if (chkAdmin.Checked)
+            if (this.chkAdmin.Checked)
                 role = "Admin";
-            else if (chkEmp.Checked)
+            else if (this.chkEmp.Checked)
                 role = "Employee";
 
             if (name.IsNullOrEmpty() || phone.IsNullOrEmpty() || password.IsNullOrEmpty() || !typeChecked)

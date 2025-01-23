@@ -563,6 +563,7 @@
             btnAdd.TabIndex = 3;
             btnAdd.Text = "Add New Stock";
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // label9
             // 
