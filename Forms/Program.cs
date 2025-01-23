@@ -20,9 +20,11 @@ namespace Forms
             //Application.Run(new FormAdminInventory());
             //Application.Run(new FormEditInventory("i-005"));
             //Application.Run(new FormAddInventory());
-            Application.Run(new FormExpense());
+            //Application.Run(new FormExpense());
             //Application.Run(new FormAddExpense("U-001"));
             //Application.Run(new FormUsers());
+            //Application.Run(new FormSales());
+            Application.Run(new FormSaleDetails("SALE-001"));
 
             //try
             //{
