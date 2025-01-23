@@ -126,22 +126,20 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.BorderStyle = BorderStyle.FixedSingle;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.Location = new Point(431, 48);
             label7.Name = "label7";
-            label7.Size = new Size(30, 23);
+            label7.Size = new Size(28, 21);
             label7.TabIndex = 7;
             label7.Text = "To:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.BorderStyle = BorderStyle.FixedSingle;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(431, 12);
             label3.Name = "label3";
-            label3.Size = new Size(52, 23);
+            label3.Size = new Size(50, 21);
             label3.TabIndex = 6;
             label3.Text = "From:";
             // 

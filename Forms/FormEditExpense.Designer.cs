@@ -105,6 +105,7 @@
             // cboCategory
             // 
             cboCategory.BackColor = SystemColors.ScrollBar;
+            cboCategory.DropDownStyle = ComboBoxStyle.DropDownList;
             cboCategory.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboCategory.FormattingEnabled = true;
             cboCategory.Items.AddRange(new object[] { "Maintenance", "Utility", "Fuel", "Miscellaneous", "Transport", "Owner" });
