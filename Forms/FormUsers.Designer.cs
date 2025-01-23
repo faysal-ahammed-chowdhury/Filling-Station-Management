@@ -53,12 +53,6 @@
             btnAdd = new Button();
             label9 = new Label();
             dgvUser = new DataGridView();
-            panel2 = new Panel();
-            label14 = new Label();
-            panel6 = new Panel();
-            panel3 = new Panel();
-            lblEmp = new Label();
-            label2 = new Label();
             UserId = new DataGridViewTextBoxColumn();
             UserName = new DataGridViewTextBoxColumn();
             Phone = new DataGridViewTextBoxColumn();
@@ -66,6 +60,12 @@
             Role = new DataGridViewTextBoxColumn();
             EditAction = new DataGridViewButtonColumn();
             DeleteAction = new DataGridViewButtonColumn();
+            panel2 = new Panel();
+            label14 = new Label();
+            panel6 = new Panel();
+            panel3 = new Panel();
+            lblEmp = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel8.SuspendLayout();
@@ -370,6 +370,7 @@
             btnAdd.TabIndex = 3;
             btnAdd.Text = "Add New Stock";
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // label9
             // 
@@ -396,6 +397,66 @@
             dgvUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvUser.Size = new Size(708, 314);
             dgvUser.TabIndex = 0;
+            dgvUser.CellContentClick += dgvUser_CellContentClick;
+            // 
+            // UserId
+            // 
+            UserId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            UserId.DataPropertyName = "UserId";
+            UserId.HeaderText = "User ID";
+            UserId.Name = "UserId";
+            UserId.ReadOnly = true;
+            // 
+            // UserName
+            // 
+            UserName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            UserName.DataPropertyName = "Name";
+            UserName.HeaderText = "Name";
+            UserName.Name = "UserName";
+            UserName.ReadOnly = true;
+            // 
+            // Phone
+            // 
+            Phone.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Phone.DataPropertyName = "Phone";
+            Phone.HeaderText = "Phone";
+            Phone.Name = "Phone";
+            Phone.ReadOnly = true;
+            // 
+            // Password
+            // 
+            Password.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Password.DataPropertyName = "Password";
+            Password.HeaderText = "Password";
+            Password.Name = "Password";
+            Password.ReadOnly = true;
+            // 
+            // Role
+            // 
+            Role.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Role.DataPropertyName = "Role";
+            Role.HeaderText = "Role";
+            Role.Name = "Role";
+            Role.ReadOnly = true;
+            // 
+            // EditAction
+            // 
+            EditAction.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            EditAction.HeaderText = "";
+            EditAction.Name = "EditAction";
+            EditAction.ReadOnly = true;
+            EditAction.Text = "Edit";
+            EditAction.UseColumnTextForButtonValue = true;
+            // 
+            // DeleteAction
+            // 
+            DeleteAction.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DeleteAction.HeaderText = "";
+            DeleteAction.Name = "DeleteAction";
+            DeleteAction.ReadOnly = true;
+            DeleteAction.Resizable = DataGridViewTriState.True;
+            DeleteAction.Text = "Delete";
+            DeleteAction.UseColumnTextForButtonValue = true;
             // 
             // panel2
             // 
@@ -462,65 +523,6 @@
             label2.Size = new Size(96, 20);
             label2.TabIndex = 7;
             label2.Text = "Total Employee";
-            // 
-            // UserId
-            // 
-            UserId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            UserId.DataPropertyName = "UserId";
-            UserId.HeaderText = "User ID";
-            UserId.Name = "UserId";
-            UserId.ReadOnly = true;
-            // 
-            // UserName
-            // 
-            UserName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            UserName.DataPropertyName = "Name";
-            UserName.HeaderText = "Name";
-            UserName.Name = "UserName";
-            UserName.ReadOnly = true;
-            // 
-            // Phone
-            // 
-            Phone.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Phone.DataPropertyName = "Phone";
-            Phone.HeaderText = "Phone";
-            Phone.Name = "Phone";
-            Phone.ReadOnly = true;
-            // 
-            // Password
-            // 
-            Password.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Password.DataPropertyName = "Password";
-            Password.HeaderText = "Password";
-            Password.Name = "Password";
-            Password.ReadOnly = true;
-            // 
-            // Role
-            // 
-            Role.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Role.DataPropertyName = "Role";
-            Role.HeaderText = "Role";
-            Role.Name = "Role";
-            Role.ReadOnly = true;
-            // 
-            // EditAction
-            // 
-            EditAction.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            EditAction.HeaderText = "";
-            EditAction.Name = "EditAction";
-            EditAction.ReadOnly = true;
-            EditAction.Text = "Edit";
-            EditAction.UseColumnTextForButtonValue = true;
-            // 
-            // DeleteAction
-            // 
-            DeleteAction.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            DeleteAction.HeaderText = "";
-            DeleteAction.Name = "DeleteAction";
-            DeleteAction.ReadOnly = true;
-            DeleteAction.Resizable = DataGridViewTriState.True;
-            DeleteAction.Text = "Delete";
-            DeleteAction.UseColumnTextForButtonValue = true;
             // 
             // FormUsers
             // 

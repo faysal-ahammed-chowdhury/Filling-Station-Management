@@ -58,7 +58,8 @@ namespace Forms
             {
                 DataTable dt = this.Da.ExecuteQueryTable("SELECT * FROM Users");
                 int adminCnt = 0, empCnt = 0;
-                foreach (DataRow dr in dt.Rows) {
+                foreach (DataRow dr in dt.Rows)
+                {
                     if (dr["Role"].ToString() == "Admin") adminCnt++;
                     else if (dr["Role"].ToString() == "Employee") empCnt++;
                 }
@@ -94,6 +95,63 @@ namespace Forms
         private void cboUserType_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.PopulateGridViewOnAction();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormAddUser(this).Show();
+        }
+
+        public void DeleteUser(string userId)
+        {
+            string name = this.dgvUser.CurrentRow.Cells[1].Value.ToString();
+
+            DialogResult result = MessageBox.Show("Are you sure you want to delete " + name + "?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            string sql = $"DELETE FROM Users WHERE UserId = '{userId}'";
+            int cnt = this.Da.ExecuteDMLQuery(sql);
+            if (cnt == 1)
+            {
+                MessageBox.Show($"{name} has been removed properly", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                this.ClearAll();
+            }
+            else
+            {
+                MessageBox.Show($"{name} has not been removed properly", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // edit
+            if (e.RowIndex >= 0 && dgvUser.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dgvUser.Columns[e.ColumnIndex].Name == "EditAction")
+            {
+                // edit operations
+                //MessageBox.Show("Edit Form");
+                if (this.dgvUser.SelectedRows.Count > 0)
+                {
+                    string userId = this.dgvUser.CurrentRow.Cells[0].Value.ToString();
+                    //this.Visible = false;
+                    new FormEditUser(userId, this).Show();
+                }
+            }
+
+            // delete
+            if (e.RowIndex >= 0 && dgvUser.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dgvUser.Columns[e.ColumnIndex].Name == "DeleteAction")
+            {
+                // delete operations
+                //MessageBox.Show(this.dgvInventory.CurrentRow.Cells[0].Value.ToString());
+                if (this.dgvUser.SelectedRows.Count > 0)
+                {
+                    string userId = this.dgvUser.CurrentRow.Cells[0].Value.ToString();
+                    this.DeleteUser(userId);
+                }
+            }
         }
     }
 }
