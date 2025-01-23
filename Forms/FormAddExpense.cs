@@ -144,7 +144,7 @@ namespace Forms
         {
             this.ClearAll();
             this.Visible = false;
-            this.FrmExp.ClearAll();
+            this.FrmExp.PopulateGridViewOnAction();
             this.FrmExp.Visible = true;
         }
 

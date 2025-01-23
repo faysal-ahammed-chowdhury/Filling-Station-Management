@@ -79,8 +79,8 @@
             label8 = new Label();
             lblStartDate = new Label();
             panel4 = new Panel();
-            lblEndDate = new Label();
             label12 = new Label();
+            lblEndDate = new Label();
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvExpense).BeginInit();
             panel6.SuspendLayout();
@@ -677,18 +677,6 @@
             panel4.Size = new Size(172, 120);
             panel4.TabIndex = 34;
             // 
-            // lblEndDate
-            // 
-            lblEndDate.AutoSize = true;
-            lblEndDate.BackColor = Color.White;
-            lblEndDate.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEndDate.ForeColor = Color.Black;
-            lblEndDate.Location = new Point(36, 49);
-            lblEndDate.Name = "lblEndDate";
-            lblEndDate.Size = new Size(82, 17);
-            lblEndDate.TabIndex = 10;
-            lblEndDate.Text = "29-01-2020";
-            // 
             // label12
             // 
             label12.AutoSize = true;
@@ -700,6 +688,18 @@
             label12.Size = new Size(20, 17);
             label12.TabIndex = 11;
             label12.Text = "to";
+            // 
+            // lblEndDate
+            // 
+            lblEndDate.AutoSize = true;
+            lblEndDate.BackColor = Color.White;
+            lblEndDate.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblEndDate.ForeColor = Color.Black;
+            lblEndDate.Location = new Point(36, 49);
+            lblEndDate.Name = "lblEndDate";
+            lblEndDate.Size = new Size(82, 17);
+            lblEndDate.TabIndex = 10;
+            lblEndDate.Text = "29-01-2020";
             // 
             // FormExpense
             // 
@@ -716,6 +716,7 @@
             Controls.Add(panel4);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormExpense";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Expense History";
             Load += FormExpense_Load;
             panel12.ResumeLayout(false);
