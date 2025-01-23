@@ -21,6 +21,8 @@ namespace Forms
             InitializeComponent();
             this.Da = new DataAccess();
             this.GenerateId();
+            this.dtpDate.MaxDate = DateTime.Today;
+            this.dtpTime.MaxDate = DateTime.Now;
         }
 
         public FormAddExpense(string userId, FormExpense frmExp) : this()
@@ -54,8 +56,10 @@ namespace Forms
             this.chkCurrentTime.Checked = true;
             this.dtpDate.Enabled = false;
             this.dtpTime.Enabled = false;
-            this.dtpDate.Text = DateTime.Now.ToString("dd-MM-yyyy").ToString();
-            this.dtpTime.Text = DateTime.Now.ToString("hh:mm:ss tt").ToString();
+            this.dtpDate.MaxDate = DateTime.Today;
+            this.dtpTime.MaxDate = DateTime.Now;
+            this.dtpDate.Text = DateTime.Today.ToString();
+            this.dtpTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
         private void chkCurrentTime_CheckedChanged(object sender, EventArgs e)
@@ -69,8 +73,10 @@ namespace Forms
             {
                 this.dtpDate.Enabled = true;
                 this.dtpTime.Enabled = true;
-                this.dtpDate.Text = DateTime.Now.ToString("dd-MM-yyyy").ToString();
-                this.dtpTime.Text = DateTime.Now.ToString("hh:mm:ss tt").ToString();
+                this.dtpDate.MaxDate = DateTime.Today;
+                this.dtpTime.MaxDate = DateTime.Now;
+                this.dtpDate.Text = DateTime.Today.ToString();
+                this.dtpTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
             }
         }
 
@@ -138,7 +144,7 @@ namespace Forms
         {
             this.ClearAll();
             this.Visible = false;
-            this.FrmExp.PopulateGridViewOnAction();
+            this.FrmExp.ClearAll();
             this.FrmExp.Visible = true;
         }
 

@@ -12,6 +12,8 @@ namespace Forms
             this.Da = new DataAccess();
             this.ShowInitialInfo();
             this.PopulateGridView();
+            this.dtpStartDate.Text = (new DateTime(2015, 1, 1)).ToString();
+            this.dtpEndDate.Text = DateTime.Now.ToString();
         }
 
         public void PopulateGridView(string query = "SELECT * FROM Expenses")
@@ -58,6 +60,8 @@ namespace Forms
             this.txtSearch.Clear();
             this.ShowInitialInfo();
             this.PopulateGridView();
+            this.dtpStartDate.Text = (new DateTime(2015, 1, 1)).ToString();
+            this.dtpEndDate.Text = DateTime.Now.ToString();
         }
 
         public DataTable GetExpenses(string startDate, string endDate)
@@ -110,9 +114,6 @@ namespace Forms
 
         public void ShowInitialInfo()
         {
-            this.dtpStartDate.Text = (new DateTime(2015, 1, 1)).ToString();
-            this.dtpEndDate.Text = DateTime.Now.ToString();
-
             try
             {
                 // today
@@ -136,12 +137,16 @@ namespace Forms
                     tot += Convert.ToDecimal(dr[1]);
                 this.lblThisMonth.Text = $"{tot.ToString("F2")} TK";
 
-                // this year
-                dt = this.GetThisYearsExpenses();
+                // between selected dates
+                string startDate = this.dtpStartDate.Value.ToString("yyyy-MM-dd 00:00:00");
+                string endDate = this.dtpEndDate.Value.ToString("yyyy-MM-dd 23:59:59");
+                dt = this.GetExpenses(startDate, endDate);
                 tot = 0;
                 foreach (DataRow dr in dt.Rows)
                     tot += Convert.ToDecimal(dr[1]);
                 this.lblThisYear.Text = $"{tot.ToString("F2")} TK";
+                this.lblStartDate.Text = this.dtpStartDate.Value.ToString("dd-MM-yyyy");
+                this.lblEndDate.Text = this.dtpEndDate.Value.ToString("dd-MM-yyyy");
             }
             catch (Exception ex)
             {
@@ -178,10 +183,12 @@ namespace Forms
 
         private void dtpStartDate_ValueChanged(object sender, EventArgs e)
         {
+            this.ShowInitialInfo();
             this.PopulateGridViewOnAction();
         }
         private void dtpEndDate_ValueChanged(object sender, EventArgs e)
         {
+            this.ShowInitialInfo();
             this.PopulateGridViewOnAction();
         }
 

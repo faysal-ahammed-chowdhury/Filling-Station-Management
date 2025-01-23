@@ -77,8 +77,10 @@
             label6 = new Label();
             lblThisMonth = new Label();
             label8 = new Label();
-            label11 = new Label();
+            lblStartDate = new Label();
             panel4 = new Panel();
+            lblEndDate = new Label();
+            label12 = new Label();
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvExpense).BeginInit();
             panel6.SuspendLayout();
@@ -147,6 +149,7 @@
             // 
             dtpEndDate.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtpEndDate.Location = new Point(491, 48);
+            dtpEndDate.MaxDate = new DateTime(2025, 12, 25, 0, 0, 0, 0);
             dtpEndDate.Name = "dtpEndDate";
             dtpEndDate.Size = new Size(228, 25);
             dtpEndDate.TabIndex = 5;
@@ -505,7 +508,7 @@
             label13.BackColor = Color.White;
             label13.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label13.ForeColor = Color.Black;
-            label13.Location = new Point(10, 21);
+            label13.Location = new Point(9, 6);
             label13.Name = "label13";
             label13.Size = new Size(89, 20);
             label13.TabIndex = 7;
@@ -649,28 +652,54 @@
             label8.TabIndex = 7;
             label8.Text = "Total Expense";
             // 
-            // label11
+            // lblStartDate
             // 
-            label11.AutoSize = true;
-            label11.BackColor = Color.White;
-            label11.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.ForeColor = Color.Black;
-            label11.Location = new Point(12, 41);
-            label11.Name = "label11";
-            label11.Size = new Size(105, 17);
-            label11.TabIndex = 9;
-            label11.Text = "Since this Year";
+            lblStartDate.AutoSize = true;
+            lblStartDate.BackColor = Color.White;
+            lblStartDate.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblStartDate.ForeColor = Color.Black;
+            lblStartDate.Location = new Point(14, 31);
+            lblStartDate.Name = "lblStartDate";
+            lblStartDate.Size = new Size(82, 17);
+            lblStartDate.TabIndex = 9;
+            lblStartDate.Text = "29-01-2020";
             // 
             // panel4
             // 
             panel4.BackColor = Color.White;
-            panel4.Controls.Add(label11);
+            panel4.Controls.Add(label12);
+            panel4.Controls.Add(lblEndDate);
+            panel4.Controls.Add(lblStartDate);
             panel4.Controls.Add(lblThisYear);
             panel4.Controls.Add(label13);
             panel4.Location = new Point(769, 74);
             panel4.Name = "panel4";
             panel4.Size = new Size(172, 120);
             panel4.TabIndex = 34;
+            // 
+            // lblEndDate
+            // 
+            lblEndDate.AutoSize = true;
+            lblEndDate.BackColor = Color.White;
+            lblEndDate.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblEndDate.ForeColor = Color.Black;
+            lblEndDate.Location = new Point(36, 49);
+            lblEndDate.Name = "lblEndDate";
+            lblEndDate.Size = new Size(82, 17);
+            lblEndDate.TabIndex = 10;
+            lblEndDate.Text = "29-01-2020";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.White;
+            label12.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.Black;
+            label12.Location = new Point(16, 48);
+            label12.Name = "label12";
+            label12.Size = new Size(20, 17);
+            label12.TabIndex = 11;
+            label12.Text = "to";
             // 
             // FormExpense
             // 
@@ -749,7 +778,7 @@
         private Label label6;
         private Label lblThisMonth;
         private Label label8;
-        private Label label11;
+        private Label lblStartDate;
         private Panel panel4;
         private DateTimePicker dtpEndDate;
         private DateTimePicker dtpStartDate;
@@ -764,5 +793,7 @@
         private DataGridViewTextBoxColumn CreatedBy;
         private DataGridViewButtonColumn EditAction;
         private DataGridViewButtonColumn DeleteAction;
+        private Label label12;
+        private Label lblEndDate;
     }
 }

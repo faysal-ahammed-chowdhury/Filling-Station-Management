@@ -32,8 +32,8 @@ namespace Forms
             this.txtAmount.Clear();
             this.txtDescription.Clear();
             this.cboCategory.SelectedIndex = -1;
-            this.dtpDate.Text = DateTime.Now.ToString("dd:mm:yy").ToString();
-            this.dtpTime.Text = DateTime.Now.ToString("hh:mm:ss tt").ToString();
+            this.dtpDate.Text = DateTime.Today.ToString();
+            this.dtpTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
         private void ShowExpense(string expenseId)
