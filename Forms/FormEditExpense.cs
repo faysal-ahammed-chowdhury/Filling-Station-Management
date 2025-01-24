@@ -60,7 +60,7 @@ namespace Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -71,7 +71,7 @@ namespace Forms
 
             if (this.cboCategory.SelectedIndex == -1)
             {
-                MessageBox.Show("Please select a category", "Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("All fields are required. Please complete them.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -79,7 +79,7 @@ namespace Forms
 
             if (description.IsNullOrEmpty())
             {
-                MessageBox.Show("Please fill all the fields", "Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("All fields are required. Please complete them.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -87,13 +87,13 @@ namespace Forms
             bool isNumeric = decimal.TryParse(this.txtAmount.Text, out amount);
             if (!isNumeric)
             {
-                MessageBox.Show("Amount should be a numerical value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Please enter a valid numerical amount.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (amount <= 0)
             {
-                MessageBox.Show("Amount should be a positive value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Amount must be a positive value.", "Invalid Amount", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -114,7 +114,7 @@ namespace Forms
                 int cnt = this.Da.ExecuteDMLQuery(sql);
                 if (cnt > 0)
                 {
-                    MessageBox.Show($"{id} updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    MessageBox.Show($"Expense ID {id} has been successfully updated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Visible = false;
                     this.ClearAll();
@@ -123,12 +123,12 @@ namespace Forms
                 }
                 else
                 {
-                    MessageBox.Show($"{id} did not updated", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Failed to update Expense ID {id}. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -40,7 +40,7 @@ namespace Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -71,13 +71,13 @@ namespace Forms
                     else if (dr["Role"].ToString() == "Employee") empCnt++;
                 }
                 //MessageBox.Show(adminCnt.ToString() + " " + empCnt.ToString());
-                this.lblTotal.Text = (adminCnt + empCnt).ToString();
+                this.lblTotal.Text = (adminCnt + empCnt).ToString("D2");
                 this.lblAdmin.Text = adminCnt.ToString("D2");
                 this.lblEmp.Text = empCnt.ToString("D2");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -114,7 +114,7 @@ namespace Forms
         {
             string name = this.dgvUser.CurrentRow.Cells[1].Value.ToString();
 
-            DialogResult result = MessageBox.Show("Are you sure you want to delete " + name + "?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete {name}?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.No)
             {
                 return;
@@ -126,17 +126,17 @@ namespace Forms
                 int cnt = this.Da.ExecuteDMLQuery(sql);
                 if (cnt == 1)
                 {
-                    MessageBox.Show($"{name} has been removed properly", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    MessageBox.Show($"{name} has been successfully removed.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.ClearAll();
                 }
                 else
                 {
-                    MessageBox.Show($"{name} has not been removed properly", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Failed to remove {name}. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -165,6 +165,31 @@ namespace Forms
                     string userId = this.dgvUser.CurrentRow.Cells[0].Value.ToString();
                     this.DeleteUser(userId);
                 }
+            }
+        }
+
+        public void AfterEdit(string userId)
+        {
+            if (userId != currentUser["UserId"].ToString())
+                return;
+
+            try
+            {
+                string query = $"SELECT * FROM Users WHERE UserId = '{userId}'";
+                DataTable dt = this.Da.ExecuteQueryTable(query);
+                currentUser = dt.Rows[0];
+                this.lblWlcName.Text = "Welcome, " + currentUser["Name"];
+
+                if (currentUser["Role"].ToString() != "Admin")
+                {
+                    MessageBox.Show("Your status has been changed to 'Employee'. Please log in again with your new role.", "Status Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Visible = false;
+                    new FormLogin().Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

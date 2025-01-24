@@ -47,7 +47,7 @@ namespace Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -159,14 +159,14 @@ namespace Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         public void DeleteExpense(string expenseId)
         {
 
-            DialogResult result = MessageBox.Show("Are you sure you want to delete " + expenseId + "?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete expense ID {expenseId}?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.No)
             {
                 return;
@@ -178,17 +178,17 @@ namespace Forms
                 int cnt = this.Da.ExecuteDMLQuery(sql);
                 if (cnt == 1)
                 {
-                    MessageBox.Show($"{expenseId} has been removed properly", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    MessageBox.Show($"Expense ID {expenseId} has been successfully removed.", "Deletion Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.ClearAll();
                 }
                 else
                 {
-                    MessageBox.Show($"{expenseId} has not been removed properly", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Failed to remove Expense ID {expenseId}.", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

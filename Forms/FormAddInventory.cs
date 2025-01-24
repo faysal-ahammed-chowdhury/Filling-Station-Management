@@ -38,7 +38,7 @@ namespace Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -57,7 +57,7 @@ namespace Forms
 
             if (id.IsNullOrEmpty() || fuelName.IsNullOrEmpty())
             {
-                MessageBox.Show("Please fill all the fields", "Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("All fields are required. Please complete them.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -65,37 +65,37 @@ namespace Forms
             bool isNumeric = decimal.TryParse(this.txtPricePerLitre.Text, out pricePerLitre);
             if (!isNumeric)
             {
-                MessageBox.Show("Price should be a numerical value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Please enter a valid numerical price.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             decimal stockQuantity;
             isNumeric = decimal.TryParse(this.txtStockQuantity.Text, out stockQuantity);
             if (!isNumeric)
             {
-                MessageBox.Show("Stock Quantity should be a numerical value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Stock quantity must be a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (pricePerLitre <= 0)
             {
-                MessageBox.Show("Price should be a positive value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Price must be a positive value.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (stockQuantity <= 0)
             {
-                MessageBox.Show("Stock Quantity should be a positive value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Stock quantity must be a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             try
             {
-                string sql = $"INSERT INTO Inventories VALUES ('{id}', '{fuelName}', '{pricePerLitre}', '{stockQuantity}')";
+                string sql = $"INSERT INTO Inventories VALUES ('{id}', '{fuelName}', '{stockQuantity}', '{pricePerLitre}')";
                 int cnt = this.Da.ExecuteDMLQuery(sql);
                 if (cnt > 0)
                 {
-                    MessageBox.Show($"{fuelName} added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
-                    
+                    MessageBox.Show($"{fuelName} has been successfully added.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     this.Visible = false;
                     this.ClearAll();
                     this.FrmInv.ClearAll();
@@ -103,12 +103,12 @@ namespace Forms
                 }
                 else
                 {
-                    MessageBox.Show($"{fuelName} did not added", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"{fuelName} could not be added. Please try again.", "Action Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

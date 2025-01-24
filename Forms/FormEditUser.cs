@@ -1,4 +1,5 @@
 ﻿using Microsoft.IdentityModel.Tokens;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace Forms
     {
         private DataAccess Da { get; set; }
         private FormUsers FrmUsers { get; set; }
+        private string userId; 
         public FormEditUser()
         {
             InitializeComponent();
@@ -25,6 +27,7 @@ namespace Forms
         {
             this.FrmUsers = frmUsers;
             this.ShowUser(userId);
+            this.userId = userId;
         }
 
         private void ShowUser(string userId)
@@ -51,7 +54,7 @@ namespace Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -79,7 +82,7 @@ namespace Forms
 
             if (name.IsNullOrEmpty() || phone.IsNullOrEmpty() || password.IsNullOrEmpty() || !typeChecked)
             {
-                MessageBox.Show("Please fill all the fields", "Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("All fields are required. Please complete them.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -95,20 +98,21 @@ namespace Forms
                 int cnt = this.Da.ExecuteDMLQuery(sql);
                 if (cnt == 1)
                 {
-                    MessageBox.Show($"{name} updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    MessageBox.Show($"{name} has been updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Visible = false;
                     this.ClearAll();
                     this.FrmUsers.ClearAll();
                     this.FrmUsers.Visible = true;
+                    this.FrmUsers.AfterEdit(this.userId);
                 }
                 else
                 {
-                    MessageBox.Show($"{name} did not updated", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Failed to update {name}. Please try again.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

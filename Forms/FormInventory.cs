@@ -37,7 +37,7 @@ namespace Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -62,7 +62,7 @@ namespace Forms
         {
             string fuelName = this.dgvInventory.CurrentRow.Cells[1].Value.ToString();
 
-            DialogResult result = MessageBox.Show("Are you sure you want to delete " + fuelName + "?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete {fuelName}?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.No)
             {
                 return;
@@ -72,12 +72,12 @@ namespace Forms
             int cnt = this.Da.ExecuteDMLQuery(sql);
             if (cnt == 1)
             {
-                MessageBox.Show($"{fuelName} has been removed properly", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show($"{fuelName} has been removed successfully.", "Deletion Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.PopulateGridViewOnAction();
             }
             else
             {
-                MessageBox.Show($"{fuelName} has not been removed properly", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Failed to remove {fuelName}. Please try again.", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

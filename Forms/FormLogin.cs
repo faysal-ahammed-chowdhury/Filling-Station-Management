@@ -20,7 +20,7 @@ namespace Forms
 
             if (phone.IsNullOrEmpty() || pass.IsNullOrEmpty())
             {
-                MessageBox.Show("Please fill the Phone and Password fields", "Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Please fill in both the Phone and Password fields.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
@@ -43,23 +43,32 @@ namespace Forms
                     }
                     else
                     {
-                        MessageBox.Show("Invalid User. Neither Admin nor Employee", "Invalid User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Invalid user. Please ensure the credentials match either Admin or Employee.", "Authentication Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Application.Exit();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("User not found, Please contact an Admin", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("User not found. Please contact an Admin for assistance.", "User Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void chkShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkShowPass.Checked)
+                this.txtPassword.UseSystemPasswordChar = false;
+            else
+                this.txtPassword.UseSystemPasswordChar = true;
         }
     }
 }

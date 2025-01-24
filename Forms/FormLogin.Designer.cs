@@ -34,6 +34,7 @@ namespace Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             panel1 = new Panel();
+            chkShowPass = new CheckBox();
             label4 = new Label();
             txtPassword = new TextBox();
             label2 = new Label();
@@ -52,6 +53,7 @@ namespace Forms
             // 
             panel1.BackColor = Color.FromArgb(196, 232, 255);
             panel1.BackgroundImageLayout = ImageLayout.Zoom;
+            panel1.Controls.Add(chkShowPass);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(txtPassword);
             panel1.Controls.Add(label2);
@@ -64,6 +66,19 @@ namespace Forms
             panel1.Name = "panel1";
             panel1.Size = new Size(480, 621);
             panel1.TabIndex = 2;
+            // 
+            // chkShowPass
+            // 
+            chkShowPass.AutoSize = true;
+            chkShowPass.Cursor = Cursors.Hand;
+            chkShowPass.Font = new System.Drawing.Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chkShowPass.Location = new Point(43, 297);
+            chkShowPass.Name = "chkShowPass";
+            chkShowPass.Size = new Size(118, 21);
+            chkShowPass.TabIndex = 12;
+            chkShowPass.Text = "Show Password";
+            chkShowPass.UseVisualStyleBackColor = true;
+            chkShowPass.CheckedChanged += chkShowPass_CheckedChanged;
             // 
             // label4
             // 
@@ -87,6 +102,7 @@ namespace Forms
             txtPassword.PlaceholderText = " Enter Your Password";
             txtPassword.Size = new Size(397, 29);
             txtPassword.TabIndex = 10;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -129,7 +145,7 @@ namespace Forms
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = SystemColors.Control;
-            btnLogin.Location = new Point(43, 313);
+            btnLogin.Location = new Point(40, 343);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(396, 44);
             btnLogin.TabIndex = 6;
@@ -145,7 +161,7 @@ namespace Forms
             txtPhone.Location = new Point(43, 187);
             txtPhone.Margin = new Padding(10, 19, 89, 3);
             txtPhone.Name = "txtPhone";
-            txtPhone.PlaceholderText = " e.g. +8801610137675";
+            txtPhone.PlaceholderText = " e.g. 01610137675";
             txtPhone.Size = new Size(397, 29);
             txtPhone.TabIndex = 3;
             // 
@@ -218,5 +234,6 @@ namespace Forms
         private Label label5;
         private Label label6;
         private PictureBox pictureBox1;
+        private CheckBox chkShowPass;
     }
 }

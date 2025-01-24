@@ -38,7 +38,7 @@ namespace Forms
         {
             this.currentUser = currentUser;
             this.FrmSls = frmSls;
-            this.lblWlcName.Text = "Welcome, " + currentUser["Name"];
+            this.lblWlcName.Text = "Welcome, " + currentUser["Name"].ToString();
         }
 
         public void GenerateId()
@@ -53,7 +53,7 @@ namespace Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -67,7 +67,7 @@ namespace Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -146,20 +146,20 @@ namespace Forms
                             bool isNumeric = decimal.TryParse(selectedQuantityStr, out addedQuantity);
                             if (!isNumeric)
                             {
-                                MessageBox.Show("Quantity should be a numerical value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                MessageBox.Show("Quantity must be a valid numerical value.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
                         }
 
                         if (avaiableQuantity < addedQuantity)
                         {
-                            MessageBox.Show($"{productName} stock shortage", "Stock Limited", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show($"Not enough {productName} in stock.", "Stock Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
 
                         if (addedQuantity <= 0)
                         {
-                            MessageBox.Show("Quantity should be a positive value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("Quantity must be a positive value.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
 
@@ -187,11 +187,10 @@ namespace Forms
                         this.dgvAddedProducts.AutoGenerateColumns = false;
                         this.dgvAddedProducts.DataSource = addedProductsTable;
                         this.ShowGrandTotal();
-                        MessageBox.Show("Added to cart");
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -220,11 +219,10 @@ namespace Forms
                     this.dgvAddedProducts.DataSource = addedProductsTable;
                     this.dgvInventory.CurrentRow.Cells[4].Value = null;
                     this.ShowGrandTotal();
-                    MessageBox.Show("Removed from cart");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -261,7 +259,7 @@ namespace Forms
         {
             if (this.addedProductsTable.Rows.Count == 0)
             {
-                MessageBox.Show("Please add some inventory", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Please add items to the cart before confirming the sale.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -270,18 +268,19 @@ namespace Forms
             isNumeric &= decimal.TryParse(this.txtChange.Text, out changeAmount);
             if (!isNumeric)
             {
-                MessageBox.Show("Amount should be a numeric value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Please enter a valid numerical amount.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (givenAmount < 0 || changeAmount < 0)
+            
+            if (givenAmount < grandTotal)
             {
-                MessageBox.Show("Amount can't be a negative value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("The given amount should be greater than or equal to the Grand Total.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (givenAmount < grandTotal)
+            if (givenAmount < 0 || changeAmount < 0)
             {
-                MessageBox.Show("Given amount should be more than or equal to Grand Total", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Amount must be a positive value.", "Invalid Amount", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -294,15 +293,13 @@ namespace Forms
 
             if (!methodChecked)
             {
-                MessageBox.Show("Please select a Payment Method", "Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Please select a payment method.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            DialogResult result = MessageBox.Show("Are you sure?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to confirm the sale?", "Confirm Sale", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.No)
-            {
                 return;
-            }
 
             // validation done, now insert into db and rest
             string id = this.lblSaleId.Text;
@@ -312,7 +309,7 @@ namespace Forms
             {
 
                 // update stock, add to sales and saledetails
-                string sql = $@"INSERT INTO Sales VALUES ('{id}', '{saleDateTime}', '{currentUser["UserId"]}',
+                string sql = $@"INSERT INTO Sales VALUES ('{id}', '{saleDateTime}', '{currentUser["UserId"].ToString()}',
                             '{grandTotal.ToString()}', '{givenAmount.ToString()}', 
                             '{changeAmount.ToString()}', '{method}')";
                 int cnt = this.Da.ExecuteDMLQuery(sql);
@@ -339,19 +336,19 @@ namespace Forms
                 }
                 if (cnt > 0)
                 {
-                    MessageBox.Show($"Sale added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    MessageBox.Show("Sale has been successfully added.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.ClearAll();
                     new FormSaleDetails(id).Show();
                 }
                 else
                 {
-                    MessageBox.Show($"Sale did not added", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Sale could not be added. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

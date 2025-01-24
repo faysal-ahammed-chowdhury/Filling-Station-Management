@@ -127,9 +127,9 @@
             label7.ForeColor = SystemColors.ButtonHighlight;
             label7.Location = new Point(13, 521);
             label7.Name = "label7";
-            label7.Size = new Size(621, 20);
+            label7.Size = new Size(640, 20);
             label7.TabIndex = 5;
-            label7.Text = "Double click on the \"Quantity\" column to select the desired Quantity, then click \"Add\" button";
+            label7.Text = "Instruction: Double-click on the 'Quantity' column to select the desired quantity, then click 'Add'.";
             // 
             // label1
             // 

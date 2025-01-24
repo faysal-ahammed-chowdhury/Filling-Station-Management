@@ -17,28 +17,6 @@ namespace Forms
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             ApplicationConfiguration.Initialize();
             Application.Run(new FormLogin());
-            //Application.Run(new FormInventory());
-            //Application.Run(new FormEditInventory("i-005"));
-            //Application.Run(new FormAddInventory());
-            //Application.Run(new FormExpense());
-            //Application.Run(new FormAddExpense("U-001"));
-            //Application.Run(new FormUsers());
-            //Application.Run(new FormSales());
-            //Application.Run(new FormSaleDetails("SALE-014"));
-
-            //try
-            //{
-            //    DataAccess da = new DataAccess();
-
-            //    string query = "select * from users";
-            //    DataSet ds = da.ExecuteQuery(query);
-
-            //    MessageBox.Show(ds.Tables[0].Rows[0][0].ToString());
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("hello");
-            //}
         }
     }
 }

@@ -38,7 +38,7 @@ namespace Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -67,7 +67,7 @@ namespace Forms
 
             if (name.IsNullOrEmpty() || phone.IsNullOrEmpty() || password.IsNullOrEmpty() || !typeChecked)
             {
-                MessageBox.Show("Please fill all the fields", "Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("All fields are required. Please complete them.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -78,7 +78,7 @@ namespace Forms
                 DataTable dt = this.Da.ExecuteQueryTable(sql);
                 if (dt.Rows.Count > 0)
                 {
-                    MessageBox.Show("There is an user with this phone number, please change the phone number", "Required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("A user with this phone number already exists. Please use a different number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
 
@@ -86,7 +86,7 @@ namespace Forms
                 int cnt = this.Da.ExecuteDMLQuery(sql);
                 if (cnt > 0)
                 {
-                    MessageBox.Show($"{name} added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    MessageBox.Show($"{name} has been added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Visible = false;
                     this.ClearAll();
@@ -95,12 +95,12 @@ namespace Forms
                 }
                 else
                 {
-                    MessageBox.Show($"{name} did not added", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Failed to add {name}. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
