@@ -79,8 +79,8 @@
             EditAction = new DataGridViewButtonColumn();
             DeleteAction = new DataGridViewButtonColumn();
             panel2 = new Panel();
-            label14 = new Label();
             panel6 = new Panel();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel8.SuspendLayout();
@@ -677,25 +677,13 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(label1);
             panel2.Controls.Add(label9);
-            panel2.Controls.Add(label14);
             panel2.ForeColor = Color.Navy;
             panel2.Location = new Point(210, 7);
             panel2.Name = "panel2";
             panel2.Size = new Size(962, 56);
             panel2.TabIndex = 44;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Arial", 13F, FontStyle.Bold);
-            label14.ForeColor = Color.Black;
-            label14.Location = new Point(782, 20);
-            label14.MaximumSize = new Size(270, 30);
-            label14.Name = "label14";
-            label14.Size = new Size(159, 21);
-            label14.TabIndex = 0;
-            label14.Text = "Welcome, Faysal";
             // 
             // panel6
             // 
@@ -705,6 +693,17 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(962, 394);
             panel6.TabIndex = 45;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 13F, FontStyle.Bold);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(584, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(359, 21);
+            label1.TabIndex = 2;
+            label1.Text = "Welcome, Faysal Ahammed Chowdhury";
             // 
             // FormSales
             // 
@@ -790,7 +789,6 @@
         private Label label9;
         private DataGridView dgvSale;
         private Panel panel2;
-        private Label label14;
         private Panel panel6;
         private DataGridViewTextBoxColumn SaleId;
         private DataGridViewTextBoxColumn SaleTimeDate;
@@ -802,5 +800,6 @@
         private DataGridViewButtonColumn Details;
         private DataGridViewButtonColumn EditAction;
         private DataGridViewButtonColumn DeleteAction;
+        private Label label1;
     }
 }

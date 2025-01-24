@@ -61,11 +61,11 @@
             EditAction = new DataGridViewButtonColumn();
             DeleteAction = new DataGridViewButtonColumn();
             panel2 = new Panel();
-            label14 = new Label();
             panel6 = new Panel();
             panel3 = new Panel();
             lblEmp = new Label();
             label2 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel8.SuspendLayout();
@@ -122,9 +122,9 @@
             panel8.BackColor = Color.White;
             panel8.Controls.Add(lblAdmin);
             panel8.Controls.Add(label5);
-            panel8.Location = new Point(467, 74);
+            panel8.Location = new Point(556, 74);
             panel8.Name = "panel8";
-            panel8.Size = new Size(218, 98);
+            panel8.Size = new Size(270, 98);
             panel8.TabIndex = 40;
             // 
             // lblAdmin
@@ -169,7 +169,7 @@
             panel1.ForeColor = Color.White;
             panel1.Location = new Point(12, 7);
             panel1.Name = "panel1";
-            panel1.Size = new Size(190, 602);
+            panel1.Size = new Size(190, 682);
             panel1.TabIndex = 43;
             // 
             // btnOverview
@@ -193,7 +193,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.logout_165852551;
-            pictureBox2.Location = new Point(13, 559);
+            pictureBox2.Location = new Point(13, 632);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(36, 33);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -255,7 +255,7 @@
             btnLogOut.FlatStyle = FlatStyle.Popup;
             btnLogOut.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogOut.ForeColor = Color.Black;
-            btnLogOut.Location = new Point(55, 559);
+            btnLogOut.Location = new Point(55, 632);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(124, 31);
             btnLogOut.TabIndex = 6;
@@ -299,7 +299,7 @@
             panel9.Controls.Add(label10);
             panel9.Location = new Point(211, 75);
             panel9.Name = "panel9";
-            panel9.Size = new Size(218, 97);
+            panel9.Size = new Size(270, 97);
             panel9.TabIndex = 39;
             // 
             // lblTotal
@@ -331,7 +331,7 @@
             txtSearch.Location = new Point(12, 13);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Serach by Name";
-            txtSearch.Size = new Size(351, 27);
+            txtSearch.Size = new Size(539, 27);
             txtSearch.TabIndex = 0;
             txtSearch.TextChanged += txtSearch_TextChanged;
             // 
@@ -343,14 +343,14 @@
             panel12.Controls.Add(txtSearch);
             panel12.Location = new Point(210, 204);
             panel12.Name = "panel12";
-            panel12.Size = new Size(733, 53);
+            panel12.Size = new Size(961, 53);
             panel12.TabIndex = 46;
             // 
             // cboUserType
             // 
             cboUserType.FormattingEnabled = true;
             cboUserType.Items.AddRange(new object[] { "All", "Admin", "Employee" });
-            cboUserType.Location = new Point(598, 17);
+            cboUserType.Location = new Point(821, 16);
             cboUserType.Name = "cboUserType";
             cboUserType.Size = new Size(121, 23);
             cboUserType.TabIndex = 4;
@@ -364,7 +364,7 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(441, 13);
+            btnAdd.Location = new Point(664, 12);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(129, 29);
             btnAdd.TabIndex = 3;
@@ -395,7 +395,7 @@
             dgvUser.Name = "dgvUser";
             dgvUser.ReadOnly = true;
             dgvUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUser.Size = new Size(708, 314);
+            dgvUser.Size = new Size(935, 389);
             dgvUser.TabIndex = 0;
             dgvUser.CellContentClick += dgvUser_CellContentClick;
             // 
@@ -461,25 +461,13 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(label3);
             panel2.Controls.Add(label9);
-            panel2.Controls.Add(label14);
             panel2.ForeColor = Color.Navy;
             panel2.Location = new Point(210, 7);
             panel2.Name = "panel2";
-            panel2.Size = new Size(732, 56);
+            panel2.Size = new Size(962, 56);
             panel2.TabIndex = 44;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Arial", 13F, FontStyle.Bold);
-            label14.ForeColor = Color.Black;
-            label14.Location = new Point(560, 18);
-            label14.MaximumSize = new Size(270, 30);
-            label14.Name = "label14";
-            label14.Size = new Size(159, 21);
-            label14.TabIndex = 0;
-            label14.Text = "Welcome, Faysal";
             // 
             // panel6
             // 
@@ -487,7 +475,7 @@
             panel6.Controls.Add(dgvUser);
             panel6.Location = new Point(210, 263);
             panel6.Name = "panel6";
-            panel6.Size = new Size(733, 346);
+            panel6.Size = new Size(961, 426);
             panel6.TabIndex = 45;
             // 
             // panel3
@@ -495,9 +483,9 @@
             panel3.BackColor = Color.White;
             panel3.Controls.Add(lblEmp);
             panel3.Controls.Add(label2);
-            panel3.Location = new Point(723, 74);
+            panel3.Location = new Point(901, 72);
             panel3.Name = "panel3";
-            panel3.Size = new Size(218, 98);
+            panel3.Size = new Size(270, 98);
             panel3.TabIndex = 41;
             // 
             // lblEmp
@@ -524,11 +512,22 @@
             label2.TabIndex = 7;
             label2.Text = "Total Employee";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 13F, FontStyle.Bold);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(587, 20);
+            label3.Name = "label3";
+            label3.Size = new Size(359, 21);
+            label3.TabIndex = 2;
+            label3.Text = "Welcome, Faysal Ahammed Chowdhury";
+            // 
             // FormUsers
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(954, 616);
+            ClientSize = new Size(1184, 701);
             Controls.Add(panel3);
             Controls.Add(panel8);
             Controls.Add(panel1);
@@ -589,7 +588,6 @@
         private Label label9;
         private DataGridView dgvUser;
         private Panel panel2;
-        private Label label14;
         private Panel panel6;
         private Panel panel3;
         private Label lblEmp;
@@ -602,5 +600,6 @@
         private DataGridViewTextBoxColumn Role;
         private DataGridViewButtonColumn EditAction;
         private DataGridViewButtonColumn DeleteAction;
+        private Label label3;
     }
 }

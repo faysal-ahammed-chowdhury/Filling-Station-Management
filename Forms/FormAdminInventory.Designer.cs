@@ -110,7 +110,7 @@
             panel6.Controls.Add(dgvInventory);
             panel6.Location = new Point(209, 150);
             panel6.Name = "panel6";
-            panel6.Size = new Size(733, 460);
+            panel6.Size = new Size(963, 539);
             panel6.TabIndex = 14;
             // 
             // dgvInventory
@@ -124,7 +124,7 @@
             dgvInventory.Name = "dgvInventory";
             dgvInventory.ReadOnly = true;
             dgvInventory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvInventory.Size = new Size(708, 432);
+            dgvInventory.Size = new Size(935, 507);
             dgvInventory.TabIndex = 0;
             dgvInventory.CellContentClick += dgvInventory_CellContentClick;
             // 
@@ -187,7 +187,7 @@
             panel12.Controls.Add(txtSearch);
             panel12.Location = new Point(209, 79);
             panel12.Name = "panel12";
-            panel12.Size = new Size(733, 65);
+            panel12.Size = new Size(963, 65);
             panel12.TabIndex = 21;
             // 
             // btnAdd
@@ -198,7 +198,7 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(590, 20);
+            btnAdd.Location = new Point(817, 20);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(129, 29);
             btnAdd.TabIndex = 3;
@@ -213,7 +213,7 @@
             txtSearch.Location = new Point(11, 22);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Serach by Fuel Name";
-            txtSearch.Size = new Size(417, 27);
+            txtSearch.Size = new Size(571, 27);
             txtSearch.TabIndex = 0;
             txtSearch.TextChanged += txtSearch_TextChanged;
             // 
@@ -401,7 +401,7 @@
             panel1.ForeColor = Color.Navy;
             panel1.Location = new Point(209, 8);
             panel1.Name = "panel1";
-            panel1.Size = new Size(733, 56);
+            panel1.Size = new Size(963, 56);
             panel1.TabIndex = 23;
             // 
             // label4
@@ -419,18 +419,18 @@
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 13F, FontStyle.Bold);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(560, 19);
+            label3.Location = new Point(587, 20);
             label3.Name = "label3";
-            label3.Size = new Size(159, 21);
+            label3.Size = new Size(359, 21);
             label3.TabIndex = 0;
-            label3.Text = "Welcome, Faysal";
+            label3.Text = "Welcome, Faysal Ahammed Chowdhury";
             // 
             // FormAdminInventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
-            ClientSize = new Size(954, 616);
+            ClientSize = new Size(1184, 701);
             Controls.Add(panel1);
             Controls.Add(panel3);
             Controls.Add(panel12);

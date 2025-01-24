@@ -48,7 +48,6 @@
             EditAction = new DataGridViewButtonColumn();
             DeleteAction = new DataGridViewButtonColumn();
             panel6 = new Panel();
-            label14 = new Label();
             panel2 = new Panel();
             pictureBox8 = new PictureBox();
             panel1 = new Panel();
@@ -81,6 +80,7 @@
             panel4 = new Panel();
             label12 = new Label();
             lblEndDate = new Label();
+            label1 = new Label();
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvExpense).BeginInit();
             panel6.SuspendLayout();
@@ -289,23 +289,11 @@
             panel6.Size = new Size(962, 394);
             panel6.TabIndex = 37;
             // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Arial", 13F, FontStyle.Bold);
-            label14.ForeColor = Color.Black;
-            label14.Location = new Point(594, 20);
-            label14.MaximumSize = new Size(270, 30);
-            label14.Name = "label14";
-            label14.Size = new Size(159, 21);
-            label14.TabIndex = 0;
-            label14.Text = "Welcome, Faysal";
-            // 
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(label1);
             panel2.Controls.Add(label9);
-            panel2.Controls.Add(label14);
             panel2.ForeColor = Color.Navy;
             panel2.Location = new Point(210, 7);
             panel2.Name = "panel2";
@@ -699,6 +687,17 @@
             lblEndDate.TabIndex = 10;
             lblEndDate.Text = "29-01-2020";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 13F, FontStyle.Bold);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(584, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(359, 21);
+            label1.TabIndex = 2;
+            label1.Text = "Welcome, Faysal Ahammed Chowdhury";
+            // 
             // FormExpense
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -748,7 +747,6 @@
         private Label label9;
         private DataGridView dgvExpense;
         private Panel panel6;
-        private Label label14;
         private Panel panel2;
         private PictureBox pictureBox8;
         private Panel panel1;
@@ -794,5 +792,6 @@
         private DataGridViewButtonColumn DeleteAction;
         private Label label12;
         private Label lblEndDate;
+        private Label label1;
     }
 }
