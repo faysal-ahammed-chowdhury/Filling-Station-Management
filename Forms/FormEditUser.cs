@@ -14,6 +14,7 @@ namespace Forms
 {
     public partial class FormEditUser : Form
     {
+        public static bool isOpen = false;
         private DataAccess Da { get; set; }
         private FormUsers FrmUsers { get; set; }
         private string userId; 
@@ -21,6 +22,7 @@ namespace Forms
         {
             InitializeComponent();
             this.Da = new DataAccess();
+            isOpen = true;
         }
 
         public FormEditUser(string userId, FormUsers frmUsers) : this()
@@ -104,6 +106,7 @@ namespace Forms
                     this.FrmUsers.ClearAll();
                     this.FrmUsers.Visible = true;
                     this.FrmUsers.AfterEdit(this.userId);
+                    isOpen = false;
                 }
                 else
                 {
@@ -122,6 +125,7 @@ namespace Forms
             this.Visible = false;
             this.FrmUsers.PopulateGridViewOnAction();
             this.FrmUsers.Visible = true;
+            isOpen = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)

@@ -13,12 +13,14 @@ namespace Forms
 {
     public partial class FormEditExpense : Form
     {
+        public static bool isOpen = false;
         private DataAccess Da { get; set; }
         private FormExpense FrmExp { get; set; }
         public FormEditExpense()
         {
             InitializeComponent();
             this.Da = new DataAccess();
+            isOpen = true;
         }
 
         public FormEditExpense(string expenseId, FormExpense frmExp) : this()
@@ -120,6 +122,7 @@ namespace Forms
                     this.ClearAll();
                     this.FrmExp.ClearAll();
                     this.FrmExp.Visible = true;
+                    isOpen = false;
                 }
                 else
                 {
@@ -138,6 +141,7 @@ namespace Forms
             this.Visible = false;
             this.FrmExp.PopulateGridViewOnAction();
             this.FrmExp.Visible = true;
+            isOpen = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)

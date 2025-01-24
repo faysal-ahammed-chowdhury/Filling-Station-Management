@@ -217,6 +217,8 @@ namespace Forms
                 //MessageBox.Show("Edit Form");
                 if (this.dgvExpense.SelectedRows.Count > 0)
                 {
+                    if (FormEditExpense.isOpen == true) 
+                        return;
                     string expenseId = this.dgvExpense.CurrentRow.Cells[0].Value.ToString();
                     //this.Visible = false;
                     new FormEditExpense(expenseId, this).Show();

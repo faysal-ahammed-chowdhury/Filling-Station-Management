@@ -151,6 +151,8 @@ namespace Forms
                 //MessageBox.Show("Edit Form");
                 if (this.dgvUser.SelectedRows.Count > 0)
                 {
+                    if (FormEditUser.isOpen)
+                        return;
                     string userId = this.dgvUser.CurrentRow.Cells[0].Value.ToString();
                     //this.Visible = false;
                     new FormEditUser(userId, this).Show();

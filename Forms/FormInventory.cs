@@ -90,6 +90,8 @@ namespace Forms
                 //MessageBox.Show("Edit Form");
                 if (this.dgvInventory.SelectedRows.Count > 0)
                 {
+                    if (FormEditInventory.isOpen)
+                        return;
                     string inventoryId = this.dgvInventory.CurrentRow.Cells[0].Value.ToString();
                     //this.Visible = false;
                     new FormEditInventory(inventoryId, this).Show();
