@@ -441,6 +441,7 @@
             Controls.Add(panel12);
             Controls.Add(panel6);
             Controls.Add(panel2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "FormInventory";

@@ -234,6 +234,7 @@
             ControlBox = false;
             Controls.Add(panel6);
             Controls.Add(panel2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormAddInventory";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Add New Inventory";

@@ -474,6 +474,7 @@
             Controls.Add(panel1);
             Controls.Add(panel6);
             Controls.Add(panel2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormAddSale";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Add New Sale";

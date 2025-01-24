@@ -663,6 +663,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             ForeColor = Color.FromArgb(59, 28, 50);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "FormAdminDashboard";

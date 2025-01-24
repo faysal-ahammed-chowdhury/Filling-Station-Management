@@ -207,6 +207,7 @@ namespace Forms
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             ImeMode = ImeMode.Off;
             MaximizeBox = false;

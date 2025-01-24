@@ -253,6 +253,7 @@
             ClientSize = new Size(954, 616);
             ControlBox = false;
             Controls.Add(panel6);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormEditExpense";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Edit Expense";

@@ -236,6 +236,7 @@
             ClientSize = new Size(954, 616);
             ControlBox = false;
             Controls.Add(panel6);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormEditUser";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Edit User";

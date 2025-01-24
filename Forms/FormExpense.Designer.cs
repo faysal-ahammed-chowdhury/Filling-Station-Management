@@ -716,6 +716,7 @@
             Controls.Add(panel9);
             Controls.Add(panel3);
             Controls.Add(panel4);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "FormExpense";

@@ -540,6 +540,7 @@
             Controls.Add(panel12);
             Controls.Add(panel2);
             Controls.Add(panel6);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "FormUsers";
             StartPosition = FormStartPosition.CenterScreen;

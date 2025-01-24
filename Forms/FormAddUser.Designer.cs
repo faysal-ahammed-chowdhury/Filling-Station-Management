@@ -236,6 +236,7 @@
             ClientSize = new Size(954, 616);
             ControlBox = false;
             Controls.Add(panel6);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormAddUser";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Add New User";

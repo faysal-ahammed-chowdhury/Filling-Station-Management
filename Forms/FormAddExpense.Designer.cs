@@ -306,6 +306,7 @@
             ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(panel6);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormAddExpense";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Create Expense";
