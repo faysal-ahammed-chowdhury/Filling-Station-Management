@@ -6,6 +6,7 @@ namespace Forms
     public partial class FormSales : Form
     {
         private DataAccess Da { get; set; }
+        private DataRow currentUser;
         public FormSales()
         {
             InitializeComponent();
@@ -14,6 +15,12 @@ namespace Forms
             this.PopulateGridView();
             this.dtpStartDate.Text = (new DateTime(2015, 1, 1)).ToString();
             this.dtpEndDate.Text = DateTime.Now.ToString();
+        }
+
+        public FormSales(DataRow currentUser) : this()
+        {
+            this.currentUser = currentUser;
+            this.lblWlcName.Text = "Welcome, " + currentUser["Name"];
         }
 
         public void PopulateGridView(string query = "SELECT * FROM Sales")
@@ -267,8 +274,38 @@ namespace Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //this.Visible = false;
-            new FormAddSale(this).Show();
+            this.Visible = false;
+            new FormAddSale(this.currentUser ,this).Show();
+        }
+
+        private void btnOverview_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormAdminDashboard(currentUser).Show();
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormInventory(currentUser).Show();
+        }
+
+        private void btnUserList_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormUsers(currentUser).Show();
+        }
+
+        private void btnExpense_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormExpense(currentUser).Show();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormLogin().Show();
         }
     }
 }

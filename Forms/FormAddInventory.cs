@@ -14,16 +14,16 @@ namespace Forms
     public partial class FormAddInventory : Form
     {
         private DataAccess Da { get; set; }
-        private FormAdminInventory FrmAdminInv { get; set; }
+        private FormInventory FrmInv { get; set; }
         public FormAddInventory()
         {
             InitializeComponent();
             this.Da = new DataAccess();
             this.GenerateId();
         }
-        public FormAddInventory(FormAdminInventory frmAdminInv) : this()
+        public FormAddInventory(FormInventory FrmInv) : this()
         {
-            this.FrmAdminInv = frmAdminInv;
+            this.FrmInv = FrmInv;
         }
 
         public void GenerateId()
@@ -86,8 +86,8 @@ namespace Forms
                     
                     this.Visible = false;
                     this.ClearAll();
-                    this.FrmAdminInv.ClearAll();
-                    this.FrmAdminInv.Visible = true;
+                    this.FrmInv.ClearAll();
+                    this.FrmInv.Visible = true;
                 }
                 else
                 {
@@ -104,8 +104,8 @@ namespace Forms
         {
             this.ClearAll();
             this.Visible = false;
-            this.FrmAdminInv.PopulateGridViewOnAction();
-            this.FrmAdminInv.Visible = true;
+            this.FrmInv.PopulateGridViewOnAction();
+            this.FrmInv.Visible = true;
         }
 
         private void btnClear_Click(object sender, EventArgs e)

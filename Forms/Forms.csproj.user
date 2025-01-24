@@ -25,7 +25,7 @@
     <Compile Update="FormExpense.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormAdminInventory.cs">
+    <Compile Update="FormInventory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormAdminDashboard.cs">

@@ -14,15 +14,15 @@ namespace Forms
     public partial class FormEditInventory : Form
     {
         private DataAccess Da { get; set; }
-        private FormAdminInventory FrmAdminInv { get; set; }
+        private FormInventory FrmInv { get; set; }
         public FormEditInventory()
         {
             InitializeComponent();
             this.Da = new DataAccess();
         }
-        public FormEditInventory(string inventoryId, FormAdminInventory frmAdminInv) : this()
+        public FormEditInventory(string inventoryId, FormInventory FrmInv) : this()
         {
-            this.FrmAdminInv = frmAdminInv;
+            this.FrmInv = FrmInv;
             this.ShowInventory(inventoryId);
         }
 
@@ -98,8 +98,8 @@ namespace Forms
                     MessageBox.Show($"{fuelName} updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
                     this.Visible = false;
                     this.ClearAll();
-                    this.FrmAdminInv.ClearAll();
-                    this.FrmAdminInv.Visible = true;
+                    this.FrmInv.ClearAll();
+                    this.FrmInv.Visible = true;
                 }
                 else
                 {
@@ -116,8 +116,8 @@ namespace Forms
         {
             this.ClearAll();
             this.Visible = false;
-            this.FrmAdminInv.PopulateGridViewOnAction();
-            this.FrmAdminInv.Visible = true;
+            this.FrmInv.PopulateGridViewOnAction();
+            this.FrmInv.Visible = true;
         }
 
         private void btnClear_Click(object sender, EventArgs e)

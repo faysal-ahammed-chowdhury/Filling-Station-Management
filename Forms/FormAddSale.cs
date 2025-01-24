@@ -14,8 +14,9 @@ namespace Forms
     public partial class FormAddSale : Form
     {
         private DataAccess Da { get; set; }
-        DataTable addedProductsTable;
+        private DataTable addedProductsTable;
         private decimal grandTotal;
+        private DataRow currentUser;
 
         private FormSales FrmSls { get; set; }
         public FormAddSale()
@@ -33,8 +34,9 @@ namespace Forms
             this.GenerateId();
         }
 
-        public FormAddSale(FormSales frmSls) : this()
+        public FormAddSale(DataRow currentUser, FormSales frmSls) : this()
         {
+            this.currentUser = currentUser;
             this.FrmSls = frmSls;
         }
 
@@ -264,7 +266,7 @@ namespace Forms
 
             decimal givenAmount, changeAmount;
             bool isNumeric = decimal.TryParse(this.txtGiven.Text, out givenAmount);
-            isNumeric &= decimal.TryParse(this.txtChange.Text, out changeAmount); 
+            isNumeric &= decimal.TryParse(this.txtChange.Text, out changeAmount);
             if (!isNumeric)
             {
                 MessageBox.Show("Amount should be a numeric value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -307,8 +309,7 @@ namespace Forms
 
             try
             {
-                // change user id from here later
-                string sql = $@"INSERT INTO Sales VALUES ('{id}', '{saleDateTime}', '{"U-001"}',
+                string sql = $@"INSERT INTO Sales VALUES ('{id}', '{saleDateTime}', '{currentUser["UserId"]}',
                             '{grandTotal.ToString()}', '{givenAmount.ToString()}', 
                             '{changeAmount.ToString()}', '{method}')";
                 int cnt = this.Da.ExecuteDMLQuery(sql);
@@ -329,7 +330,6 @@ namespace Forms
                 {
                     MessageBox.Show($"Sale added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
 
-                    //this.Visible = false;
                     this.ClearAll();
                     new FormSaleDetails(id).Show();
                 }
@@ -342,6 +342,14 @@ namespace Forms
             {
                 MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.ClearAll();
+            this.Visible = false;
+            this.FrmSls.ClearAll();
+            this.FrmSls.Visible = true;
         }
     }
 }

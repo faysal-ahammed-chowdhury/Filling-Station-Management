@@ -49,6 +49,7 @@
             DeleteAction = new DataGridViewButtonColumn();
             panel6 = new Panel();
             panel2 = new Panel();
+            lblWlcName = new Label();
             pictureBox8 = new PictureBox();
             panel1 = new Panel();
             pictureBox5 = new PictureBox();
@@ -60,7 +61,7 @@
             pictureBox1 = new PictureBox();
             btnInventory = new Button();
             btnLogOut = new Button();
-            btnEmpolyeeList = new Button();
+            btnUsers = new Button();
             btnSalesrep = new Button();
             lblThisYear = new Label();
             label13 = new Label();
@@ -80,7 +81,6 @@
             panel4 = new Panel();
             label12 = new Label();
             lblEndDate = new Label();
-            label1 = new Label();
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvExpense).BeginInit();
             panel6.SuspendLayout();
@@ -292,13 +292,24 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(label1);
+            panel2.Controls.Add(lblWlcName);
             panel2.Controls.Add(label9);
             panel2.ForeColor = Color.Navy;
             panel2.Location = new Point(210, 7);
             panel2.Name = "panel2";
             panel2.Size = new Size(962, 56);
             panel2.TabIndex = 36;
+            // 
+            // lblWlcName
+            // 
+            lblWlcName.AutoSize = true;
+            lblWlcName.Font = new Font("Arial", 13F, FontStyle.Bold);
+            lblWlcName.ForeColor = Color.Black;
+            lblWlcName.Location = new Point(584, 20);
+            lblWlcName.Name = "lblWlcName";
+            lblWlcName.Size = new Size(359, 21);
+            lblWlcName.TabIndex = 2;
+            lblWlcName.Text = "Welcome, Faysal Ahammed Chowdhury";
             // 
             // pictureBox8
             // 
@@ -323,7 +334,7 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btnInventory);
             panel1.Controls.Add(btnLogOut);
-            panel1.Controls.Add(btnEmpolyeeList);
+            panel1.Controls.Add(btnUsers);
             panel1.Controls.Add(btnSalesrep);
             panel1.ForeColor = Color.White;
             panel1.Location = new Point(12, 7);
@@ -352,7 +363,7 @@
             btnExpense.Name = "btnExpense";
             btnExpense.Size = new Size(124, 33);
             btnExpense.TabIndex = 16;
-            btnExpense.Text = "Expense list";
+            btnExpense.Text = "Expenses";
             btnExpense.TextAlign = ContentAlignment.MiddleLeft;
             btnExpense.UseVisualStyleBackColor = false;
             // 
@@ -373,6 +384,7 @@
             btnOverview.Text = "Overview";
             btnOverview.TextAlign = ContentAlignment.MiddleLeft;
             btnOverview.UseVisualStyleBackColor = false;
+            btnOverview.Click += btnOverview_Click;
             // 
             // pictureBox2
             // 
@@ -428,9 +440,10 @@
             btnInventory.Name = "btnInventory";
             btnInventory.Size = new Size(124, 33);
             btnInventory.TabIndex = 2;
-            btnInventory.Text = "Inventory";
+            btnInventory.Text = "Inventories";
             btnInventory.TextAlign = ContentAlignment.MiddleLeft;
             btnInventory.UseVisualStyleBackColor = false;
+            btnInventory.Click += btnInventory_Click;
             // 
             // btnLogOut
             // 
@@ -446,21 +459,23 @@
             btnLogOut.Text = "Log-Out";
             btnLogOut.TextAlign = ContentAlignment.MiddleLeft;
             btnLogOut.UseVisualStyleBackColor = false;
+            btnLogOut.Click += btnLogOut_Click;
             // 
-            // btnEmpolyeeList
+            // btnUsers
             // 
-            btnEmpolyeeList.BackColor = Color.FromArgb(196, 232, 255);
-            btnEmpolyeeList.Cursor = Cursors.Hand;
-            btnEmpolyeeList.FlatStyle = FlatStyle.Popup;
-            btnEmpolyeeList.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEmpolyeeList.ForeColor = Color.Black;
-            btnEmpolyeeList.Location = new Point(55, 188);
-            btnEmpolyeeList.Name = "btnEmpolyeeList";
-            btnEmpolyeeList.Size = new Size(124, 33);
-            btnEmpolyeeList.TabIndex = 5;
-            btnEmpolyeeList.Text = "Empolyee List";
-            btnEmpolyeeList.TextAlign = ContentAlignment.MiddleLeft;
-            btnEmpolyeeList.UseVisualStyleBackColor = false;
+            btnUsers.BackColor = Color.FromArgb(196, 232, 255);
+            btnUsers.Cursor = Cursors.Hand;
+            btnUsers.FlatStyle = FlatStyle.Popup;
+            btnUsers.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUsers.ForeColor = Color.Black;
+            btnUsers.Location = new Point(55, 188);
+            btnUsers.Name = "btnUsers";
+            btnUsers.Size = new Size(124, 33);
+            btnUsers.TabIndex = 5;
+            btnUsers.Text = "Users";
+            btnUsers.TextAlign = ContentAlignment.MiddleLeft;
+            btnUsers.UseVisualStyleBackColor = false;
+            btnUsers.Click += btnUsers_Click;
             // 
             // btnSalesrep
             // 
@@ -472,9 +487,10 @@
             btnSalesrep.Name = "btnSalesrep";
             btnSalesrep.Size = new Size(124, 33);
             btnSalesrep.TabIndex = 4;
-            btnSalesrep.Text = "Sales Report";
+            btnSalesrep.Text = "Sales History";
             btnSalesrep.TextAlign = ContentAlignment.MiddleLeft;
             btnSalesrep.UseVisualStyleBackColor = false;
+            btnSalesrep.Click += btnSalesrep_Click;
             // 
             // lblThisYear
             // 
@@ -687,17 +703,6 @@
             lblEndDate.TabIndex = 10;
             lblEndDate.Text = "29-01-2020";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 13F, FontStyle.Bold);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(584, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(359, 21);
-            label1.TabIndex = 2;
-            label1.Text = "Welcome, Faysal Ahammed Chowdhury";
-            // 
             // FormExpense
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -759,7 +764,7 @@
         private PictureBox pictureBox1;
         protected Button btnInventory;
         private Button btnLogOut;
-        private Button btnEmpolyeeList;
+        private Button btnUsers;
         private Button btnSalesrep;
         private Label lblThisYear;
         private Label label13;
@@ -792,6 +797,6 @@
         private DataGridViewButtonColumn DeleteAction;
         private Label label12;
         private Label lblEndDate;
-        private Label label1;
+        private Label lblWlcName;
     }
 }

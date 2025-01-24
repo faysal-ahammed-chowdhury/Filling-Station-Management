@@ -14,6 +14,7 @@ namespace Forms
     public partial class FormUsers : Form
     {
         private DataAccess Da { get; set; }
+        private DataRow currentUser;
         public FormUsers()
         {
             InitializeComponent();
@@ -21,6 +22,12 @@ namespace Forms
             this.PopulateGridView();
             this.cboUserType.SelectedIndex = 0;
             this.ShowInitialInfo();
+        }
+
+        public FormUsers(DataRow currentUser) : this()
+        {
+            this.currentUser = currentUser;
+            this.lblWlcName.Text = "Welcome, " + currentUser["Name"];
         }
 
         public void PopulateGridView(string query = "SELECT * FROM Users")
@@ -159,6 +166,36 @@ namespace Forms
                     this.DeleteUser(userId);
                 }
             }
+        }
+
+        private void btnOverview_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormAdminDashboard(currentUser).Show();
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormInventory(currentUser).Show();
+        }
+
+        private void btnSalesrep_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormSales(currentUser).Show();
+        }
+
+        private void btnExpense_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormExpense(currentUser).Show();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormLogin().Show();
         }
     }
 }

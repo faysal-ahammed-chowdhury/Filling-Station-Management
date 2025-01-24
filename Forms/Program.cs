@@ -16,14 +16,14 @@ namespace Forms
             Application.SetCompatibleTextRenderingDefault(false);
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             ApplicationConfiguration.Initialize();
-            //Application.Run(new FormLogin());
-            //Application.Run(new FormAdminInventory());
+            Application.Run(new FormLogin());
+            //Application.Run(new FormInventory());
             //Application.Run(new FormEditInventory("i-005"));
             //Application.Run(new FormAddInventory());
             //Application.Run(new FormExpense());
             //Application.Run(new FormAddExpense("U-001"));
             //Application.Run(new FormUsers());
-            Application.Run(new FormSales());
+            //Application.Run(new FormSales());
             //Application.Run(new FormSaleDetails("SALE-014"));
 
             //try

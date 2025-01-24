@@ -34,7 +34,6 @@
             lblSalesBy = new Label();
             label7 = new Label();
             panel6 = new Panel();
-            btnClose = new Button();
             lblChange = new Label();
             label11 = new Label();
             lblGiven = new Label();
@@ -127,7 +126,6 @@
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Controls.Add(btnClose);
             panel6.Controls.Add(lblChange);
             panel6.Controls.Add(label11);
             panel6.Controls.Add(lblGiven);
@@ -140,35 +138,23 @@
             panel6.Size = new Size(902, 451);
             panel6.TabIndex = 46;
             // 
-            // btnClose
-            // 
-            btnClose.BackColor = Color.Red;
-            btnClose.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnClose.ForeColor = Color.Lavender;
-            btnClose.Location = new Point(390, 376);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(157, 42);
-            btnClose.TabIndex = 57;
-            btnClose.Text = "Close";
-            btnClose.UseVisualStyleBackColor = false;
-            // 
             // lblChange
             // 
             lblChange.AutoSize = true;
             lblChange.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblChange.ForeColor = Color.Black;
-            lblChange.Location = new Point(723, 311);
+            lblChange.Location = new Point(723, 377);
             lblChange.Name = "lblChange";
-            lblChange.Size = new Size(67, 21);
+            lblChange.Size = new Size(70, 21);
             lblChange.TabIndex = 56;
-            lblChange.Text = "5055 TK";
+            lblChange.Text = "00.00 TK";
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.Black;
-            label11.Location = new Point(593, 311);
+            label11.Location = new Point(593, 377);
             label11.Name = "label11";
             label11.Size = new Size(72, 21);
             label11.TabIndex = 55;
@@ -179,18 +165,18 @@
             lblGiven.AutoSize = true;
             lblGiven.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblGiven.ForeColor = Color.Black;
-            lblGiven.Location = new Point(723, 279);
+            lblGiven.Location = new Point(723, 345);
             lblGiven.Name = "lblGiven";
-            lblGiven.Size = new Size(67, 21);
+            lblGiven.Size = new Size(70, 21);
             lblGiven.TabIndex = 54;
-            lblGiven.Text = "5055 TK";
+            lblGiven.Text = "00.00 TK";
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(593, 279);
+            label8.Location = new Point(593, 345);
             label8.Name = "label8";
             label8.Size = new Size(124, 21);
             label8.TabIndex = 53;
@@ -201,18 +187,18 @@
             lblGrand.AutoSize = true;
             lblGrand.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblGrand.ForeColor = Color.Black;
-            lblGrand.Location = new Point(723, 245);
+            lblGrand.Location = new Point(723, 311);
             lblGrand.Name = "lblGrand";
-            lblGrand.Size = new Size(67, 21);
+            lblGrand.Size = new Size(70, 21);
             lblGrand.TabIndex = 52;
-            lblGrand.Text = "5055 TK";
+            lblGrand.Text = "00.00 TK";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(593, 245);
+            label5.Location = new Point(593, 311);
             label5.Name = "label5";
             label5.Size = new Size(102, 21);
             label5.TabIndex = 51;
@@ -230,7 +216,7 @@
             dgvSaleDetail.Name = "dgvSaleDetail";
             dgvSaleDetail.ReadOnly = true;
             dgvSaleDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvSaleDetail.Size = new Size(899, 239);
+            dgvSaleDetail.Size = new Size(899, 281);
             dgvSaleDetail.TabIndex = 0;
             // 
             // SaleDetailId
@@ -387,7 +373,6 @@
         private Label label11;
         private Label lblGiven;
         private Label label8;
-        private Button btnClose;
         private DataGridViewTextBoxColumn SaleDetailId;
         private DataGridViewTextBoxColumn InventoryName;
         private DataGridViewTextBoxColumn PricePerLitre;

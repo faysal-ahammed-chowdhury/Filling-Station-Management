@@ -31,6 +31,8 @@ namespace Forms
                 if (isFound)
                 {
                     // will back later
+                    this.Visible = false;
+                    new FormAdminDashboard(ds.Tables[0].Rows[0]).Show();
                 }
                 else
                 {

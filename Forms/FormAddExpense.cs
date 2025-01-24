@@ -14,8 +14,8 @@ namespace Forms
     public partial class FormAddExpense : Form
     {
         private DataAccess Da { get; set; }
-        private string UserId { get; set; }
         private FormExpense FrmExp { get; set; }
+        private DataRow currentUser;
         public FormAddExpense()
         {
             InitializeComponent();
@@ -25,9 +25,9 @@ namespace Forms
             this.dtpTime.MaxDate = DateTime.Now;
         }
 
-        public FormAddExpense(string userId, FormExpense frmExp) : this()
+        public FormAddExpense(DataRow currentUser, FormExpense frmExp) : this()
         {
-            this.UserId = userId;
+            this.currentUser = currentUser;
             this.FrmExp = frmExp;
         }
 
@@ -118,7 +118,7 @@ namespace Forms
 
             try
             {
-                string sql = $"INSERT INTO Expenses VALUES ('{id}', '{amount}', '{category}', '{dateTime}', '{description}', '{this.UserId}')";
+                string sql = $"INSERT INTO Expenses VALUES ('{id}', '{amount}', '{category}', '{dateTime}', '{description}', '{currentUser["UserId"]}')";
                 int cnt = this.Da.ExecuteDMLQuery(sql);
                 if (cnt > 0)
                 {

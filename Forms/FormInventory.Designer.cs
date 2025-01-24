@@ -1,6 +1,6 @@
 ﻿namespace Forms
 {
-    partial class FormAdminInventory
+    partial class FormInventory
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdminInventory));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInventory));
             panel2 = new Panel();
             lblUserName = new Label();
             label1 = new Label();
@@ -54,11 +54,11 @@
             pictureBox3 = new PictureBox();
             pictureBox1 = new PictureBox();
             btnInventory = new Button();
-            btnEmpolyeeList = new Button();
+            btnUserList = new Button();
             btnSalesrep = new Button();
             panel1 = new Panel();
             label4 = new Label();
-            label3 = new Label();
+            lblWlcName = new Label();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
@@ -220,7 +220,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.logout_165852551;
-            pictureBox2.Location = new Point(13, 559);
+            pictureBox2.Location = new Point(13, 634);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(36, 33);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -234,13 +234,14 @@
             btnLogOut.FlatStyle = FlatStyle.Popup;
             btnLogOut.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogOut.ForeColor = Color.Black;
-            btnLogOut.Location = new Point(55, 559);
+            btnLogOut.Location = new Point(55, 634);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(124, 31);
             btnLogOut.TabIndex = 6;
             btnLogOut.Text = "Log-Out";
             btnLogOut.TextAlign = ContentAlignment.MiddleLeft;
             btnLogOut.UseVisualStyleBackColor = false;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // panel3
             // 
@@ -255,12 +256,12 @@
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(btnInventory);
             panel3.Controls.Add(btnLogOut);
-            panel3.Controls.Add(btnEmpolyeeList);
+            panel3.Controls.Add(btnUserList);
             panel3.Controls.Add(btnSalesrep);
             panel3.ForeColor = Color.White;
             panel3.Location = new Point(10, 8);
             panel3.Name = "panel3";
-            panel3.Size = new Size(190, 602);
+            panel3.Size = new Size(190, 681);
             panel3.TabIndex = 22;
             // 
             // pictureBox5
@@ -283,9 +284,10 @@
             btnExpense.Name = "btnExpense";
             btnExpense.Size = new Size(124, 33);
             btnExpense.TabIndex = 20;
-            btnExpense.Text = "Expense list";
+            btnExpense.Text = "Expenses";
             btnExpense.TextAlign = ContentAlignment.MiddleLeft;
             btnExpense.UseVisualStyleBackColor = false;
+            btnExpense.Click += btnExpense_Click;
             // 
             // pictureBox8
             // 
@@ -314,6 +316,7 @@
             btnOverview.Text = "Overview";
             btnOverview.TextAlign = ContentAlignment.MiddleLeft;
             btnOverview.UseVisualStyleBackColor = false;
+            btnOverview.Click += btnOverview_Click;
             // 
             // pictureBox4
             // 
@@ -359,24 +362,25 @@
             btnInventory.Name = "btnInventory";
             btnInventory.Size = new Size(124, 33);
             btnInventory.TabIndex = 2;
-            btnInventory.Text = "Inventory";
+            btnInventory.Text = "Inventories";
             btnInventory.TextAlign = ContentAlignment.MiddleLeft;
             btnInventory.UseVisualStyleBackColor = false;
             // 
-            // btnEmpolyeeList
+            // btnUserList
             // 
-            btnEmpolyeeList.BackColor = Color.FromArgb(196, 232, 255);
-            btnEmpolyeeList.Cursor = Cursors.Hand;
-            btnEmpolyeeList.FlatStyle = FlatStyle.Popup;
-            btnEmpolyeeList.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEmpolyeeList.ForeColor = Color.Black;
-            btnEmpolyeeList.Location = new Point(55, 188);
-            btnEmpolyeeList.Name = "btnEmpolyeeList";
-            btnEmpolyeeList.Size = new Size(124, 33);
-            btnEmpolyeeList.TabIndex = 5;
-            btnEmpolyeeList.Text = "Empolyee List";
-            btnEmpolyeeList.TextAlign = ContentAlignment.MiddleLeft;
-            btnEmpolyeeList.UseVisualStyleBackColor = false;
+            btnUserList.BackColor = Color.FromArgb(196, 232, 255);
+            btnUserList.Cursor = Cursors.Hand;
+            btnUserList.FlatStyle = FlatStyle.Popup;
+            btnUserList.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUserList.ForeColor = Color.Black;
+            btnUserList.Location = new Point(55, 188);
+            btnUserList.Name = "btnUserList";
+            btnUserList.Size = new Size(124, 33);
+            btnUserList.TabIndex = 5;
+            btnUserList.Text = "Users";
+            btnUserList.TextAlign = ContentAlignment.MiddleLeft;
+            btnUserList.UseVisualStyleBackColor = false;
+            btnUserList.Click += btnUserList_Click;
             // 
             // btnSalesrep
             // 
@@ -389,15 +393,16 @@
             btnSalesrep.Name = "btnSalesrep";
             btnSalesrep.Size = new Size(124, 33);
             btnSalesrep.TabIndex = 4;
-            btnSalesrep.Text = "Sales Report";
+            btnSalesrep.Text = "Sales History";
             btnSalesrep.TextAlign = ContentAlignment.MiddleLeft;
             btnSalesrep.UseVisualStyleBackColor = false;
+            btnSalesrep.Click += btnSalesrep_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(label3);
+            panel1.Controls.Add(lblWlcName);
             panel1.ForeColor = Color.Navy;
             panel1.Location = new Point(209, 8);
             panel1.Name = "panel1";
@@ -414,18 +419,18 @@
             label4.TabIndex = 24;
             label4.Text = "Inventories";
             // 
-            // label3
+            // lblWlcName
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 13F, FontStyle.Bold);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(587, 20);
-            label3.Name = "label3";
-            label3.Size = new Size(359, 21);
-            label3.TabIndex = 0;
-            label3.Text = "Welcome, Faysal Ahammed Chowdhury";
+            lblWlcName.AutoSize = true;
+            lblWlcName.Font = new Font("Arial", 13F, FontStyle.Bold);
+            lblWlcName.ForeColor = Color.Black;
+            lblWlcName.Location = new Point(587, 20);
+            lblWlcName.Name = "lblWlcName";
+            lblWlcName.Size = new Size(359, 21);
+            lblWlcName.TabIndex = 0;
+            lblWlcName.Text = "Welcome, Faysal Ahammed Chowdhury";
             // 
-            // FormAdminInventory
+            // FormInventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -438,10 +443,10 @@
             Controls.Add(panel2);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            Name = "FormAdminInventory";
+            Name = "FormInventory";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inventories";
-            Load += FormAdminInventory_Load;
+            Load += FormInventory_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel6.ResumeLayout(false);
@@ -478,10 +483,10 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox1;
         protected Button btnInventory;
-        private Button btnEmpolyeeList;
+        private Button btnUserList;
         private Button btnSalesrep;
         private Panel panel1;
-        private Label label3;
+        private Label lblWlcName;
         private PictureBox pictureBox5;
         private Button btnExpense;
         private DataGridViewTextBoxColumn InventoryID;

@@ -46,7 +46,7 @@
             pictureBox1 = new PictureBox();
             btnInventory = new Button();
             btnLogOut = new Button();
-            btnEmpolyeeList = new Button();
+            btnUserList = new Button();
             btnSalesrep = new Button();
             panel9 = new Panel();
             label4 = new Label();
@@ -79,8 +79,8 @@
             EditAction = new DataGridViewButtonColumn();
             DeleteAction = new DataGridViewButtonColumn();
             panel2 = new Panel();
+            lblWlcName = new Label();
             panel6 = new Panel();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel8.SuspendLayout();
@@ -110,18 +110,19 @@
             // 
             // btnExpense
             // 
-            btnExpense.BackColor = Color.FromArgb(49, 108, 181);
+            btnExpense.BackColor = Color.Transparent;
             btnExpense.Cursor = Cursors.Hand;
             btnExpense.FlatStyle = FlatStyle.Popup;
             btnExpense.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnExpense.ForeColor = Color.White;
+            btnExpense.ForeColor = Color.Black;
             btnExpense.Location = new Point(55, 245);
             btnExpense.Name = "btnExpense";
             btnExpense.Size = new Size(124, 33);
             btnExpense.TabIndex = 16;
-            btnExpense.Text = "Expense list";
+            btnExpense.Text = "Expenses";
             btnExpense.TextAlign = ContentAlignment.MiddleLeft;
             btnExpense.UseVisualStyleBackColor = false;
+            btnExpense.Click += btnExpense_Click;
             // 
             // pictureBox8
             // 
@@ -229,7 +230,7 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btnInventory);
             panel1.Controls.Add(btnLogOut);
-            panel1.Controls.Add(btnEmpolyeeList);
+            panel1.Controls.Add(btnUserList);
             panel1.Controls.Add(btnSalesrep);
             panel1.ForeColor = Color.White;
             panel1.Location = new Point(12, 7);
@@ -254,6 +255,7 @@
             btnOverview.Text = "Overview";
             btnOverview.TextAlign = ContentAlignment.MiddleLeft;
             btnOverview.UseVisualStyleBackColor = false;
+            btnOverview.Click += btnOverview_Click;
             // 
             // pictureBox2
             // 
@@ -309,9 +311,10 @@
             btnInventory.Name = "btnInventory";
             btnInventory.Size = new Size(124, 33);
             btnInventory.TabIndex = 2;
-            btnInventory.Text = "Inventory";
+            btnInventory.Text = "Inventories";
             btnInventory.TextAlign = ContentAlignment.MiddleLeft;
             btnInventory.UseVisualStyleBackColor = false;
+            btnInventory.Click += btnInventory_Click;
             // 
             // btnLogOut
             // 
@@ -327,33 +330,36 @@
             btnLogOut.Text = "Log-Out";
             btnLogOut.TextAlign = ContentAlignment.MiddleLeft;
             btnLogOut.UseVisualStyleBackColor = false;
+            btnLogOut.Click += btnLogOut_Click;
             // 
-            // btnEmpolyeeList
+            // btnUserList
             // 
-            btnEmpolyeeList.BackColor = Color.FromArgb(196, 232, 255);
-            btnEmpolyeeList.Cursor = Cursors.Hand;
-            btnEmpolyeeList.FlatStyle = FlatStyle.Popup;
-            btnEmpolyeeList.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEmpolyeeList.ForeColor = Color.Black;
-            btnEmpolyeeList.Location = new Point(55, 188);
-            btnEmpolyeeList.Name = "btnEmpolyeeList";
-            btnEmpolyeeList.Size = new Size(124, 33);
-            btnEmpolyeeList.TabIndex = 5;
-            btnEmpolyeeList.Text = "Empolyee List";
-            btnEmpolyeeList.TextAlign = ContentAlignment.MiddleLeft;
-            btnEmpolyeeList.UseVisualStyleBackColor = false;
+            btnUserList.BackColor = Color.FromArgb(196, 232, 255);
+            btnUserList.Cursor = Cursors.Hand;
+            btnUserList.FlatStyle = FlatStyle.Popup;
+            btnUserList.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUserList.ForeColor = Color.Black;
+            btnUserList.Location = new Point(55, 188);
+            btnUserList.Name = "btnUserList";
+            btnUserList.Size = new Size(124, 33);
+            btnUserList.TabIndex = 5;
+            btnUserList.Text = "Users";
+            btnUserList.TextAlign = ContentAlignment.MiddleLeft;
+            btnUserList.UseVisualStyleBackColor = false;
+            btnUserList.Click += btnUserList_Click;
             // 
             // btnSalesrep
             // 
+            btnSalesrep.BackColor = Color.FromArgb(49, 108, 181);
             btnSalesrep.Cursor = Cursors.Hand;
             btnSalesrep.FlatStyle = FlatStyle.Popup;
             btnSalesrep.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSalesrep.ForeColor = Color.Black;
+            btnSalesrep.ForeColor = Color.White;
             btnSalesrep.Location = new Point(55, 130);
             btnSalesrep.Name = "btnSalesrep";
             btnSalesrep.Size = new Size(124, 33);
             btnSalesrep.TabIndex = 4;
-            btnSalesrep.Text = "Sales Report";
+            btnSalesrep.Text = "Sales History";
             btnSalesrep.TextAlign = ContentAlignment.MiddleLeft;
             btnSalesrep.UseVisualStyleBackColor = false;
             // 
@@ -677,13 +683,24 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(label1);
+            panel2.Controls.Add(lblWlcName);
             panel2.Controls.Add(label9);
             panel2.ForeColor = Color.Navy;
             panel2.Location = new Point(210, 7);
             panel2.Name = "panel2";
             panel2.Size = new Size(962, 56);
             panel2.TabIndex = 44;
+            // 
+            // lblWlcName
+            // 
+            lblWlcName.AutoSize = true;
+            lblWlcName.Font = new Font("Arial", 13F, FontStyle.Bold);
+            lblWlcName.ForeColor = Color.Black;
+            lblWlcName.Location = new Point(584, 18);
+            lblWlcName.Name = "lblWlcName";
+            lblWlcName.Size = new Size(359, 21);
+            lblWlcName.TabIndex = 2;
+            lblWlcName.Text = "Welcome, Faysal Ahammed Chowdhury";
             // 
             // panel6
             // 
@@ -693,17 +710,6 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(962, 394);
             panel6.TabIndex = 45;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 13F, FontStyle.Bold);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(584, 18);
-            label1.Name = "label1";
-            label1.Size = new Size(359, 21);
-            label1.TabIndex = 2;
-            label1.Text = "Welcome, Faysal Ahammed Chowdhury";
             // 
             // FormSales
             // 
@@ -766,7 +772,7 @@
         private PictureBox pictureBox1;
         protected Button btnInventory;
         private Button btnLogOut;
-        private Button btnEmpolyeeList;
+        private Button btnUserList;
         private Button btnSalesrep;
         private Panel panel9;
         private Label label4;
@@ -800,6 +806,6 @@
         private DataGridViewButtonColumn Details;
         private DataGridViewButtonColumn EditAction;
         private DataGridViewButtonColumn DeleteAction;
-        private Label label1;
+        private Label lblWlcName;
     }
 }

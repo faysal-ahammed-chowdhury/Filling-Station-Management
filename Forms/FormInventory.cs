@@ -11,14 +11,20 @@ using System.Windows.Forms;
 
 namespace Forms
 {
-    public partial class FormAdminInventory : Form
+    public partial class FormInventory : Form
     {
         private DataAccess Da { get; set; }
-        public FormAdminInventory()
+        private DataRow currentUser;
+        public FormInventory()
         {
             InitializeComponent();
             this.Da = new DataAccess();
             this.PopulateGridView();
+        }
+        public FormInventory(DataRow currentUser) : this()
+        {
+            this.currentUser = currentUser;
+            this.lblWlcName.Text = "Welcome, " + currentUser["Name"];
         }
 
         public void PopulateGridView(string query = "SELECT * FROM Inventories")
@@ -103,7 +109,7 @@ namespace Forms
             }
         }
 
-        private void FormAdminInventory_Load(object sender, EventArgs e)
+        private void FormInventory_Load(object sender, EventArgs e)
         {
             this.dgvInventory.ClearSelection();
         }
@@ -117,6 +123,36 @@ namespace Forms
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             this.PopulateGridViewOnAction();
+        }
+
+        private void btnOverview_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormAdminDashboard(currentUser).Show();
+        }
+
+        private void btnSalesrep_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormSales(currentUser).Show();
+        }
+
+        private void btnUserList_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormUsers(currentUser).Show();
+        }
+
+        private void btnExpense_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormExpense(currentUser).Show();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormLogin().Show();
         }
     }
 }
