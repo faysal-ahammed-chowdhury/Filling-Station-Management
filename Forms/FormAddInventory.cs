@@ -13,6 +13,7 @@ namespace Forms
 {
     public partial class FormAddInventory : Form
     {
+        public static bool isOpen = false;
         private DataAccess Da { get; set; }
         private FormInventory FrmInv { get; set; }
         public FormAddInventory()
@@ -20,6 +21,7 @@ namespace Forms
             InitializeComponent();
             this.Da = new DataAccess();
             this.GenerateId();
+            isOpen = true;
         }
         public FormAddInventory(FormInventory FrmInv) : this()
         {
@@ -100,6 +102,7 @@ namespace Forms
                     this.ClearAll();
                     this.FrmInv.ClearAll();
                     this.FrmInv.Visible = true;
+                    isOpen = false;
                 }
                 else
                 {
@@ -118,6 +121,7 @@ namespace Forms
             this.Visible = false;
             this.FrmInv.PopulateGridViewOnAction();
             this.FrmInv.Visible = true;
+            isOpen = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)

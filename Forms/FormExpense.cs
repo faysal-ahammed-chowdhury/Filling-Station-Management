@@ -243,6 +243,8 @@ namespace Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (FormAddExpense.isOpen) 
+                return;
             //this.Visible = false;
             new FormAddExpense(this.currentUser, this).Show();
         }

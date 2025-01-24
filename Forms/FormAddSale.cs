@@ -13,6 +13,7 @@ namespace Forms
 {
     public partial class FormAddSale : Form
     {
+        public static bool isOpen = false;
         private DataAccess Da { get; set; }
         private DataTable addedProductsTable;
         private decimal grandTotal;
@@ -32,6 +33,7 @@ namespace Forms
             this.addedProductsTable.Columns.Add("CTotal", typeof(decimal));
             this.ShowGrandTotal();
             this.GenerateId();
+            isOpen = true;
         }
 
         public FormAddSale(DataRow currentUser, FormSales frmSls) : this()
@@ -340,6 +342,7 @@ namespace Forms
 
                     this.ClearAll();
                     new FormSaleDetails(id).Show();
+                    isOpen = false;
                 }
                 else
                 {
@@ -358,6 +361,7 @@ namespace Forms
             this.Visible = false;
             this.FrmSls.ClearAll();
             this.FrmSls.Visible = true;
+            isOpen = false;
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Forms
 {
     public partial class FormAddExpense : Form
     {
+        public static bool isOpen = false;
         private DataAccess Da { get; set; }
         private FormExpense FrmExp { get; set; }
         private DataRow currentUser;
@@ -23,6 +24,7 @@ namespace Forms
             this.GenerateId();
             this.dtpDate.MaxDate = DateTime.Today;
             this.dtpTime.MaxDate = DateTime.Now;
+            isOpen = true;
         }
 
         public FormAddExpense(DataRow currentUser, FormExpense frmExp) : this()
@@ -134,6 +136,7 @@ namespace Forms
                     this.ClearAll();
                     this.FrmExp.ClearAll();
                     this.FrmExp.Visible = true;
+                    isOpen = false;
                 }
                 else
                 {
@@ -152,6 +155,7 @@ namespace Forms
             this.Visible = false;
             this.FrmExp.PopulateGridViewOnAction();
             this.FrmExp.Visible = true;
+            isOpen = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)

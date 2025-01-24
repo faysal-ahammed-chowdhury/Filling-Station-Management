@@ -116,6 +116,8 @@ namespace Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (FormAddInventory.isOpen)
+                return;
             //this.Visible = false;
             new FormAddInventory(this).Show();
         }

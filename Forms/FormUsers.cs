@@ -106,6 +106,8 @@ namespace Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (FormAddUser.isOpen)
+                return;
             //this.Visible = false;
             new FormAddUser(this).Show();
         }

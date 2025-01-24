@@ -272,6 +272,8 @@ namespace Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (FormAddSale.isOpen) 
+                return;
             //this.Visible = false;
             new FormAddSale(this.currentUser, this).Show();
         }
