@@ -79,7 +79,7 @@
             CreatedBy = new DataGridViewTextBoxColumn();
             EditAction = new DataGridViewButtonColumn();
             DeleteAction = new DataGridViewButtonColumn();
-            button1 = new Button();
+            btnViewExpense = new Button();
             label4 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
@@ -531,7 +531,7 @@
             // 
             panel8.BackColor = Color.White;
             panel8.Controls.Add(dgvExpense);
-            panel8.Controls.Add(button1);
+            panel8.Controls.Add(btnViewExpense);
             panel8.Controls.Add(label4);
             panel8.Location = new Point(209, 447);
             panel8.Name = "panel8";
@@ -628,14 +628,15 @@
             DeleteAction.Text = "Delete";
             DeleteAction.UseColumnTextForButtonValue = true;
             // 
-            // button1
+            // btnViewExpense
             // 
-            button1.Location = new Point(873, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "View all";
-            button1.UseVisualStyleBackColor = true;
+            btnViewExpense.Location = new Point(873, 3);
+            btnViewExpense.Name = "btnViewExpense";
+            btnViewExpense.Size = new Size(75, 23);
+            btnViewExpense.TabIndex = 2;
+            btnViewExpense.Text = "View all";
+            btnViewExpense.UseVisualStyleBackColor = true;
+            btnViewExpense.Click += btnViewExpense_Click;
             // 
             // label4
             // 
@@ -668,6 +669,7 @@
             SizeGripStyle = SizeGripStyle.Show;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin Dashboard";
+            FormClosed += FormAdminDashboard_FormClosed;
             Load += FormAdminDashboard_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
@@ -723,7 +725,7 @@
         private Button btnExpense;
         private Label label10;
         private Panel panel8;
-        private Button button1;
+        private Button btnViewExpense;
         private Label label4;
         private DataGridView dgvExpense;
         private DataGridViewTextBoxColumn ExpenseId;

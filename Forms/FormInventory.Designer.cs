@@ -446,6 +446,7 @@
             Name = "FormInventory";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inventories";
+            FormClosing += FormInventory_FormClosing;
             Load += FormInventory_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

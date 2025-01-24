@@ -339,6 +339,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(954, 616);
             Controls.Add(panel2);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "FormSaleDetails";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sale Details";

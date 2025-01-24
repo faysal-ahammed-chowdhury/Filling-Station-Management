@@ -717,9 +717,11 @@
             Controls.Add(panel3);
             Controls.Add(panel4);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FormExpense";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Expense History";
+            FormClosed += FormExpense_FormClosed;
             Load += FormExpense_Load;
             panel12.ResumeLayout(false);
             panel12.PerformLayout();

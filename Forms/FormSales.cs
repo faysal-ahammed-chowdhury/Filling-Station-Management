@@ -274,8 +274,8 @@ namespace Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            new FormAddSale(this.currentUser ,this).Show();
+            //this.Visible = false;
+            new FormAddSale(this.currentUser, this).Show();
         }
 
         private void btnOverview_Click(object sender, EventArgs e)
@@ -306,6 +306,11 @@ namespace Forms
         {
             this.Visible = false;
             new FormLogin().Show();
+        }
+
+        private void FormSales_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

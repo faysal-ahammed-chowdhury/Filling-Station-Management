@@ -33,6 +33,7 @@
             panel2 = new Panel();
             lblWlcName = new Label();
             panel6 = new Panel();
+            label7 = new Label();
             label1 = new Label();
             txtSearch = new TextBox();
             dgvInventory = new DataGridView();
@@ -65,7 +66,6 @@
             lblGrand = new Label();
             label5 = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            label7 = new Label();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
@@ -118,6 +118,18 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(717, 605);
             panel6.TabIndex = 53;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.IndianRed;
+            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.ButtonHighlight;
+            label7.Location = new Point(13, 521);
+            label7.Name = "label7";
+            label7.Size = new Size(621, 20);
+            label7.TabIndex = 5;
+            label7.Text = "Double click on the \"Quantity\" column to select the desired Quantity, then click \"Add\" button";
             // 
             // label1
             // 
@@ -453,23 +465,12 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.IndianRed;
-            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = SystemColors.ButtonHighlight;
-            label7.Location = new Point(13, 521);
-            label7.Name = "label7";
-            label7.Size = new Size(621, 20);
-            label7.TabIndex = 5;
-            label7.Text = "Double click on the \"Quantity\" column to select the desired Quantity, then click \"Add\" button";
-            // 
             // FormAddSale
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1184, 701);
+            ControlBox = false;
             Controls.Add(panel1);
             Controls.Add(panel6);
             Controls.Add(panel2);

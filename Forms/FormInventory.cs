@@ -91,7 +91,7 @@ namespace Forms
                 if (this.dgvInventory.SelectedRows.Count > 0)
                 {
                     string inventoryId = this.dgvInventory.CurrentRow.Cells[0].Value.ToString();
-                    this.Visible = false;
+                    //this.Visible = false;
                     new FormEditInventory(inventoryId, this).Show();
                 }
             }
@@ -116,7 +116,7 @@ namespace Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            //this.Visible = false;
             new FormAddInventory(this).Show();
         }
 
@@ -153,6 +153,11 @@ namespace Forms
         {
             this.Visible = false;
             new FormLogin().Show();
+        }
+
+        private void FormInventory_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

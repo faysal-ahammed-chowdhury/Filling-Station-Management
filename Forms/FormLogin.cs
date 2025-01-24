@@ -27,7 +27,7 @@ namespace Forms
             {
                 string query = $"SELECT * FROM Users WHERE Phone = '{phone}' and Password = '{pass}'";
                 DataSet ds = this.Da.ExecuteQuery(query);
-                bool isFound =  Convert.ToBoolean(ds.Tables[0].Rows.Count);
+                bool isFound = Convert.ToBoolean(ds.Tables[0].Rows.Count);
                 if (isFound)
                 {
                     // will back later
@@ -55,6 +55,11 @@ namespace Forms
             {
                 MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

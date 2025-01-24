@@ -540,9 +540,11 @@
             Controls.Add(panel12);
             Controls.Add(panel2);
             Controls.Add(panel6);
+            MaximizeBox = false;
             Name = "FormUsers";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Users";
+            FormClosing += FormUsers_FormClosing;
             Load += FormUsers_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();

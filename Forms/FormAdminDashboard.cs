@@ -133,5 +133,15 @@ namespace Forms
         {
             this.GotoExpenseHistory();
         }
+
+        private void btnViewExpense_Click(object sender, EventArgs e)
+        {
+            this.GotoExpenseHistory();
+        }
+
+        private void FormAdminDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

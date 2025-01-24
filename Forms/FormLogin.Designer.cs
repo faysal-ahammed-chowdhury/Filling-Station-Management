@@ -198,6 +198,7 @@ namespace Forms
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LOGIN ";
             TransparencyKey = Color.WhiteSmoke;
+            FormClosing += FormLogin_FormClosing;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -218,7 +218,7 @@ namespace Forms
                 if (this.dgvExpense.SelectedRows.Count > 0)
                 {
                     string expenseId = this.dgvExpense.CurrentRow.Cells[0].Value.ToString();
-                    this.Visible = false;
+                    //this.Visible = false;
                     new FormEditExpense(expenseId, this).Show();
                 }
             }
@@ -243,7 +243,7 @@ namespace Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            //this.Visible = false;
             new FormAddExpense(this.currentUser, this).Show();
         }
 
@@ -275,6 +275,11 @@ namespace Forms
         {
             this.Visible = false;
             new FormLogin().Show();
+        }
+
+        private void FormExpense_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

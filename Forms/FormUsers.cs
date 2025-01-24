@@ -106,7 +106,7 @@ namespace Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            //this.Visible = false;
             new FormAddUser(this).Show();
         }
 
@@ -196,6 +196,11 @@ namespace Forms
         {
             this.Visible = false;
             new FormLogin().Show();
+        }
+
+        private void FormUsers_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
