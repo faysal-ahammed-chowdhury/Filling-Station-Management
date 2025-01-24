@@ -33,7 +33,7 @@ namespace Forms
                 foreach (DataRow row in dt.Rows)
                 {
                     DataTable dt2 = this.Da.ExecuteQueryTable($"SELECT FuelName FROM Inventories WHERE InventoryId = '{row["InventoryId"]}'");
-                    string name = "Null";
+                    string name = "null";
                     if (dt2.Rows.Count > 0)
                         name = dt2.Rows[0][0].ToString();
                     row["InventoryName"] = name;
@@ -55,7 +55,9 @@ namespace Forms
                 DateTime fullDateTime = Convert.ToDateTime(dt.Rows[0]["SaleDateTime"]);
                 string time = fullDateTime.ToString("hh:mm tt") + " " + fullDateTime.ToString("dd-MM-yyyy");
                 DataTable dt2 = this.Da.ExecuteQueryTable($"SELECT Name FROM Users WHERE UserId = '{dt.Rows[0]["CreatedBy"]}'");
-                string createdBy = dt2.Rows[0][0].ToString();
+                string createdBy = "null";
+                if (dt2.Rows.Count > 0)
+                    createdBy = dt2.Rows[0][0].ToString();
                 string paymentMethod = dt.Rows[0]["PaymentMethod"].ToString();
                 decimal grandTotal = Convert.ToDecimal(dt.Rows[0]["GrandTotal"]);
                 decimal givemAmount = Convert.ToDecimal(dt.Rows[0]["GivenAmount"]);

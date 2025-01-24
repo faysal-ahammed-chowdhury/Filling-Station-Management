@@ -154,6 +154,69 @@ namespace Forms
             }
         }
 
+        public void DeleteSale(string saleId)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to delete " + saleId + "?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            try
+            {
+                // update stock first
+                Dictionary<string, decimal> currentStock = new Dictionary<string, decimal>(); // id->stockquantity
+                string query = $"SELECT * FROM Inventories";
+                DataTable dt = this.Da.ExecuteQueryTable(query);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    currentStock[dr["InventoryId"].ToString()] = Convert.ToDecimal(dr["StockQuantity"]);
+                }
+
+                query = $"SELECT * FROM SaleDetails WHERE SaleId = '{saleId}'";
+                DataTable dt2 = this.Da.ExecuteQueryTable(query);
+                foreach (DataRow dr in dt2.Rows)
+                {
+                    if (currentStock.ContainsKey(dr["InventoryId"].ToString()))
+                    {
+                        currentStock[dr["InventoryId"].ToString()] += Convert.ToDecimal(dr["Quantity"]);
+                    }
+                }
+
+                int cnt = 1;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    string sqll = $@"UPDATE Inventories
+                                SET StockQuantity = '{currentStock[dr["InventoryId"].ToString()]}'
+                                WHERE InventoryId = '{dr["InventoryId"].ToString()}'";
+                    cnt = Math.Min(cnt, this.Da.ExecuteDMLQuery(sqll));
+                    if (cnt == 0)
+                    {
+                        MessageBox.Show($"{saleId} has not been removed properly", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+                string sql = $"DELETE FROM Sales WHERE SaleId = '{saleId}'";
+                cnt = Math.Min(cnt, this.Da.ExecuteDMLQuery(sql));
+                sql = $"DELETE FROM SaleDetails WHERE SaleId = '{saleId}'";
+                cnt = Math.Min(cnt, this.Da.ExecuteDMLQuery(sql));
+                if (cnt == 1)
+                {
+                    MessageBox.Show($"{saleId} has been removed properly", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    this.ClearAll();
+                }
+                else
+                {
+                    MessageBox.Show($"{saleId} has not been removed properly", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private void dtpStartDate_ValueChanged(object sender, EventArgs e)
         {
             this.ShowInitialInfo();
@@ -187,6 +250,17 @@ namespace Forms
                     string saleId = this.dgvSale.CurrentRow.Cells[0].Value.ToString();
                     //this.Visible = false;
                     new FormSaleDetails(saleId).Show();
+                }
+            }
+
+            // delete
+            if (e.RowIndex >= 0 && dgvSale.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dgvSale.Columns[e.ColumnIndex].Name == "DeleteAction")
+            {
+                //MessageBox.Show("Delete");
+                if (this.dgvSale.SelectedRows.Count > 0)
+                {
+                    string saleId = this.dgvSale.CurrentRow.Cells[0].Value.ToString();
+                    this.DeleteSale(saleId);
                 }
             }
         }
