@@ -117,7 +117,7 @@
             btnClear.BackColor = Color.Gray;
             btnClear.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(439, 400);
+            btnClear.Location = new Point(305, 411);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(114, 42);
             btnClear.TabIndex = 35;
@@ -130,7 +130,7 @@
             btnCancel.BackColor = Color.FromArgb(255, 50, 49);
             btnCancel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(305, 400);
+            btnCancel.Location = new Point(171, 411);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(114, 42);
             btnCancel.TabIndex = 34;
@@ -218,10 +218,10 @@
             // 
             // bntSave
             // 
-            bntSave.BackColor = Color.FromArgb(49, 108, 181);
+            bntSave.BackColor = Color.Green;
             bntSave.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bntSave.ForeColor = Color.White;
-            bntSave.Location = new Point(167, 400);
+            bntSave.Location = new Point(442, 411);
             bntSave.Name = "bntSave";
             bntSave.Size = new Size(114, 42);
             bntSave.TabIndex = 0;

@@ -369,11 +369,11 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(664, 12);
+            btnAdd.Location = new Point(626, 12);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(129, 29);
+            btnAdd.Size = new Size(167, 29);
             btnAdd.TabIndex = 3;
-            btnAdd.Text = "Add New Stock";
+            btnAdd.Text = "Add New User";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 

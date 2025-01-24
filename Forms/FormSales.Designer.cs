@@ -567,7 +567,7 @@
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(129, 29);
             btnAdd.TabIndex = 3;
-            btnAdd.Text = "Add New Stock";
+            btnAdd.Text = "Add New Sale";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 

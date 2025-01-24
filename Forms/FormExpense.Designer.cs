@@ -105,7 +105,7 @@
             txtSearch.Location = new Point(11, 29);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Serach by Category";
-            txtSearch.Size = new Size(402, 27);
+            txtSearch.Size = new Size(368, 27);
             txtSearch.TabIndex = 0;
             txtSearch.TextChanged += txtSearch_TextChanged;
             // 
@@ -170,11 +170,11 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(490, 29);
+            btnAdd.Location = new Point(423, 29);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(129, 29);
+            btnAdd.Size = new Size(202, 29);
             btnAdd.TabIndex = 3;
-            btnAdd.Text = "Add New Stock";
+            btnAdd.Text = "Create New Expense";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
