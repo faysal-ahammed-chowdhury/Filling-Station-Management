@@ -105,7 +105,7 @@
             txtSearch.Location = new Point(11, 29);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Serach by Category";
-            txtSearch.Size = new Size(267, 27);
+            txtSearch.Size = new Size(402, 27);
             txtSearch.TabIndex = 0;
             txtSearch.TextChanged += txtSearch_TextChanged;
             // 
@@ -120,14 +120,14 @@
             panel12.Controls.Add(txtSearch);
             panel12.Location = new Point(210, 204);
             panel12.Name = "panel12";
-            panel12.Size = new Size(733, 85);
+            panel12.Size = new Size(961, 85);
             panel12.TabIndex = 38;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(431, 48);
+            label7.Location = new Point(655, 49);
             label7.Name = "label7";
             label7.Size = new Size(28, 21);
             label7.TabIndex = 7;
@@ -137,7 +137,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(431, 12);
+            label3.Location = new Point(655, 13);
             label3.Name = "label3";
             label3.Size = new Size(50, 21);
             label3.TabIndex = 6;
@@ -146,7 +146,7 @@
             // dtpEndDate
             // 
             dtpEndDate.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpEndDate.Location = new Point(491, 48);
+            dtpEndDate.Location = new Point(715, 49);
             dtpEndDate.MaxDate = new DateTime(2025, 12, 25, 0, 0, 0, 0);
             dtpEndDate.Name = "dtpEndDate";
             dtpEndDate.Size = new Size(228, 25);
@@ -156,7 +156,7 @@
             // dtpStartDate
             // 
             dtpStartDate.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpStartDate.Location = new Point(491, 12);
+            dtpStartDate.Location = new Point(715, 13);
             dtpStartDate.Name = "dtpStartDate";
             dtpStartDate.Size = new Size(228, 25);
             dtpStartDate.TabIndex = 4;
@@ -170,7 +170,7 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(284, 29);
+            btnAdd.Location = new Point(490, 29);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(129, 29);
             btnAdd.TabIndex = 3;
@@ -197,11 +197,11 @@
             dgvExpense.BackgroundColor = SystemColors.HighlightText;
             dgvExpense.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvExpense.Columns.AddRange(new DataGridViewColumn[] { ExpenseId, Amount, Category, Description, Date, TIme, CreatedBy, EditAction, DeleteAction });
-            dgvExpense.Location = new Point(11, 30);
+            dgvExpense.Location = new Point(11, 20);
             dgvExpense.Name = "dgvExpense";
             dgvExpense.ReadOnly = true;
             dgvExpense.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvExpense.Size = new Size(708, 272);
+            dgvExpense.Size = new Size(932, 361);
             dgvExpense.TabIndex = 0;
             dgvExpense.CellContentClick += dgvExpense_CellContentClick;
             // 
@@ -286,7 +286,7 @@
             panel6.Controls.Add(dgvExpense);
             panel6.Location = new Point(210, 295);
             panel6.Name = "panel6";
-            panel6.Size = new Size(733, 314);
+            panel6.Size = new Size(962, 394);
             panel6.TabIndex = 37;
             // 
             // label14
@@ -294,7 +294,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Arial", 13F, FontStyle.Bold);
             label14.ForeColor = Color.Black;
-            label14.Location = new Point(560, 18);
+            label14.Location = new Point(594, 20);
             label14.MaximumSize = new Size(270, 30);
             label14.Name = "label14";
             label14.Size = new Size(159, 21);
@@ -309,7 +309,7 @@
             panel2.ForeColor = Color.Navy;
             panel2.Location = new Point(210, 7);
             panel2.Name = "panel2";
-            panel2.Size = new Size(732, 56);
+            panel2.Size = new Size(962, 56);
             panel2.TabIndex = 36;
             // 
             // pictureBox8
@@ -340,7 +340,7 @@
             panel1.ForeColor = Color.White;
             panel1.Location = new Point(12, 7);
             panel1.Name = "panel1";
-            panel1.Size = new Size(190, 602);
+            panel1.Size = new Size(190, 682);
             panel1.TabIndex = 35;
             // 
             // pictureBox5
@@ -389,7 +389,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.logout_165852551;
-            pictureBox2.Location = new Point(13, 559);
+            pictureBox2.Location = new Point(13, 638);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(36, 33);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -451,7 +451,7 @@
             btnLogOut.FlatStyle = FlatStyle.Popup;
             btnLogOut.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogOut.ForeColor = Color.Black;
-            btnLogOut.Location = new Point(55, 559);
+            btnLogOut.Location = new Point(55, 638);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(124, 31);
             btnLogOut.TabIndex = 6;
@@ -518,9 +518,9 @@
             panel8.Controls.Add(label2);
             panel8.Controls.Add(lblThisWeeK);
             panel8.Controls.Add(label5);
-            panel8.Location = new Point(397, 74);
+            panel8.Location = new Point(456, 74);
             panel8.Name = "panel8";
-            panel8.Size = new Size(172, 120);
+            panel8.Size = new Size(223, 120);
             panel8.TabIndex = 32;
             // 
             // label2
@@ -565,9 +565,9 @@
             panel9.Controls.Add(label4);
             panel9.Controls.Add(lblThisDay);
             panel9.Controls.Add(label10);
-            panel9.Location = new Point(211, 75);
+            panel9.Location = new Point(210, 75);
             panel9.Name = "panel9";
-            panel9.Size = new Size(172, 119);
+            panel9.Size = new Size(223, 120);
             panel9.TabIndex = 31;
             // 
             // label4
@@ -609,9 +609,9 @@
             panel3.Controls.Add(label6);
             panel3.Controls.Add(lblThisMonth);
             panel3.Controls.Add(label8);
-            panel3.Location = new Point(583, 74);
+            panel3.Location = new Point(702, 74);
             panel3.Name = "panel3";
-            panel3.Size = new Size(172, 120);
+            panel3.Size = new Size(223, 120);
             panel3.TabIndex = 33;
             // 
             // label6
@@ -670,9 +670,9 @@
             panel4.Controls.Add(lblStartDate);
             panel4.Controls.Add(lblThisYear);
             panel4.Controls.Add(label13);
-            panel4.Location = new Point(769, 74);
+            panel4.Location = new Point(948, 74);
             panel4.Name = "panel4";
-            panel4.Size = new Size(172, 120);
+            panel4.Size = new Size(223, 120);
             panel4.TabIndex = 34;
             // 
             // label12
@@ -703,7 +703,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(954, 616);
+            ClientSize = new Size(1184, 701);
             Controls.Add(panel12);
             Controls.Add(panel6);
             Controls.Add(panel2);

@@ -95,11 +95,14 @@ namespace Forms
             this.txtSearch.Clear();
             this.PopulateGridView();
             this.addedProductsTable.Clear();
+            this.dgvAddedProducts.AutoGenerateColumns = false;
             this.dgvAddedProducts.DataSource = addedProductsTable;
             this.ShowGrandTotal();
             this.txtGiven.Text = string.Empty;
             this.txtChange.Text = string.Empty;
             this.GenerateId();
+            this.chkCash.Checked = false;
+            this.chkBkash.Checked = false;
         }
 
         private void FormAddSale_Load(object sender, EventArgs e)
@@ -298,7 +301,7 @@ namespace Forms
                 return;
             }
 
-            // do later (rest of the process) -> add to db sales, saledetails and close, next form
+            // validation done, now insert into db and rest
             string id = this.lblSaleId.Text;
             string saleDateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 

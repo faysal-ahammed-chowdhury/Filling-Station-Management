@@ -18,7 +18,7 @@ namespace Forms
             InitializeComponent();
             this.Da = new DataAccess();
         }
-        public FormSaleDetails(string saleId) : this() 
+        public FormSaleDetails(string saleId) : this()
         {
             string query = $"SELECT * FROM SaleDetails WHERE SaleId = '{saleId}'";
             this.PopulateGridView(query);
@@ -74,6 +74,11 @@ namespace Forms
             {
                 MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void FormSaleDetails_Load(object sender, EventArgs e)
+        {
+            this.dgvSaleDetail.ClearSelection();
         }
     }
 }

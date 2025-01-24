@@ -28,7 +28,9 @@ namespace Forms
                     DateTime fullDateTime = Convert.ToDateTime(row["SaleDateTime"]);
                     row["SaleTimeDate"] = fullDateTime.ToString("hh:mm tt") + " " + fullDateTime.ToString("dd-MM-yyyy");
                     DataTable dt2 = this.Da.ExecuteQueryTable($"SELECT Name FROM Users WHERE UserId = '{row["CreatedBy"]}'");
-                    string name = dt2.Rows[0][0].ToString();
+                    string name = "null";
+                    if (dt2.Rows.Count > 0)
+                        name = dt2.Rows[0][0].ToString();
                     row["CreatedByName"] = name;
                 }
                 this.dgvSale.AutoGenerateColumns = false;
@@ -179,38 +181,13 @@ namespace Forms
             // details
             if (e.RowIndex >= 0 && dgvSale.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dgvSale.Columns[e.ColumnIndex].Name == "Details")
             {
-                MessageBox.Show("Details");
-                //if (this.dgvSale.SelectedRows.Count > 0)
-                //{
-                //    string saleId = this.dgvSale.CurrentRow.Cells[0].Value.ToString();
-                //    this.Visible = false;
-                //    new FormEditExpense(saleId, this).Show();
-                //}
-            }
-
-            // edit
-            if (e.RowIndex >= 0 && dgvSale.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dgvSale.Columns[e.ColumnIndex].Name == "EditAction")
-            {
-                // edit operations
-                //MessageBox.Show("Edit Form");
-                //if (this.dgvSale.SelectedRows.Count > 0)
-                //{
-                //    string saleId = this.dgvSale.CurrentRow.Cells[0].Value.ToString();
-                //    this.Visible = false;
-                //    new FormEditExpense(saleId, this).Show();
-                //}
-            }
-
-            // delete
-            if (e.RowIndex >= 0 && dgvSale.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dgvSale.Columns[e.ColumnIndex].Name == "DeleteAction")
-            {
-                // delete operations
-                //MessageBox.Show(this.dgvSale.CurrentRow.Cells[0].Value.ToString());
-                //if (this.dgvSale.SelectedRows.Count > 0)
-                //{
-                //    string saleId = this.dgvSale.CurrentRow.Cells[0].Value.ToString();
-                //    this.DeleteSale(saleId);
-                //}
+                //MessageBox.Show("Details");
+                if (this.dgvSale.SelectedRows.Count > 0)
+                {
+                    string saleId = this.dgvSale.CurrentRow.Cells[0].Value.ToString();
+                    //this.Visible = false;
+                    new FormSaleDetails(saleId).Show();
+                }
             }
         }
 

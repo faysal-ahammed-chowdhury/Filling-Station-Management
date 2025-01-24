@@ -113,16 +113,23 @@ namespace Forms
                 return;
             }
 
-            string sql = $"DELETE FROM Users WHERE UserId = '{userId}'";
-            int cnt = this.Da.ExecuteDMLQuery(sql);
-            if (cnt == 1)
+            try
             {
-                MessageBox.Show($"{name} has been removed properly", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
-                this.ClearAll();
+                string sql = $"DELETE FROM Users WHERE UserId = '{userId}'";
+                int cnt = this.Da.ExecuteDMLQuery(sql);
+                if (cnt == 1)
+                {
+                    MessageBox.Show($"{name} has been removed properly", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    this.ClearAll();
+                }
+                else
+                {
+                    MessageBox.Show($"{name} has not been removed properly", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show($"{name} has not been removed properly", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

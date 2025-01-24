@@ -30,7 +30,9 @@ namespace Forms
                     row["Date"] = fullDateTime.ToString("dd-MM-yyyy");
                     row["Time"] = fullDateTime.ToString("hh:mm tt");
                     DataTable dt2 = this.Da.ExecuteQueryTable($"SELECT Name FROM Users WHERE UserId = '{row["CreatedBy"]}'");
-                    string name = dt2.Rows[0][0].ToString();
+                    string name = "null";
+                    if (dt2.Rows.Count > 0)
+                        name = dt2.Rows[0][0].ToString();
                     row["CreatedByName"] = name;
                 }
                 this.dgvExpense.AutoGenerateColumns = false;
@@ -163,16 +165,23 @@ namespace Forms
                 return;
             }
 
-            string sql = $"DELETE FROM Expenses WHERE ExpenseId = '{expenseId}'";
-            int cnt = this.Da.ExecuteDMLQuery(sql);
-            if (cnt == 1)
+            try
             {
-                MessageBox.Show($"{expenseId} has been removed properly", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
-                this.ClearAll();
+                string sql = $"DELETE FROM Expenses WHERE ExpenseId = '{expenseId}'";
+                int cnt = this.Da.ExecuteDMLQuery(sql);
+                if (cnt == 1)
+                {
+                    MessageBox.Show($"{expenseId} has been removed properly", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    this.ClearAll();
+                }
+                else
+                {
+                    MessageBox.Show($"{expenseId} has not been removed properly", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show($"{expenseId} has not been removed properly", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An Error Occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
