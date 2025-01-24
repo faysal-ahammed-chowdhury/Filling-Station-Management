@@ -24,12 +24,12 @@ namespace Forms
             InitializeComponent();
             this.Da = new DataAccess();
             this.PopulateGridView();
-            addedProductsTable = new DataTable();
-            addedProductsTable.Columns.Add("CInventoryId", typeof(string));
-            addedProductsTable.Columns.Add("CFuelName", typeof(string));
-            addedProductsTable.Columns.Add("CPricePerLitre", typeof(decimal));
-            addedProductsTable.Columns.Add("CQuantity", typeof(decimal));
-            addedProductsTable.Columns.Add("CTotal", typeof(decimal));
+            this.addedProductsTable = new DataTable();
+            this.addedProductsTable.Columns.Add("CInventoryId", typeof(string));
+            this.addedProductsTable.Columns.Add("CFuelName", typeof(string));
+            this.addedProductsTable.Columns.Add("CPricePerLitre", typeof(decimal));
+            this.addedProductsTable.Columns.Add("CQuantity", typeof(decimal));
+            this.addedProductsTable.Columns.Add("CTotal", typeof(decimal));
             this.ShowGrandTotal();
             this.GenerateId();
         }
@@ -38,6 +38,7 @@ namespace Forms
         {
             this.currentUser = currentUser;
             this.FrmSls = frmSls;
+            this.lblWlcName.Text = "Welcome, " + currentUser["Name"];
         }
 
         public void GenerateId()
@@ -309,6 +310,8 @@ namespace Forms
 
             try
             {
+
+                // update stock, add to sales and saledetails
                 string sql = $@"INSERT INTO Sales VALUES ('{id}', '{saleDateTime}', '{currentUser["UserId"]}',
                             '{grandTotal.ToString()}', '{givenAmount.ToString()}', 
                             '{changeAmount.ToString()}', '{method}')";
@@ -324,6 +327,14 @@ namespace Forms
                     string total = row["CTotal"].ToString();
                     sql = $@"INSERT INTO SaleDetails VALUES ('{saleDetailId}', '{this.lblSaleId.Text}', 
                             '{inventoryId}', '{pricePerLitre}', '{quantity}', '{total}')";
+                    Math.Min(cnt, this.Da.ExecuteDMLQuery(sql));
+
+                    // update stock
+                    dt = this.Da.ExecuteQueryTable($"SELECT StockQuantity FROM Inventories WHERE InventoryId = '{inventoryId}'");
+                    decimal newStockQuantity = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(quantity);
+                    sql = $@"UPDATE Inventories 
+                            SET StockQuantity = '{newStockQuantity}'
+                            WHERE InventoryId = '{inventoryId}'";
                     Math.Min(cnt, this.Da.ExecuteDMLQuery(sql));
                 }
                 if (cnt > 0)

@@ -31,8 +31,20 @@ namespace Forms
                 if (isFound)
                 {
                     // will back later
-                    this.Visible = false;
-                    new FormAdminDashboard(ds.Tables[0].Rows[0]).Show();
+                    if (ds.Tables[0].Rows[0]["Role"].ToString() == "Admin")
+                    {
+                        this.Visible = false;
+                        new FormAdminDashboard(ds.Tables[0].Rows[0]).Show();
+                    }
+                    else if (ds.Tables[0].Rows[0]["Role"].ToString() == "Employee")
+                    {
+                        this.Visible = false;
+                        //new FormEmpDashboard(ds.Tables[0].Rows[0]).Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid User. Neither Admin nor Employee", "Invalid User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
                 else
                 {
