@@ -76,6 +76,18 @@ namespace Forms
                 return;
             }
 
+            if (pricePerLitre <= 0)
+            {
+                MessageBox.Show("Price should be a positive value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (stockQuantity <= 0)
+            {
+                MessageBox.Show("Stock Quantity should be a positive value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             try
             {
                 string sql = $"INSERT INTO Inventories VALUES ('{id}', '{fuelName}', '{pricePerLitre}', '{stockQuantity}')";

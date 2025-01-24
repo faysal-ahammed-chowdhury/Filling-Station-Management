@@ -91,6 +91,12 @@ namespace Forms
                 return;
             }
 
+            if (amount <= 0)
+            {
+                MessageBox.Show("Amount should be a positive value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             string date = dtpDate.Value.ToString("yyyy-MM-dd");
             string time = dtpTime.Value.ToString("HH:mm:ss");
             string dateTime = $"{date} {time}";

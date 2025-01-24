@@ -159,7 +159,7 @@ namespace Forms
 
                         if (addedQuantity <= 0)
                         {
-                            MessageBox.Show("Quantity can't be a negative value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("Quantity should be a positive value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
 

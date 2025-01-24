@@ -107,6 +107,12 @@ namespace Forms
                 return;
             }
 
+            if (amount <= 0)
+            {
+                MessageBox.Show("Amount should be a positive value", "Huh!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             string dateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             if (!this.chkCurrentTime.Checked)
             {
