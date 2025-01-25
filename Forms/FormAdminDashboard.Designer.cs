@@ -56,6 +56,12 @@
             lblExpense = new Label();
             panel7 = new Panel();
             dgvSale = new DataGridView();
+            btnViewSales = new Button();
+            label9 = new Label();
+            panel8 = new Panel();
+            dgvExpense = new DataGridView();
+            btnViewExpense = new Button();
+            label4 = new Label();
             SaleId = new DataGridViewTextBoxColumn();
             SaleTimeDate = new DataGridViewTextBoxColumn();
             GrandTotal = new DataGridViewTextBoxColumn();
@@ -64,12 +70,6 @@
             PaymentMethod = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             Details = new DataGridViewButtonColumn();
-            dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
-            dataGridViewButtonColumn2 = new DataGridViewButtonColumn();
-            btnViewSales = new Button();
-            label9 = new Label();
-            panel8 = new Panel();
-            dgvExpense = new DataGridView();
             ExpenseId = new DataGridViewTextBoxColumn();
             Amount = new DataGridViewTextBoxColumn();
             Category = new DataGridViewTextBoxColumn();
@@ -77,10 +77,6 @@
             Date = new DataGridViewTextBoxColumn();
             TIme = new DataGridViewTextBoxColumn();
             CreatedBy = new DataGridViewTextBoxColumn();
-            EditAction = new DataGridViewButtonColumn();
-            DeleteAction = new DataGridViewButtonColumn();
-            btnViewExpense = new Button();
-            label4 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
@@ -417,13 +413,79 @@
             dgvSale.AllowUserToOrderColumns = true;
             dgvSale.BackgroundColor = SystemColors.HighlightText;
             dgvSale.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSale.Columns.AddRange(new DataGridViewColumn[] { SaleId, SaleTimeDate, GrandTotal, GivenAmount, Change, PaymentMethod, dataGridViewTextBoxColumn1, Details, dataGridViewButtonColumn1, dataGridViewButtonColumn2 });
+            dgvSale.Columns.AddRange(new DataGridViewColumn[] { SaleId, SaleTimeDate, GrandTotal, GivenAmount, Change, PaymentMethod, dataGridViewTextBoxColumn1, Details });
             dgvSale.Location = new Point(13, 32);
             dgvSale.Name = "dgvSale";
             dgvSale.ReadOnly = true;
             dgvSale.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvSale.Size = new Size(936, 193);
             dgvSale.TabIndex = 3;
+            // 
+            // btnViewSales
+            // 
+            btnViewSales.Location = new Point(873, 3);
+            btnViewSales.Name = "btnViewSales";
+            btnViewSales.Size = new Size(75, 23);
+            btnViewSales.TabIndex = 2;
+            btnViewSales.Text = "View all";
+            btnViewSales.UseVisualStyleBackColor = true;
+            btnViewSales.Click += btnViewSales_Click;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(15, 7);
+            label9.Name = "label9";
+            label9.Size = new Size(91, 20);
+            label9.TabIndex = 1;
+            label9.Text = "Sales History";
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.White;
+            panel8.Controls.Add(dgvExpense);
+            panel8.Controls.Add(btnViewExpense);
+            panel8.Controls.Add(label4);
+            panel8.Location = new Point(209, 447);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(964, 251);
+            panel8.TabIndex = 9;
+            // 
+            // dgvExpense
+            // 
+            dgvExpense.AllowUserToAddRows = false;
+            dgvExpense.AllowUserToDeleteRows = false;
+            dgvExpense.AllowUserToOrderColumns = true;
+            dgvExpense.BackgroundColor = SystemColors.HighlightText;
+            dgvExpense.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvExpense.Columns.AddRange(new DataGridViewColumn[] { ExpenseId, Amount, Category, Description, Date, TIme, CreatedBy });
+            dgvExpense.Location = new Point(14, 32);
+            dgvExpense.Name = "dgvExpense";
+            dgvExpense.ReadOnly = true;
+            dgvExpense.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvExpense.Size = new Size(932, 204);
+            dgvExpense.TabIndex = 3;
+            // 
+            // btnViewExpense
+            // 
+            btnViewExpense.Location = new Point(873, 3);
+            btnViewExpense.Name = "btnViewExpense";
+            btnViewExpense.Size = new Size(75, 23);
+            btnViewExpense.TabIndex = 2;
+            btnViewExpense.Text = "View all";
+            btnViewExpense.UseVisualStyleBackColor = true;
+            btnViewExpense.Click += btnViewExpense_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(15, 7);
+            label4.Name = "label4";
+            label4.Size = new Size(109, 20);
+            label4.TabIndex = 1;
+            label4.Text = "Expense History";
             // 
             // SaleId
             // 
@@ -488,71 +550,6 @@
             Details.Text = "Details";
             Details.UseColumnTextForButtonValue = true;
             // 
-            // dataGridViewButtonColumn1
-            // 
-            dataGridViewButtonColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewButtonColumn1.HeaderText = "";
-            dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            dataGridViewButtonColumn1.ReadOnly = true;
-            dataGridViewButtonColumn1.Text = "Edit";
-            dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-            // 
-            // dataGridViewButtonColumn2
-            // 
-            dataGridViewButtonColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewButtonColumn2.HeaderText = "";
-            dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            dataGridViewButtonColumn2.ReadOnly = true;
-            dataGridViewButtonColumn2.Resizable = DataGridViewTriState.True;
-            dataGridViewButtonColumn2.Text = "Delete";
-            dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
-            // 
-            // btnViewSales
-            // 
-            btnViewSales.Location = new Point(873, 3);
-            btnViewSales.Name = "btnViewSales";
-            btnViewSales.Size = new Size(75, 23);
-            btnViewSales.TabIndex = 2;
-            btnViewSales.Text = "View all";
-            btnViewSales.UseVisualStyleBackColor = true;
-            btnViewSales.Click += btnViewSales_Click;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(15, 7);
-            label9.Name = "label9";
-            label9.Size = new Size(91, 20);
-            label9.TabIndex = 1;
-            label9.Text = "Sales History";
-            // 
-            // panel8
-            // 
-            panel8.BackColor = Color.White;
-            panel8.Controls.Add(dgvExpense);
-            panel8.Controls.Add(btnViewExpense);
-            panel8.Controls.Add(label4);
-            panel8.Location = new Point(209, 447);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(964, 251);
-            panel8.TabIndex = 9;
-            // 
-            // dgvExpense
-            // 
-            dgvExpense.AllowUserToAddRows = false;
-            dgvExpense.AllowUserToDeleteRows = false;
-            dgvExpense.AllowUserToOrderColumns = true;
-            dgvExpense.BackgroundColor = SystemColors.HighlightText;
-            dgvExpense.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvExpense.Columns.AddRange(new DataGridViewColumn[] { ExpenseId, Amount, Category, Description, Date, TIme, CreatedBy, EditAction, DeleteAction });
-            dgvExpense.Location = new Point(14, 32);
-            dgvExpense.Name = "dgvExpense";
-            dgvExpense.ReadOnly = true;
-            dgvExpense.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvExpense.Size = new Size(932, 204);
-            dgvExpense.TabIndex = 3;
-            // 
             // ExpenseId
             // 
             ExpenseId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -608,45 +605,6 @@
             CreatedBy.HeaderText = "Created By";
             CreatedBy.Name = "CreatedBy";
             CreatedBy.ReadOnly = true;
-            // 
-            // EditAction
-            // 
-            EditAction.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            EditAction.HeaderText = "";
-            EditAction.Name = "EditAction";
-            EditAction.ReadOnly = true;
-            EditAction.Text = "Edit";
-            EditAction.UseColumnTextForButtonValue = true;
-            // 
-            // DeleteAction
-            // 
-            DeleteAction.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            DeleteAction.HeaderText = "";
-            DeleteAction.Name = "DeleteAction";
-            DeleteAction.ReadOnly = true;
-            DeleteAction.Resizable = DataGridViewTriState.True;
-            DeleteAction.Text = "Delete";
-            DeleteAction.UseColumnTextForButtonValue = true;
-            // 
-            // btnViewExpense
-            // 
-            btnViewExpense.Location = new Point(873, 3);
-            btnViewExpense.Name = "btnViewExpense";
-            btnViewExpense.Size = new Size(75, 23);
-            btnViewExpense.TabIndex = 2;
-            btnViewExpense.Text = "View all";
-            btnViewExpense.UseVisualStyleBackColor = true;
-            btnViewExpense.Click += btnViewExpense_Click;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(15, 7);
-            label4.Name = "label4";
-            label4.Size = new Size(109, 20);
-            label4.TabIndex = 1;
-            label4.Text = "Expense History";
             // 
             // FormAdminDashboard
             // 
@@ -729,15 +687,6 @@
         private Button btnViewExpense;
         private Label label4;
         private DataGridView dgvExpense;
-        private DataGridViewTextBoxColumn ExpenseId;
-        private DataGridViewTextBoxColumn Amount;
-        private DataGridViewTextBoxColumn Category;
-        private DataGridViewTextBoxColumn Description;
-        private DataGridViewTextBoxColumn Date;
-        private DataGridViewTextBoxColumn TIme;
-        private DataGridViewTextBoxColumn CreatedBy;
-        private DataGridViewButtonColumn EditAction;
-        private DataGridViewButtonColumn DeleteAction;
         private DataGridView dgvSale;
         private DataGridViewTextBoxColumn SaleId;
         private DataGridViewTextBoxColumn SaleTimeDate;
@@ -747,7 +696,12 @@
         private DataGridViewTextBoxColumn PaymentMethod;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewButtonColumn Details;
-        private DataGridViewButtonColumn dataGridViewButtonColumn1;
-        private DataGridViewButtonColumn dataGridViewButtonColumn2;
+        private DataGridViewTextBoxColumn ExpenseId;
+        private DataGridViewTextBoxColumn Amount;
+        private DataGridViewTextBoxColumn Category;
+        private DataGridViewTextBoxColumn Description;
+        private DataGridViewTextBoxColumn Date;
+        private DataGridViewTextBoxColumn TIme;
+        private DataGridViewTextBoxColumn CreatedBy;
     }
 }
