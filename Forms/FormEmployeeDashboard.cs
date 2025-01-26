@@ -110,5 +110,11 @@ namespace Forms
 
             new FormAddExpense(this.currentUser, this).Show();
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormLogin().Show();
+        }
     }
 }
