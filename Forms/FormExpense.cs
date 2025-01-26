@@ -23,7 +23,7 @@ namespace Forms
             this.lblWlcName.Text = "Welcome, " + currentUser["Name"];
         }
 
-        public void PopulateGridView(string query = "SELECT * FROM Expenses")
+        public void PopulateGridView(string query = "SELECT * FROM Expenses ORDER BY DateTime DESC")
         {
             try
             {
@@ -60,7 +60,7 @@ namespace Forms
             {
                 part = $"Category LIKE '%{this.txtSearch.Text}%' AND ";
             }
-            string query = $"SELECT * FROM Expenses WHERE {part} DateTime BETWEEN '{startDate}' AND '{endDate}';";
+            string query = $"SELECT * FROM Expenses WHERE {part} DateTime BETWEEN '{startDate}' AND '{endDate}' ORDER BY DateTime DESC;";
             this.PopulateGridView(query);
         }
 

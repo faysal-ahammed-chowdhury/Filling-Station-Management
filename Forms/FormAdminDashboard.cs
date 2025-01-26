@@ -33,7 +33,7 @@ namespace Forms
             try
             {
                 // sales
-                string query = $"SELECT * FROM Sales";
+                string query = $"SELECT * FROM Sales ORDER BY SaleDateTime DESC";
                 DataTable dt = this.Da.ExecuteQueryTable(query);
                 dt.Columns.Add("SaleTimeDate", typeof(string));
                 dt.Columns.Add("CreatedByName", typeof(string));
@@ -54,7 +54,7 @@ namespace Forms
                 this.lblSale.Text = totalSale.ToString("F2") + " TK";
 
                 // expenses
-                query = $"SELECT * FROM Expenses";
+                query = $"SELECT * FROM Expenses ORDER BY DateTime DESC";
                 dt = this.Da.ExecuteQueryTable(query);
                 dt.Columns.Add("Date", typeof(string));
                 dt.Columns.Add("Time", typeof(string));
@@ -142,6 +142,21 @@ namespace Forms
         private void FormAdminDashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dgvSale_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // details
+            if (e.RowIndex >= 0 && dgvSale.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dgvSale.Columns[e.ColumnIndex].Name == "Details")
+            {
+                //MessageBox.Show("Details");
+                if (this.dgvSale.SelectedRows.Count > 0)
+                {
+                    string saleId = this.dgvSale.CurrentRow.Cells[0].Value.ToString();
+                    //this.Visible = false;
+                    new FormSaleDetails(saleId).Show();
+                }
+            }
         }
     }
 }
