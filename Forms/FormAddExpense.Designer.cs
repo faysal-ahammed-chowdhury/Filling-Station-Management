@@ -223,9 +223,9 @@
             label8.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.Location = new Point(27, 19);
             label8.Name = "label8";
-            label8.Size = new Size(324, 45);
+            label8.Size = new Size(291, 45);
             label8.TabIndex = 17;
-            label8.Text = "Create New Expense";
+            label8.Text = "Add New Expense";
             // 
             // label7
             // 

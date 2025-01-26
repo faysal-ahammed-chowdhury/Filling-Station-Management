@@ -39,7 +39,7 @@ namespace Forms
                     else if (ds.Tables[0].Rows[0]["Role"].ToString() == "Employee")
                     {
                         this.Visible = false;
-                        //new FormEmpDashboard(ds.Tables[0].Rows[0]).Show();
+                        new FormEmployeeDashboard(ds.Tables[0].Rows[0]).Show();
                     }
                     else
                     {

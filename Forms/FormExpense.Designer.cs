@@ -164,17 +164,17 @@
             // 
             // btnAdd
             // 
-            btnAdd.BackColor = Color.FromArgb(49, 108, 181);
+            btnAdd.BackColor = Color.Red;
             btnAdd.BackgroundImageLayout = ImageLayout.Zoom;
             btnAdd.Cursor = Cursors.Hand;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(423, 29);
+            btnAdd.Location = new Point(423, 21);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(202, 29);
+            btnAdd.Size = new Size(202, 49);
             btnAdd.TabIndex = 3;
-            btnAdd.Text = "Create New Expense";
+            btnAdd.Text = "Add New Expense";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 

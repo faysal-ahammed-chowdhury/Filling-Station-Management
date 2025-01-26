@@ -16,7 +16,9 @@ namespace Forms
         public static bool isOpen = false;
         private DataAccess Da { get; set; }
         private FormExpense FrmExp { get; set; }
+        private FormEmployeeDashboard frmEmpDashboard { get; set; }
         private DataRow currentUser;
+        private string who;
         public FormAddExpense()
         {
             InitializeComponent();
@@ -31,6 +33,14 @@ namespace Forms
         {
             this.currentUser = currentUser;
             this.FrmExp = frmExp;
+            this.who = "Admin";
+        }
+
+        public FormAddExpense(DataRow currentUser, FormEmployeeDashboard frmEmpDashboard) : this()
+        {
+            this.currentUser = currentUser;
+            this.frmEmpDashboard = frmEmpDashboard;
+            this.who = "Employee";
         }
 
         public void GenerateId()
@@ -134,9 +144,17 @@ namespace Forms
 
                     this.Visible = false;
                     this.ClearAll();
-                    this.FrmExp.ClearAll();
-                    this.FrmExp.Visible = true;
                     isOpen = false;
+                    if (this.who == "Admin")
+                    {
+                        this.FrmExp.PopulateGridViewOnAction();
+                        this.FrmExp.Visible = true;
+                    }
+                    else if (this.who == "Employee")
+                    {
+                        this.frmEmpDashboard.ClearAll();
+                        this.frmEmpDashboard.Visible = true;
+                    }
                 }
                 else
                 {
@@ -153,8 +171,16 @@ namespace Forms
         {
             this.ClearAll();
             this.Visible = false;
-            this.FrmExp.PopulateGridViewOnAction();
-            this.FrmExp.Visible = true;
+            if (this.who == "Admin")
+            {
+                this.FrmExp.PopulateGridViewOnAction();
+                this.FrmExp.Visible = true;
+            }
+            else if (this.who == "Employee")
+            {
+                this.frmEmpDashboard.ClearAll();
+                this.frmEmpDashboard.Visible = true;
+            }
             isOpen = false;
         }
 

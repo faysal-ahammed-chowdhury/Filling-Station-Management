@@ -20,6 +20,8 @@ namespace Forms
         private DataRow currentUser;
 
         private FormSales FrmSls { get; set; }
+        private FormEmployeeDashboard frmEmpDashboard { get; set; }
+        private string who;
         public FormAddSale()
         {
             InitializeComponent();
@@ -41,6 +43,15 @@ namespace Forms
             this.currentUser = currentUser;
             this.FrmSls = frmSls;
             this.lblWlcName.Text = "Welcome, " + currentUser["Name"].ToString();
+            this.who = "Admin";
+        }
+
+        public FormAddSale(DataRow currentUser, FormEmployeeDashboard frmEmpDashboard) : this()
+        {
+            this.currentUser = currentUser;
+            this.frmEmpDashboard = frmEmpDashboard;
+            this.lblWlcName.Text = "Welcome, " + currentUser["Name"].ToString();
+            this.who = "Employee";
         }
 
         public void GenerateId()
@@ -341,7 +352,12 @@ namespace Forms
                     MessageBox.Show("Sale has been successfully added.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.ClearAll();
+                    this.Visible = false;
                     new FormSaleDetails(id).Show();
+                    if (this.who == "Admin")
+                        this.FrmSls.ClearAll();
+                    else if (this.who == "Employee")
+                        this.frmEmpDashboard.ClearAll();
                     isOpen = false;
                 }
                 else
@@ -359,9 +375,17 @@ namespace Forms
         {
             this.ClearAll();
             this.Visible = false;
-            this.FrmSls.ClearAll();
-            this.FrmSls.Visible = true;
             isOpen = false;
+            if (this.who == "Admin")
+            {
+                this.FrmSls.ClearAll();
+                this.FrmSls.Visible = true;
+            }
+            else if (this.who == "Employee")
+            {
+                this.frmEmpDashboard.ClearAll();
+                this.frmEmpDashboard.Visible = true;
+            }
         }
     }
 }
