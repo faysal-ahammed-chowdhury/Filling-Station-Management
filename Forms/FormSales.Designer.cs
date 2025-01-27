@@ -68,6 +68,9 @@
             btnAdd = new Button();
             label9 = new Label();
             dgvSale = new DataGridView();
+            panel2 = new Panel();
+            lblWlcName = new Label();
+            panel6 = new Panel();
             SaleId = new DataGridViewTextBoxColumn();
             SaleTimeDate = new DataGridViewTextBoxColumn();
             GrandTotal = new DataGridViewTextBoxColumn();
@@ -76,11 +79,7 @@
             PaymentMethod = new DataGridViewTextBoxColumn();
             CreatedBy = new DataGridViewTextBoxColumn();
             Details = new DataGridViewButtonColumn();
-            EditAction = new DataGridViewButtonColumn();
             DeleteAction = new DataGridViewButtonColumn();
-            panel2 = new Panel();
-            lblWlcName = new Label();
-            panel6 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel8.SuspendLayout();
@@ -589,7 +588,7 @@
             dgvSale.AllowUserToOrderColumns = true;
             dgvSale.BackgroundColor = SystemColors.HighlightText;
             dgvSale.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSale.Columns.AddRange(new DataGridViewColumn[] { SaleId, SaleTimeDate, GrandTotal, GivenAmount, Change, PaymentMethod, CreatedBy, Details, EditAction, DeleteAction });
+            dgvSale.Columns.AddRange(new DataGridViewColumn[] { SaleId, SaleTimeDate, GrandTotal, GivenAmount, Change, PaymentMethod, CreatedBy, Details, DeleteAction });
             dgvSale.Location = new Point(11, 15);
             dgvSale.Name = "dgvSale";
             dgvSale.ReadOnly = true;
@@ -597,6 +596,37 @@
             dgvSale.Size = new Size(936, 363);
             dgvSale.TabIndex = 0;
             dgvSale.CellContentClick += dgvSale_CellContentClick;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(lblWlcName);
+            panel2.Controls.Add(label9);
+            panel2.ForeColor = Color.Navy;
+            panel2.Location = new Point(210, 7);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(962, 56);
+            panel2.TabIndex = 44;
+            // 
+            // lblWlcName
+            // 
+            lblWlcName.AutoSize = true;
+            lblWlcName.Font = new Font("Arial", 13F, FontStyle.Bold);
+            lblWlcName.ForeColor = Color.Black;
+            lblWlcName.Location = new Point(584, 18);
+            lblWlcName.Name = "lblWlcName";
+            lblWlcName.Size = new Size(359, 21);
+            lblWlcName.TabIndex = 2;
+            lblWlcName.Text = "Welcome, Faysal Ahammed Chowdhury";
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.White;
+            panel6.Controls.Add(dgvSale);
+            panel6.Location = new Point(210, 295);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(962, 394);
+            panel6.TabIndex = 45;
             // 
             // SaleId
             // 
@@ -661,15 +691,6 @@
             Details.Text = "Details";
             Details.UseColumnTextForButtonValue = true;
             // 
-            // EditAction
-            // 
-            EditAction.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            EditAction.HeaderText = "";
-            EditAction.Name = "EditAction";
-            EditAction.ReadOnly = true;
-            EditAction.Text = "Edit";
-            EditAction.UseColumnTextForButtonValue = true;
-            // 
             // DeleteAction
             // 
             DeleteAction.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -679,37 +700,6 @@
             DeleteAction.Resizable = DataGridViewTriState.True;
             DeleteAction.Text = "Delete";
             DeleteAction.UseColumnTextForButtonValue = true;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(lblWlcName);
-            panel2.Controls.Add(label9);
-            panel2.ForeColor = Color.Navy;
-            panel2.Location = new Point(210, 7);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(962, 56);
-            panel2.TabIndex = 44;
-            // 
-            // lblWlcName
-            // 
-            lblWlcName.AutoSize = true;
-            lblWlcName.Font = new Font("Arial", 13F, FontStyle.Bold);
-            lblWlcName.ForeColor = Color.Black;
-            lblWlcName.Location = new Point(584, 18);
-            lblWlcName.Name = "lblWlcName";
-            lblWlcName.Size = new Size(359, 21);
-            lblWlcName.TabIndex = 2;
-            lblWlcName.Text = "Welcome, Faysal Ahammed Chowdhury";
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.White;
-            panel6.Controls.Add(dgvSale);
-            panel6.Location = new Point(210, 295);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(962, 394);
-            panel6.TabIndex = 45;
             // 
             // FormSales
             // 
@@ -799,6 +789,7 @@
         private DataGridView dgvSale;
         private Panel panel2;
         private Panel panel6;
+        private Label lblWlcName;
         private DataGridViewTextBoxColumn SaleId;
         private DataGridViewTextBoxColumn SaleTimeDate;
         private DataGridViewTextBoxColumn GrandTotal;
@@ -807,8 +798,6 @@
         private DataGridViewTextBoxColumn PaymentMethod;
         private DataGridViewTextBoxColumn CreatedBy;
         private DataGridViewButtonColumn Details;
-        private DataGridViewButtonColumn EditAction;
         private DataGridViewButtonColumn DeleteAction;
-        private Label lblWlcName;
     }
 }

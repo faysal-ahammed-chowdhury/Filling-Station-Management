@@ -194,11 +194,11 @@ namespace Forms
                         }
                         else
                         {
-                            addedProductsTable.Rows.Add(inventoryId, productName, productPrice, addedQuantity, productTotal);
+                            this.addedProductsTable.Rows.Add(inventoryId, productName, productPrice, addedQuantity, productTotal);
                         }
 
                         this.dgvAddedProducts.AutoGenerateColumns = false;
-                        this.dgvAddedProducts.DataSource = addedProductsTable;
+                        this.dgvAddedProducts.DataSource = this.addedProductsTable;
                         this.ShowGrandTotal();
                     }
                     catch (Exception ex)
@@ -219,7 +219,7 @@ namespace Forms
                     {
                         if (row["CInventoryId"].ToString() == inventoryId)
                         {
-                            addedProductsTable.Rows.Remove(row);
+                            this.addedProductsTable.Rows.Remove(row);
                             isDeleted = true;
                             break;
                         }
@@ -229,7 +229,7 @@ namespace Forms
                         return;
 
                     this.dgvAddedProducts.AutoGenerateColumns = false;
-                    this.dgvAddedProducts.DataSource = addedProductsTable;
+                    this.dgvAddedProducts.DataSource = this.addedProductsTable;
                     this.dgvInventory.CurrentRow.Cells[4].Value = null;
                     this.ShowGrandTotal();
                 }
