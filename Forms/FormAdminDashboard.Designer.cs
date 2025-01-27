@@ -44,8 +44,9 @@
             btnUserList = new Button();
             btnSalesrep = new Button();
             panel2 = new Panel();
-            label10 = new Label();
+            panel5 = new Panel();
             lblWlcName = new Label();
+            label10 = new Label();
             panel3 = new Panel();
             pictureBox5 = new PictureBox();
             lblSale = new Label();
@@ -85,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            panel5.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             panel4.SuspendLayout();
@@ -279,35 +281,44 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(panel5);
             panel2.Controls.Add(label10);
-            panel2.Controls.Add(lblWlcName);
             panel2.ForeColor = Color.Navy;
             panel2.Location = new Point(208, 12);
             panel2.Name = "panel2";
             panel2.Size = new Size(964, 56);
             panel2.TabIndex = 3;
             // 
+            // panel5
+            // 
+            panel5.Controls.Add(lblWlcName);
+            panel5.Location = new Point(548, 18);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(402, 35);
+            panel5.TabIndex = 3;
+            // 
+            // lblWlcName
+            // 
+            lblWlcName.AutoSize = true;
+            lblWlcName.Dock = DockStyle.Right;
+            lblWlcName.Font = new Font("Arial", 13F, FontStyle.Bold);
+            lblWlcName.ForeColor = Color.Black;
+            lblWlcName.Location = new Point(180, 0);
+            lblWlcName.Name = "lblWlcName";
+            lblWlcName.Size = new Size(222, 21);
+            lblWlcName.TabIndex = 0;
+            lblWlcName.Text = "Welcome, Asef Abdullah";
+            // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Arial Black", 20F, FontStyle.Bold);
             label10.ForeColor = Color.Navy;
-            label10.Location = new Point(10, 8);
+            label10.Location = new Point(10, 9);
             label10.Name = "label10";
             label10.Size = new Size(278, 38);
             label10.TabIndex = 2;
             label10.Text = "Admin Dashboard";
-            // 
-            // lblWlcName
-            // 
-            lblWlcName.AutoSize = true;
-            lblWlcName.Font = new Font("Arial", 13F, FontStyle.Bold);
-            lblWlcName.ForeColor = Color.Black;
-            lblWlcName.Location = new Point(589, 20);
-            lblWlcName.Name = "lblWlcName";
-            lblWlcName.Size = new Size(359, 21);
-            lblWlcName.TabIndex = 0;
-            lblWlcName.Text = "Welcome, Faysal Ahammed Chowdhury";
             // 
             // panel3
             // 
@@ -640,6 +651,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -704,5 +717,6 @@
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn TIme;
         private DataGridViewTextBoxColumn CreatedBy;
+        private Panel panel5;
     }
 }

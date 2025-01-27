@@ -61,6 +61,7 @@
             EditAction = new DataGridViewButtonColumn();
             DeleteAction = new DataGridViewButtonColumn();
             panel2 = new Panel();
+            panel5 = new Panel();
             lblWlcName = new Label();
             panel6 = new Panel();
             panel3 = new Panel();
@@ -78,6 +79,7 @@
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUser).BeginInit();
             panel2.SuspendLayout();
+            panel5.SuspendLayout();
             panel6.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -467,7 +469,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(lblWlcName);
+            panel2.Controls.Add(panel5);
             panel2.Controls.Add(label9);
             panel2.ForeColor = Color.Navy;
             panel2.Location = new Point(210, 7);
@@ -475,16 +477,25 @@
             panel2.Size = new Size(962, 56);
             panel2.TabIndex = 44;
             // 
+            // panel5
+            // 
+            panel5.Controls.Add(lblWlcName);
+            panel5.Location = new Point(548, 18);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(402, 35);
+            panel5.TabIndex = 5;
+            // 
             // lblWlcName
             // 
             lblWlcName.AutoSize = true;
+            lblWlcName.Dock = DockStyle.Right;
             lblWlcName.Font = new Font("Arial", 13F, FontStyle.Bold);
             lblWlcName.ForeColor = Color.Black;
-            lblWlcName.Location = new Point(587, 20);
+            lblWlcName.Location = new Point(180, 0);
             lblWlcName.Name = "lblWlcName";
-            lblWlcName.Size = new Size(359, 21);
-            lblWlcName.TabIndex = 2;
-            lblWlcName.Text = "Welcome, Faysal Ahammed Chowdhury";
+            lblWlcName.Size = new Size(222, 21);
+            lblWlcName.TabIndex = 0;
+            lblWlcName.Text = "Welcome, Asef Abdullah";
             // 
             // panel6
             // 
@@ -564,6 +575,8 @@
             ((System.ComponentModel.ISupportInitialize)dgvUser).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             panel6.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -609,6 +622,7 @@
         private DataGridViewTextBoxColumn Role;
         private DataGridViewButtonColumn EditAction;
         private DataGridViewButtonColumn DeleteAction;
+        private Panel panel5;
         private Label lblWlcName;
     }
 }

@@ -30,7 +30,6 @@ namespace Forms
                 bool isFound = Convert.ToBoolean(ds.Tables[0].Rows.Count);
                 if (isFound)
                 {
-                    // will back later
                     if (ds.Tables[0].Rows[0]["Role"].ToString() == "Admin")
                     {
                         this.Visible = false;

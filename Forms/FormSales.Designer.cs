@@ -68,9 +68,6 @@
             btnAdd = new Button();
             label9 = new Label();
             dgvSale = new DataGridView();
-            panel2 = new Panel();
-            lblWlcName = new Label();
-            panel6 = new Panel();
             SaleId = new DataGridViewTextBoxColumn();
             SaleTimeDate = new DataGridViewTextBoxColumn();
             GrandTotal = new DataGridViewTextBoxColumn();
@@ -80,6 +77,10 @@
             CreatedBy = new DataGridViewTextBoxColumn();
             Details = new DataGridViewButtonColumn();
             DeleteAction = new DataGridViewButtonColumn();
+            panel2 = new Panel();
+            panel5 = new Panel();
+            lblWlcName = new Label();
+            panel6 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel8.SuspendLayout();
@@ -94,6 +95,7 @@
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSale).BeginInit();
             panel2.SuspendLayout();
+            panel5.SuspendLayout();
             panel6.SuspendLayout();
             SuspendLayout();
             // 
@@ -597,37 +599,6 @@
             dgvSale.TabIndex = 0;
             dgvSale.CellContentClick += dgvSale_CellContentClick;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(lblWlcName);
-            panel2.Controls.Add(label9);
-            panel2.ForeColor = Color.Navy;
-            panel2.Location = new Point(210, 7);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(962, 56);
-            panel2.TabIndex = 44;
-            // 
-            // lblWlcName
-            // 
-            lblWlcName.AutoSize = true;
-            lblWlcName.Font = new Font("Arial", 13F, FontStyle.Bold);
-            lblWlcName.ForeColor = Color.Black;
-            lblWlcName.Location = new Point(584, 18);
-            lblWlcName.Name = "lblWlcName";
-            lblWlcName.Size = new Size(359, 21);
-            lblWlcName.TabIndex = 2;
-            lblWlcName.Text = "Welcome, Faysal Ahammed Chowdhury";
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.White;
-            panel6.Controls.Add(dgvSale);
-            panel6.Location = new Point(210, 295);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(962, 394);
-            panel6.TabIndex = 45;
-            // 
             // SaleId
             // 
             SaleId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -701,6 +672,46 @@
             DeleteAction.Text = "Delete";
             DeleteAction.UseColumnTextForButtonValue = true;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(panel5);
+            panel2.Controls.Add(label9);
+            panel2.ForeColor = Color.Navy;
+            panel2.Location = new Point(210, 7);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(962, 56);
+            panel2.TabIndex = 44;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(lblWlcName);
+            panel5.Location = new Point(546, 18);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(402, 35);
+            panel5.TabIndex = 5;
+            // 
+            // lblWlcName
+            // 
+            lblWlcName.AutoSize = true;
+            lblWlcName.Dock = DockStyle.Right;
+            lblWlcName.Font = new Font("Arial", 13F, FontStyle.Bold);
+            lblWlcName.ForeColor = Color.Black;
+            lblWlcName.Location = new Point(180, 0);
+            lblWlcName.Name = "lblWlcName";
+            lblWlcName.Size = new Size(222, 21);
+            lblWlcName.TabIndex = 0;
+            lblWlcName.Text = "Welcome, Asef Abdullah";
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.White;
+            panel6.Controls.Add(dgvSale);
+            panel6.Location = new Point(210, 295);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(962, 394);
+            panel6.TabIndex = 45;
+            // 
             // FormSales
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -741,6 +752,8 @@
             ((System.ComponentModel.ISupportInitialize)dgvSale).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             panel6.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -789,7 +802,6 @@
         private DataGridView dgvSale;
         private Panel panel2;
         private Panel panel6;
-        private Label lblWlcName;
         private DataGridViewTextBoxColumn SaleId;
         private DataGridViewTextBoxColumn SaleTimeDate;
         private DataGridViewTextBoxColumn GrandTotal;
@@ -799,5 +811,7 @@
         private DataGridViewTextBoxColumn CreatedBy;
         private DataGridViewButtonColumn Details;
         private DataGridViewButtonColumn DeleteAction;
+        private Panel panel5;
+        private Label lblWlcName;
     }
 }

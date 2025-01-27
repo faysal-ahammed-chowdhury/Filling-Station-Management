@@ -82,5 +82,10 @@ namespace Forms
         {
             this.dgvSaleDetail.ClearSelection();
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

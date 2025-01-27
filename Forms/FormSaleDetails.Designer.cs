@@ -53,18 +53,26 @@
             label2 = new Label();
             label1 = new Label();
             label9 = new Label();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            panel7 = new Panel();
+            panel8 = new Panel();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSaleDetail).BeginInit();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
+            panel7.SuspendLayout();
+            panel8.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(lblMethod);
-            panel2.Controls.Add(label10);
-            panel2.Controls.Add(lblSalesBy);
-            panel2.Controls.Add(label7);
+            panel2.Controls.Add(panel4);
+            panel2.Controls.Add(panel3);
             panel2.Controls.Add(panel6);
             panel2.Controls.Add(lblTime);
             panel2.Controls.Add(label4);
@@ -82,9 +90,10 @@
             // lblMethod
             // 
             lblMethod.AutoSize = true;
+            lblMethod.Dock = DockStyle.Right;
             lblMethod.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblMethod.ForeColor = Color.Black;
-            lblMethod.Location = new Point(778, 98);
+            lblMethod.Location = new Point(373, 0);
             lblMethod.Name = "lblMethod";
             lblMethod.Size = new Size(52, 21);
             lblMethod.TabIndex = 50;
@@ -93,20 +102,23 @@
             // label10
             // 
             label10.AutoSize = true;
+            label10.Dock = DockStyle.Right;
             label10.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.Black;
-            label10.Location = new Point(633, 98);
+            label10.Location = new Point(227, 0);
             label10.Name = "label10";
             label10.Size = new Size(146, 21);
             label10.TabIndex = 49;
             label10.Text = "Payment Method:";
+            label10.Click += label10_Click;
             // 
             // lblSalesBy
             // 
             lblSalesBy.AutoSize = true;
+            lblSalesBy.Dock = DockStyle.Right;
             lblSalesBy.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblSalesBy.ForeColor = Color.Black;
-            lblSalesBy.Location = new Point(707, 72);
+            lblSalesBy.Location = new Point(212, 0);
             lblSalesBy.Name = "lblSalesBy";
             lblSalesBy.Size = new Size(213, 21);
             lblSalesBy.TabIndex = 48;
@@ -115,9 +127,10 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.Dock = DockStyle.Right;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(633, 72);
+            label7.Location = new Point(136, 0);
             label7.Name = "label7";
             label7.Size = new Size(76, 21);
             label7.TabIndex = 47;
@@ -126,12 +139,9 @@
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Controls.Add(lblChange);
-            panel6.Controls.Add(label11);
-            panel6.Controls.Add(lblGiven);
-            panel6.Controls.Add(label8);
-            panel6.Controls.Add(lblGrand);
-            panel6.Controls.Add(label5);
+            panel6.Controls.Add(panel8);
+            panel6.Controls.Add(panel7);
+            panel6.Controls.Add(panel5);
             panel6.Controls.Add(dgvSaleDetail);
             panel6.Location = new Point(14, 138);
             panel6.Name = "panel6";
@@ -141,9 +151,10 @@
             // lblChange
             // 
             lblChange.AutoSize = true;
+            lblChange.Dock = DockStyle.Right;
             lblChange.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblChange.ForeColor = Color.Black;
-            lblChange.Location = new Point(723, 377);
+            lblChange.Location = new Point(355, 0);
             lblChange.Name = "lblChange";
             lblChange.Size = new Size(70, 21);
             lblChange.TabIndex = 56;
@@ -154,7 +165,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.Black;
-            label11.Location = new Point(593, 377);
+            label11.Location = new Point(172, 5);
             label11.Name = "label11";
             label11.Size = new Size(72, 21);
             label11.TabIndex = 55;
@@ -163,9 +174,10 @@
             // lblGiven
             // 
             lblGiven.AutoSize = true;
+            lblGiven.Dock = DockStyle.Right;
             lblGiven.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblGiven.ForeColor = Color.Black;
-            lblGiven.Location = new Point(723, 345);
+            lblGiven.Location = new Point(355, 0);
             lblGiven.Name = "lblGiven";
             lblGiven.Size = new Size(70, 21);
             lblGiven.TabIndex = 54;
@@ -176,7 +188,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(593, 345);
+            label8.Location = new Point(173, 2);
             label8.Name = "label8";
             label8.Size = new Size(124, 21);
             label8.TabIndex = 53;
@@ -185,9 +197,10 @@
             // lblGrand
             // 
             lblGrand.AutoSize = true;
+            lblGrand.Dock = DockStyle.Right;
             lblGrand.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblGrand.ForeColor = Color.Black;
-            lblGrand.Location = new Point(723, 311);
+            lblGrand.Location = new Point(355, 0);
             lblGrand.Name = "lblGrand";
             lblGrand.Size = new Size(70, 21);
             lblGrand.TabIndex = 52;
@@ -198,7 +211,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(593, 311);
+            label5.Location = new Point(176, 0);
             label5.Name = "label5";
             label5.Size = new Size(102, 21);
             label5.TabIndex = 51;
@@ -333,6 +346,51 @@
             label9.TabIndex = 1;
             label9.Text = "INVOICE";
             // 
+            // panel3
+            // 
+            panel3.Controls.Add(label7);
+            panel3.Controls.Add(lblSalesBy);
+            panel3.Location = new Point(488, 67);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(425, 26);
+            panel3.TabIndex = 51;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(label10);
+            panel4.Controls.Add(lblMethod);
+            panel4.Location = new Point(488, 96);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(425, 26);
+            panel4.TabIndex = 52;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(lblGrand);
+            panel5.Controls.Add(label5);
+            panel5.Location = new Point(474, 301);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(425, 26);
+            panel5.TabIndex = 53;
+            // 
+            // panel7
+            // 
+            panel7.Controls.Add(label8);
+            panel7.Controls.Add(lblGiven);
+            panel7.Location = new Point(477, 333);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(425, 26);
+            panel7.TabIndex = 54;
+            // 
+            // panel8
+            // 
+            panel8.Controls.Add(lblChange);
+            panel8.Controls.Add(label11);
+            panel8.Location = new Point(478, 365);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(425, 26);
+            panel8.TabIndex = 55;
+            // 
             // FormSaleDetails
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -348,8 +406,17 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel6.ResumeLayout(false);
-            panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSaleDetail).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -380,5 +447,10 @@
         private DataGridViewTextBoxColumn PricePerLitre;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Total;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
+        private Panel panel8;
+        private Panel panel7;
     }
 }

@@ -57,8 +57,9 @@
             btnUserList = new Button();
             btnSalesrep = new Button();
             panel1 = new Panel();
-            label4 = new Label();
+            panel5 = new Panel();
             lblWlcName = new Label();
+            label4 = new Label();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
@@ -71,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -401,13 +403,33 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(panel5);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(lblWlcName);
             panel1.ForeColor = Color.Navy;
             panel1.Location = new Point(209, 8);
             panel1.Name = "panel1";
             panel1.Size = new Size(963, 56);
             panel1.TabIndex = 23;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(lblWlcName);
+            panel5.Location = new Point(544, 18);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(402, 35);
+            panel5.TabIndex = 25;
+            // 
+            // lblWlcName
+            // 
+            lblWlcName.AutoSize = true;
+            lblWlcName.Dock = DockStyle.Right;
+            lblWlcName.Font = new Font("Arial", 13F, FontStyle.Bold);
+            lblWlcName.ForeColor = Color.Black;
+            lblWlcName.Location = new Point(180, 0);
+            lblWlcName.Name = "lblWlcName";
+            lblWlcName.Size = new Size(222, 21);
+            lblWlcName.TabIndex = 0;
+            lblWlcName.Text = "Welcome, Asef Abdullah";
             // 
             // label4
             // 
@@ -418,17 +440,6 @@
             label4.Size = new Size(167, 37);
             label4.TabIndex = 24;
             label4.Text = "Inventories";
-            // 
-            // lblWlcName
-            // 
-            lblWlcName.AutoSize = true;
-            lblWlcName.Font = new Font("Arial", 13F, FontStyle.Bold);
-            lblWlcName.ForeColor = Color.Black;
-            lblWlcName.Location = new Point(587, 20);
-            lblWlcName.Name = "lblWlcName";
-            lblWlcName.Size = new Size(359, 21);
-            lblWlcName.TabIndex = 0;
-            lblWlcName.Text = "Welcome, Faysal Ahammed Chowdhury";
             // 
             // FormInventory
             // 
@@ -464,6 +475,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -488,7 +501,6 @@
         private Button btnUserList;
         private Button btnSalesrep;
         private Panel panel1;
-        private Label lblWlcName;
         private PictureBox pictureBox5;
         private Button btnExpense;
         private DataGridViewTextBoxColumn InventoryID;
@@ -498,5 +510,7 @@
         private DataGridViewButtonColumn EditAction;
         private DataGridViewButtonColumn DeleteAction;
         private Label label4;
+        private Panel panel5;
+        private Label lblWlcName;
     }
 }

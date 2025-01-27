@@ -49,6 +49,7 @@
             DeleteAction = new DataGridViewButtonColumn();
             panel6 = new Panel();
             panel2 = new Panel();
+            panel5 = new Panel();
             lblWlcName = new Label();
             pictureBox8 = new PictureBox();
             panel1 = new Panel();
@@ -85,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvExpense).BeginInit();
             panel6.SuspendLayout();
             panel2.SuspendLayout();
+            panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -292,7 +294,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(lblWlcName);
+            panel2.Controls.Add(panel5);
             panel2.Controls.Add(label9);
             panel2.ForeColor = Color.Navy;
             panel2.Location = new Point(210, 7);
@@ -300,16 +302,25 @@
             panel2.Size = new Size(962, 56);
             panel2.TabIndex = 36;
             // 
+            // panel5
+            // 
+            panel5.Controls.Add(lblWlcName);
+            panel5.Location = new Point(545, 21);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(402, 35);
+            panel5.TabIndex = 5;
+            // 
             // lblWlcName
             // 
             lblWlcName.AutoSize = true;
+            lblWlcName.Dock = DockStyle.Right;
             lblWlcName.Font = new Font("Arial", 13F, FontStyle.Bold);
             lblWlcName.ForeColor = Color.Black;
-            lblWlcName.Location = new Point(584, 20);
+            lblWlcName.Location = new Point(180, 0);
             lblWlcName.Name = "lblWlcName";
-            lblWlcName.Size = new Size(359, 21);
-            lblWlcName.TabIndex = 2;
-            lblWlcName.Text = "Welcome, Faysal Ahammed Chowdhury";
+            lblWlcName.Size = new Size(222, 21);
+            lblWlcName.TabIndex = 0;
+            lblWlcName.Text = "Welcome, Asef Abdullah";
             // 
             // pictureBox8
             // 
@@ -730,6 +741,8 @@
             panel6.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -800,6 +813,7 @@
         private DataGridViewButtonColumn DeleteAction;
         private Label label12;
         private Label lblEndDate;
+        private Panel panel5;
         private Label lblWlcName;
     }
 }

@@ -289,7 +289,7 @@ namespace Forms
                 MessageBox.Show("Please enter a valid numerical amount.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
             if (givenAmount < grandTotal)
             {
                 MessageBox.Show("The given amount should be greater than or equal to the Grand Total.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

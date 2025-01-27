@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             label9 = new Label();
             panel2 = new Panel();
+            panel5 = new Panel();
             lblWlcName = new Label();
             panel6 = new Panel();
             label7 = new Label();
@@ -67,6 +68,7 @@
             label5 = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
             panel2.SuspendLayout();
+            panel5.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
             panel1.SuspendLayout();
@@ -88,7 +90,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(lblWlcName);
+            panel2.Controls.Add(panel5);
             panel2.Controls.Add(label9);
             panel2.ForeColor = Color.Navy;
             panel2.Location = new Point(12, 7);
@@ -96,16 +98,25 @@
             panel2.Size = new Size(1160, 56);
             panel2.TabIndex = 52;
             // 
+            // panel5
+            // 
+            panel5.Controls.Add(lblWlcName);
+            panel5.Location = new Point(745, 15);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(402, 35);
+            panel5.TabIndex = 4;
+            // 
             // lblWlcName
             // 
             lblWlcName.AutoSize = true;
+            lblWlcName.Dock = DockStyle.Right;
             lblWlcName.Font = new Font("Arial", 13F, FontStyle.Bold);
             lblWlcName.ForeColor = Color.Black;
-            lblWlcName.Location = new Point(788, 18);
+            lblWlcName.Location = new Point(180, 0);
             lblWlcName.Name = "lblWlcName";
-            lblWlcName.Size = new Size(359, 21);
-            lblWlcName.TabIndex = 55;
-            lblWlcName.Text = "Welcome, Faysal Ahammed Chowdhury";
+            lblWlcName.Size = new Size(222, 21);
+            lblWlcName.TabIndex = 0;
+            lblWlcName.Text = "Welcome, Asef Abdullah";
             // 
             // panel6
             // 
@@ -248,9 +259,9 @@
             panel3.Controls.Add(label6);
             panel3.Controls.Add(chkBkash);
             panel3.Controls.Add(chkCash);
-            panel3.Location = new Point(12, 389);
+            panel3.Location = new Point(166, 483);
             panel3.Name = "panel3";
-            panel3.Size = new Size(126, 90);
+            panel3.Size = new Size(253, 29);
             panel3.TabIndex = 64;
             // 
             // label6
@@ -268,7 +279,7 @@
             // 
             chkBkash.AutoSize = true;
             chkBkash.Font = new Font("Segoe UI", 10F);
-            chkBkash.Location = new Point(0, 50);
+            chkBkash.Location = new Point(192, 2);
             chkBkash.Name = "chkBkash";
             chkBkash.Size = new Size(63, 23);
             chkBkash.TabIndex = 1;
@@ -280,7 +291,7 @@
             // 
             chkCash.AutoSize = true;
             chkCash.Font = new Font("Segoe UI", 10F);
-            chkCash.Location = new Point(0, 25);
+            chkCash.Location = new Point(132, 2);
             chkCash.Name = "chkCash";
             chkCash.Size = new Size(57, 23);
             chkCash.TabIndex = 0;
@@ -481,6 +492,8 @@
             Load += FormAddSale_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInventory).EndInit();
@@ -529,7 +542,8 @@
         private RadioButton chkBkash;
         private RadioButton chkCash;
         private Label label6;
-        private Label lblWlcName;
         private Label label7;
+        private Panel panel5;
+        private Label lblWlcName;
     }
 }
