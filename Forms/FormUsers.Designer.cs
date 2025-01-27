@@ -353,6 +353,7 @@
             // 
             // cboUserType
             // 
+            cboUserType.DropDownStyle = ComboBoxStyle.DropDownList;
             cboUserType.FormattingEnabled = true;
             cboUserType.Items.AddRange(new object[] { "All", "Admin", "Employee" });
             cboUserType.Location = new Point(821, 16);

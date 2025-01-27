@@ -108,7 +108,7 @@
             cboCategory.DropDownStyle = ComboBoxStyle.DropDownList;
             cboCategory.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboCategory.FormattingEnabled = true;
-            cboCategory.Items.AddRange(new object[] { "Maintenance", "Utility", "Fuel", "Miscellaneous", "Transport", "Owner" });
+            cboCategory.Items.AddRange(new object[] { "Maintenance", "Utility", "Fuel", "Miscellaneous", "Transport", "Owner", "Others" });
             cboCategory.Location = new Point(33, 212);
             cboCategory.Name = "cboCategory";
             cboCategory.Size = new Size(287, 29);
