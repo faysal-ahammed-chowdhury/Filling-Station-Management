@@ -59,6 +59,11 @@ namespace Forms
             try
             {
                 DataTable dt = this.Da.ExecuteQueryTable("SELECT MAX(SaleId) FROM Sales");
+                if (dt.Rows.Count == 0)
+                {
+                    this.lblSaleId.Text = "SALE-001";
+                    return;
+                }
                 string[] temp = dt.Rows[0][0].ToString().Split("-");
                 int id = Convert.ToInt32(temp[1]) + 1;
                 this.lblSaleId.Text = $"SALE-{id.ToString("D3")}";
