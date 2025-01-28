@@ -33,7 +33,7 @@ namespace Forms
             try
             {
                 DataTable dt =  this.Da.ExecuteQueryTable("SELECT MAX(InventoryId) FROM Inventories");
-                if (dt.Rows.Count == 0)
+                if (dt.Rows[0][0].ToString().IsNullOrEmpty())
                 {
                     this.txtInventoryId.Text = "INV-001";
                     return;

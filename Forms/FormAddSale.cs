@@ -59,7 +59,7 @@ namespace Forms
             try
             {
                 DataTable dt = this.Da.ExecuteQueryTable("SELECT MAX(SaleId) FROM Sales");
-                if (dt.Rows.Count == 0)
+                if (dt.Rows[0][0].ToString().IsNullOrEmpty())
                 {
                     this.lblSaleId.Text = "SALE-001";
                     return;

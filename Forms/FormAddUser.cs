@@ -33,7 +33,7 @@ namespace Forms
             try
             {
                 DataTable dt = this.Da.ExecuteQueryTable("SELECT MAX(UserId) FROM Users");
-                if (dt.Rows.Count == 0)
+                if (dt.Rows[0][0].ToString().IsNullOrEmpty())
                 {
                     this.txtUserId.Text = "USER-001";
                     return;

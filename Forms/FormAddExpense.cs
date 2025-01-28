@@ -48,7 +48,7 @@ namespace Forms
             try
             {
                 DataTable dt = this.Da.ExecuteQueryTable("SELECT MAX(ExpenseId) FROM Expenses");
-                if (dt.Rows.Count == 0)
+                if (dt.Rows[0][0].ToString().IsNullOrEmpty())
                 {
                     this.txtExpenseId.Text = "EXP-001";
                     return;

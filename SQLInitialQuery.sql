@@ -1,3 +1,4 @@
+USE [ChowdhuryFillingStation]
 DELETE FROM SaleDetails;
 DELETE FROM Sales;
 DELETE FROM Expenses;
