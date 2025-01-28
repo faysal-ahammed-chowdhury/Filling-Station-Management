@@ -59,34 +59,43 @@ namespace Forms
             this.chkEmp.Checked = false;
         }
 
-        private void bntAdd_Click(object sender, EventArgs e)
+        public bool IsValid()
         {
-            string id = this.txtUserId.Text;
             string name = this.txtName.Text;
             string phone = this.txtPhone.Text;
             string password = this.txtPassword.Text;
             bool typeChecked = this.chkEmp.Checked || this.chkAdmin.Checked;
-            string role = "";
-            if (this.chkAdmin.Checked)
-                role = "Admin";
-            else if (this.chkEmp.Checked)
-                role = "Employee";
-
             if (name.IsNullOrEmpty() || phone.IsNullOrEmpty() || password.IsNullOrEmpty() || !typeChecked)
             {
                 MessageBox.Show("All fields are required. Please complete them.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
 
+            return true;
+        }
+
+        private void bntAdd_Click(object sender, EventArgs e)
+        {
+            if (!this.IsValid())
+                return;
 
             try
             {
+                string id = this.txtUserId.Text;
+                string name = this.txtName.Text;
+                string phone = this.txtPhone.Text;
+                string password = this.txtPassword.Text;
+                string role = "";
+                if (this.chkAdmin.Checked)
+                    role = "Admin";
+                else if (this.chkEmp.Checked)
+                    role = "Employee";
+
+
                 string sql = $"SELECT * FROM Users WHERE Phone = '{phone}'";
                 DataTable dt = this.Da.ExecuteQueryTable(sql);
                 if (dt.Rows.Count > 0)
-                {
                     MessageBox.Show("A user with this phone number already exists. Please use a different number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
 
 
                 sql = $"INSERT INTO Users VALUES ('{id}', '{name}', '{phone}', '{password}', '{role}')";
@@ -102,9 +111,7 @@ namespace Forms
                     isOpen = false;
                 }
                 else
-                {
                     MessageBox.Show($"Failed to add {name}. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
             catch (Exception ex)
             {

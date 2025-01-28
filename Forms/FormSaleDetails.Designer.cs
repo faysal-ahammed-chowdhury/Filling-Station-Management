@@ -28,16 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSaleDetails));
             panel2 = new Panel();
-            lblMethod = new Label();
+            panel4 = new Panel();
             label10 = new Label();
-            lblSalesBy = new Label();
+            lblMethod = new Label();
+            panel3 = new Panel();
             label7 = new Label();
+            lblSalesBy = new Label();
             panel6 = new Panel();
+            panel8 = new Panel();
             lblChange = new Label();
             label11 = new Label();
-            lblGiven = new Label();
+            panel7 = new Panel();
             label8 = new Label();
+            lblGiven = new Label();
+            panel5 = new Panel();
             lblGrand = new Label();
             label5 = new Label();
             dgvSaleDetail = new DataGridView();
@@ -53,19 +59,14 @@
             label2 = new Label();
             label1 = new Label();
             label9 = new Label();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel7 = new Panel();
-            panel8 = new Panel();
             panel2.SuspendLayout();
-            panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvSaleDetail).BeginInit();
-            panel3.SuspendLayout();
             panel4.SuspendLayout();
-            panel5.SuspendLayout();
-            panel7.SuspendLayout();
+            panel3.SuspendLayout();
+            panel6.SuspendLayout();
             panel8.SuspendLayout();
+            panel7.SuspendLayout();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSaleDetail).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -87,17 +88,14 @@
             panel2.Size = new Size(930, 592);
             panel2.TabIndex = 45;
             // 
-            // lblMethod
+            // panel4
             // 
-            lblMethod.AutoSize = true;
-            lblMethod.Dock = DockStyle.Right;
-            lblMethod.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMethod.ForeColor = Color.Black;
-            lblMethod.Location = new Point(373, 0);
-            lblMethod.Name = "lblMethod";
-            lblMethod.Size = new Size(52, 21);
-            lblMethod.TabIndex = 50;
-            lblMethod.Text = "BKash";
+            panel4.Controls.Add(label10);
+            panel4.Controls.Add(lblMethod);
+            panel4.Location = new Point(488, 96);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(425, 26);
+            panel4.TabIndex = 52;
             // 
             // label10
             // 
@@ -112,17 +110,26 @@
             label10.Text = "Payment Method:";
             label10.Click += label10_Click;
             // 
-            // lblSalesBy
+            // lblMethod
             // 
-            lblSalesBy.AutoSize = true;
-            lblSalesBy.Dock = DockStyle.Right;
-            lblSalesBy.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSalesBy.ForeColor = Color.Black;
-            lblSalesBy.Location = new Point(212, 0);
-            lblSalesBy.Name = "lblSalesBy";
-            lblSalesBy.Size = new Size(213, 21);
-            lblSalesBy.TabIndex = 48;
-            lblSalesBy.Text = "Faysal Ahammed Chowdhury";
+            lblMethod.AutoSize = true;
+            lblMethod.Dock = DockStyle.Right;
+            lblMethod.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblMethod.ForeColor = Color.Black;
+            lblMethod.Location = new Point(373, 0);
+            lblMethod.Name = "lblMethod";
+            lblMethod.Size = new Size(52, 21);
+            lblMethod.TabIndex = 50;
+            lblMethod.Text = "BKash";
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(label7);
+            panel3.Controls.Add(lblSalesBy);
+            panel3.Location = new Point(488, 67);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(425, 26);
+            panel3.TabIndex = 51;
             // 
             // label7
             // 
@@ -136,6 +143,18 @@
             label7.TabIndex = 47;
             label7.Text = "Sales By:";
             // 
+            // lblSalesBy
+            // 
+            lblSalesBy.AutoSize = true;
+            lblSalesBy.Dock = DockStyle.Right;
+            lblSalesBy.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSalesBy.ForeColor = Color.Black;
+            lblSalesBy.Location = new Point(212, 0);
+            lblSalesBy.Name = "lblSalesBy";
+            lblSalesBy.Size = new Size(213, 21);
+            lblSalesBy.TabIndex = 48;
+            lblSalesBy.Text = "Faysal Ahammed Chowdhury";
+            // 
             // panel6
             // 
             panel6.BackColor = Color.White;
@@ -147,6 +166,15 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(902, 451);
             panel6.TabIndex = 46;
+            // 
+            // panel8
+            // 
+            panel8.Controls.Add(lblChange);
+            panel8.Controls.Add(label11);
+            panel8.Location = new Point(478, 365);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(425, 26);
+            panel8.TabIndex = 55;
             // 
             // lblChange
             // 
@@ -171,6 +199,26 @@
             label11.TabIndex = 55;
             label11.Text = "Change:";
             // 
+            // panel7
+            // 
+            panel7.Controls.Add(label8);
+            panel7.Controls.Add(lblGiven);
+            panel7.Location = new Point(477, 333);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(425, 26);
+            panel7.TabIndex = 54;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.Black;
+            label8.Location = new Point(173, 2);
+            label8.Name = "label8";
+            label8.Size = new Size(124, 21);
+            label8.TabIndex = 53;
+            label8.Text = "Given Amount:";
+            // 
             // lblGiven
             // 
             lblGiven.AutoSize = true;
@@ -183,16 +231,14 @@
             lblGiven.TabIndex = 54;
             lblGiven.Text = "00.00 TK";
             // 
-            // label8
+            // panel5
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.Black;
-            label8.Location = new Point(173, 2);
-            label8.Name = "label8";
-            label8.Size = new Size(124, 21);
-            label8.TabIndex = 53;
-            label8.Text = "Given Amount:";
+            panel5.Controls.Add(lblGrand);
+            panel5.Controls.Add(label5);
+            panel5.Location = new Point(474, 301);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(425, 26);
+            panel5.TabIndex = 53;
             // 
             // lblGrand
             // 
@@ -327,6 +373,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial Black", 20F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
             label1.Location = new Point(442, 14);
@@ -346,51 +393,6 @@
             label9.TabIndex = 1;
             label9.Text = "INVOICE";
             // 
-            // panel3
-            // 
-            panel3.Controls.Add(label7);
-            panel3.Controls.Add(lblSalesBy);
-            panel3.Location = new Point(488, 67);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(425, 26);
-            panel3.TabIndex = 51;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(label10);
-            panel4.Controls.Add(lblMethod);
-            panel4.Location = new Point(488, 96);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(425, 26);
-            panel4.TabIndex = 52;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(lblGrand);
-            panel5.Controls.Add(label5);
-            panel5.Location = new Point(474, 301);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(425, 26);
-            panel5.TabIndex = 53;
-            // 
-            // panel7
-            // 
-            panel7.Controls.Add(label8);
-            panel7.Controls.Add(lblGiven);
-            panel7.Location = new Point(477, 333);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(425, 26);
-            panel7.TabIndex = 54;
-            // 
-            // panel8
-            // 
-            panel8.Controls.Add(lblChange);
-            panel8.Controls.Add(label11);
-            panel8.Location = new Point(478, 365);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(425, 26);
-            panel8.TabIndex = 55;
-            // 
             // FormSaleDetails
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -398,6 +400,7 @@
             ClientSize = new Size(954, 616);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "FormSaleDetails";
             StartPosition = FormStartPosition.CenterScreen;
@@ -405,18 +408,18 @@
             Load += FormSaleDetails_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvSaleDetail).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel6.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSaleDetail).EndInit();
             ResumeLayout(false);
         }
 

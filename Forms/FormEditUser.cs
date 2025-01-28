@@ -69,24 +69,35 @@ namespace Forms
             this.chkEmp.Checked = false;
         }
 
-        private void bntSave_Click(object sender, EventArgs e)
+        public bool IsValid()
         {
-            string id = this.txtUserId.Text;
             string name = this.txtName.Text;
             string phone = this.txtPhone.Text;
             string password = this.txtPassword.Text;
             bool typeChecked = chkEmp.Checked || chkAdmin.Checked;
+            if (name.IsNullOrEmpty() || phone.IsNullOrEmpty() || password.IsNullOrEmpty() || !typeChecked)
+            {
+                MessageBox.Show("All fields are required. Please complete them.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void bntSave_Click(object sender, EventArgs e)
+        {
+            if (!this.IsValid()) 
+                return;
+
+            string id = this.txtUserId.Text;
+            string name = this.txtName.Text;
+            string phone = this.txtPhone.Text;
+            string password = this.txtPassword.Text;
             string role = "";
             if (chkAdmin.Checked)
                 role = "Admin";
             else if (chkEmp.Checked)
                 role = "Employee";
-
-            if (name.IsNullOrEmpty() || phone.IsNullOrEmpty() || password.IsNullOrEmpty() || !typeChecked)
-            {
-                MessageBox.Show("All fields are required. Please complete them.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
             try
             {
@@ -109,9 +120,7 @@ namespace Forms
                     isOpen = false;
                 }
                 else
-                {
                     MessageBox.Show($"Failed to update {name}. Please try again.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
             catch (Exception ex)
             {

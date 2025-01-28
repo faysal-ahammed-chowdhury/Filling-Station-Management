@@ -84,11 +84,11 @@ namespace Forms
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Red;
-            label4.Location = new Point(138, 569);
+            label4.Location = new Point(111, 569);
             label4.Name = "label4";
-            label4.Size = new Size(359, 20);
+            label4.Size = new Size(381, 20);
             label4.TabIndex = 11;
             label4.Text = "**Please contact with an admin for Login Credentials.";
             // 
@@ -171,7 +171,7 @@ namespace Forms
             label5.AutoSize = true;
             label5.BackColor = SystemColors.ButtonHighlight;
             label5.Font = new System.Drawing.Font("Segoe UI Black", 42F, FontStyle.Bold);
-            label5.Location = new Point(57, 322);
+            label5.Location = new Point(57, 360);
             label5.Name = "label5";
             label5.Size = new Size(455, 74);
             label5.TabIndex = 3;
@@ -182,7 +182,7 @@ namespace Forms
             label6.AutoSize = true;
             label6.BackColor = SystemColors.ButtonHighlight;
             label6.Font = new System.Drawing.Font("Segoe UI Black", 33F, FontStyle.Bold);
-            label6.Location = new Point(311, 202);
+            label6.Location = new Point(311, 240);
             label6.Name = "label6";
             label6.Size = new Size(195, 60);
             label6.TabIndex = 4;
@@ -193,7 +193,7 @@ namespace Forms
             label7.AutoSize = true;
             label7.BackColor = SystemColors.ButtonHighlight;
             label7.Font = new System.Drawing.Font("Segoe UI Black", 33F, FontStyle.Bold);
-            label7.Location = new Point(282, 262);
+            label7.Location = new Point(282, 300);
             label7.Name = "label7";
             label7.Size = new Size(224, 60);
             label7.TabIndex = 5;
@@ -202,7 +202,7 @@ namespace Forms
             // pictureBox1
             // 
             pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(30, 121);
+            pictureBox1.Location = new Point(30, 159);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(284, 275);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;

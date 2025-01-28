@@ -60,15 +60,14 @@ namespace Forms
             this.txtStockQuantity.Clear();
         }
 
-        private void bntSave_Click(object sender, EventArgs e)
+        public bool IsValid()
         {
             string id = this.txtInventoryId.Text;
             string fuelName = this.txtFuelName.Text;
-
             if (id.IsNullOrEmpty() || fuelName.IsNullOrEmpty())
             {
                 MessageBox.Show("All fields are required. Please complete them.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
 
             decimal pricePerLitre;
@@ -76,27 +75,40 @@ namespace Forms
             if (!isNumeric)
             {
                 MessageBox.Show("Please enter a valid numerical value for the price.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
             decimal stockQuantity;
             isNumeric = decimal.TryParse(this.txtStockQuantity.Text, out stockQuantity);
             if (!isNumeric)
             {
                 MessageBox.Show("Stock quantity must be a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
             if (pricePerLitre <= 0)
             {
                 MessageBox.Show("Price must be a positive value.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
             if (stockQuantity <= 0)
             {
                 MessageBox.Show("Stock quantity must be a positive value.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
+
+            return true;
+        }
+
+        private void bntSave_Click(object sender, EventArgs e)
+        {
+            if (!this.IsValid())
+                return;
+
+            string id = this.txtInventoryId.Text;
+            string fuelName = this.txtFuelName.Text;
+            decimal stockQuantity = Convert.ToDecimal(this.txtStockQuantity.Text);
+            decimal pricePerLitre = Convert.ToDecimal(this.txtPricePerLitre.Text);
 
             try
             {
@@ -117,9 +129,7 @@ namespace Forms
                     isOpen = false;
                 }
                 else
-                {
                     MessageBox.Show($"{fuelName} could not be updated. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
             catch (Exception ex)
             {

@@ -57,7 +57,7 @@ namespace Forms
             this.txtStockQuantity.Clear();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        public bool IsValid()
         {
             string id = this.txtInventoryId.Text;
             string fuelName = this.txtFuelName.Text;
@@ -65,7 +65,7 @@ namespace Forms
             if (id.IsNullOrEmpty() || fuelName.IsNullOrEmpty())
             {
                 MessageBox.Show("All fields are required. Please complete them.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
 
             decimal pricePerLitre;
@@ -73,30 +73,43 @@ namespace Forms
             if (!isNumeric)
             {
                 MessageBox.Show("Please enter a valid numerical price.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
             decimal stockQuantity;
             isNumeric = decimal.TryParse(this.txtStockQuantity.Text, out stockQuantity);
             if (!isNumeric)
             {
                 MessageBox.Show("Stock quantity must be a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
             if (pricePerLitre <= 0)
             {
                 MessageBox.Show("Price must be a positive value.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
             if (stockQuantity <= 0)
             {
                 MessageBox.Show("Stock quantity must be a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
+
+            return true;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (!this.IsValid())
+                return;
 
             try
             {
+                string id = this.txtInventoryId.Text;
+                string fuelName = this.txtFuelName.Text;
+                decimal pricePerLitre = Convert.ToDecimal(this.txtPricePerLitre.Text);
+                decimal stockQuantity = Convert.ToDecimal(this.txtStockQuantity.Text);
+
                 string sql = $"INSERT INTO Inventories VALUES ('{id}', '{fuelName}', '{stockQuantity}', '{pricePerLitre}')";
                 int cnt = this.Da.ExecuteDMLQuery(sql);
                 if (cnt > 0)

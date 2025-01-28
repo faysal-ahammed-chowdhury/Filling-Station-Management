@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddInventory));
             lblUserName = new Label();
             label1 = new Label();
             panel2 = new Panel();
@@ -235,6 +236,7 @@
             Controls.Add(panel6);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormAddInventory";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Add New Inventory";

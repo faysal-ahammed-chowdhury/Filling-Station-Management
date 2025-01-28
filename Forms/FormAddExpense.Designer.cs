@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddExpense));
             btnClear = new Button();
             txtDescription = new TextBox();
             asrer = new Label();
@@ -307,9 +308,10 @@
             Controls.Add(panel2);
             Controls.Add(panel6);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormAddExpense";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Create Expense";
+            Text = "Add New Expense";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel6.ResumeLayout(false);

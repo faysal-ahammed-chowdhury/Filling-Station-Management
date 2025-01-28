@@ -66,23 +66,13 @@ namespace Forms
             }
         }
 
-        private void bntSave_Click(object sender, EventArgs e)
+        public bool IsValid()
         {
-            string id = this.txtExpenseId.Text;
             string description = this.txtDescription.Text;
-
-            if (this.cboCategory.SelectedIndex == -1)
+            if (this.cboCategory.SelectedIndex == -1 || description.IsNullOrEmpty())
             {
                 MessageBox.Show("All fields are required. Please complete them.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string category = this.cboCategory.SelectedItem.ToString();
-
-            if (description.IsNullOrEmpty())
-            {
-                MessageBox.Show("All fields are required. Please complete them.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
 
             decimal amount;
@@ -90,19 +80,30 @@ namespace Forms
             if (!isNumeric)
             {
                 MessageBox.Show("Please enter a valid numerical amount.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
             if (amount <= 0)
             {
                 MessageBox.Show("Amount must be a positive value.", "Invalid Amount", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
+            return true;
+        }
+
+        private void bntSave_Click(object sender, EventArgs e)
+        {
+            if (!this.IsValid())
+                return;
+
+            string id = this.txtExpenseId.Text;
+            string description = this.txtDescription.Text;
+            decimal amount = Convert.ToDecimal(this.txtAmount.Text);
+            string category = this.cboCategory.SelectedItem.ToString();
             string date = dtpDate.Value.ToString("yyyy-MM-dd");
             string time = dtpTime.Value.ToString("HH:mm:ss");
             string dateTime = $"{date} {time}";
-
 
             try
             {
@@ -125,9 +126,7 @@ namespace Forms
                     isOpen = false;
                 }
                 else
-                {
                     MessageBox.Show($"Failed to update Expense ID {id}. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
             catch (Exception ex)
             {

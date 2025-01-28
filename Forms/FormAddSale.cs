@@ -132,6 +132,43 @@ namespace Forms
             this.dgvAddedProducts.ClearSelection();
         }
 
+        public bool IsValidToAddCart()
+        {
+            string productName = this.dgvInventory.CurrentRow.Cells[1].Value.ToString();
+            decimal avaiableQuantity = Convert.ToDecimal(this.dgvInventory.CurrentRow.Cells[3].Value.ToString());
+            string selectedQuantityStr = "";
+            if (this.dgvInventory.CurrentRow.Cells[4].Value != null)
+                selectedQuantityStr = this.dgvInventory.CurrentRow.Cells[4].Value.ToString();
+            decimal addedQuantity = 0;
+            if (selectedQuantityStr.IsNullOrEmpty())
+            {
+                this.dgvInventory.CurrentRow.Cells[4].Value = "1";
+                addedQuantity = 1; 
+            }
+            else
+            {
+                bool isNumeric = decimal.TryParse(selectedQuantityStr, out addedQuantity);
+                if (!isNumeric)
+                {
+                    MessageBox.Show("Quantity must be a valid numerical value.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+
+            if (avaiableQuantity < addedQuantity)
+            {
+                MessageBox.Show($"Not enough {productName} in stock.", "Stock Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (addedQuantity <= 0)
+            {
+                MessageBox.Show("Quantity must be a positive value.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
         private void dgvInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // add
@@ -141,46 +178,16 @@ namespace Forms
                 {
                     try
                     {
+                        if (!this.IsValidToAddCart())
+                            return;
+
+
                         string inventoryId = this.dgvInventory.CurrentRow.Cells[0].Value.ToString();
                         string productName = this.dgvInventory.CurrentRow.Cells[1].Value.ToString();
                         decimal productPrice = Convert.ToDecimal(this.dgvInventory.CurrentRow.Cells[2].Value.ToString());
                         decimal avaiableQuantity = Convert.ToDecimal(this.dgvInventory.CurrentRow.Cells[3].Value.ToString());
-                        string selectedQuantityStr = "";
-                        if (this.dgvInventory.CurrentRow.Cells[4].Value != null)
-                        {
-                            selectedQuantityStr = this.dgvInventory.CurrentRow.Cells[4].Value.ToString();
-                            //MessageBox.Show(selectedQuantityStr);
-                        }
-
-                        decimal addedQuantity = 0;
-
-                        if (selectedQuantityStr.IsNullOrEmpty())
-                        {
-                            this.dgvInventory.CurrentRow.Cells[4].Value = "1";
-                            addedQuantity = 1;
-                        }
-                        else
-                        {
-                            bool isNumeric = decimal.TryParse(selectedQuantityStr, out addedQuantity);
-                            if (!isNumeric)
-                            {
-                                MessageBox.Show("Quantity must be a valid numerical value.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                return;
-                            }
-                        }
-
-                        if (avaiableQuantity < addedQuantity)
-                        {
-                            MessageBox.Show($"Not enough {productName} in stock.", "Stock Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
-                        }
-
-                        if (addedQuantity <= 0)
-                        {
-                            MessageBox.Show("Quantity must be a positive value.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
-                        }
-
+                        decimal addedQuantity = Convert.ToDecimal(this.dgvInventory.CurrentRow.Cells[4].Value.ToString);
+                     
                         decimal productTotal = addedQuantity * productPrice;
 
                         DataRow existingRow = null;
@@ -273,12 +280,12 @@ namespace Forms
             this.txtChange.Text = (amount - grandTotal).ToString();
         }
 
-        private void bntConfirm_Click(object sender, EventArgs e)
+        public bool IsValid()
         {
             if (this.addedProductsTable.Rows.Count == 0)
             {
                 MessageBox.Show("Please add items to the cart before confirming the sale.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
 
             decimal givenAmount, changeAmount;
@@ -287,33 +294,66 @@ namespace Forms
             if (!isNumeric)
             {
                 MessageBox.Show("Please enter a valid numerical amount.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
             if (givenAmount < grandTotal)
             {
                 MessageBox.Show("The given amount should be greater than or equal to the Grand Total.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
             if (givenAmount < 0 || changeAmount < 0)
             {
                 MessageBox.Show("Amount must be a positive value.", "Invalid Amount", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
             bool methodChecked = this.chkCash.Checked || this.chkBkash.Checked;
-            string method = "";
-            if (this.chkCash.Checked)
-                method = "Cash";
-            else if (this.chkBkash.Checked)
-                method = "Bkash";
 
             if (!methodChecked)
             {
                 MessageBox.Show("Please select a payment method.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
+
+            return true;
+        }
+
+        public int InsertIntoSaleDetails(DataRow sale)
+        {
+            DataTable dt = this.Da.ExecuteQueryTable("SELECT MAX(SaleDetailId) FROM SaleDetails");
+            string[] temp = dt.Rows[0][0].ToString().Split("-");
+            string saleDetailId = $"SD-{(Convert.ToInt32(temp[1]) + 1).ToString("D3")}";
+            string inventoryId = sale["CInventoryId"].ToString();
+            string pricePerLitre = sale["CPricePerLitre"].ToString();
+            string quantity = sale["CQuantity"].ToString();
+            string total = sale["CTotal"].ToString();
+
+            string sql = $@"INSERT INTO SaleDetails VALUES ('{saleDetailId}', '{this.lblSaleId.Text}', 
+                            '{inventoryId}', '{pricePerLitre}', '{quantity}', '{total}')";
+            return this.Da.ExecuteDMLQuery(sql);
+        }
+
+        public int UpdateStock(DataRow sale)
+        {
+            string inventoryId = sale["CInventoryId"].ToString();
+            string pricePerLitre = sale["CPricePerLitre"].ToString();
+            string quantity = sale["CQuantity"].ToString();
+            string total = sale["CTotal"].ToString();
+
+            DataTable dt = this.Da.ExecuteQueryTable($"SELECT StockQuantity FROM Inventories WHERE InventoryId = '{inventoryId}'");
+            decimal newStockQuantity = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(quantity);
+            string sql = $@"UPDATE Inventories 
+                            SET StockQuantity = '{newStockQuantity}'
+                            WHERE InventoryId = '{inventoryId}'";
+            return this.Da.ExecuteDMLQuery(sql);
+        }
+
+        private void bntConfirm_Click(object sender, EventArgs e)
+        {
+            if (!this.IsValid())
+                return;
 
             DialogResult result = MessageBox.Show("Are you sure you want to confirm the sale?", "Confirm Sale", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.No)
@@ -322,35 +362,28 @@ namespace Forms
             // validation done, now insert into db and rest
             string id = this.lblSaleId.Text;
             string saleDateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            decimal givenAmount = Convert.ToDecimal(this.txtGiven.Text);
+            decimal changeAmount = Convert.ToDecimal(this.txtChange.Text);
+            string method = "";
+            if (this.chkCash.Checked)
+                method = "Cash";
+            else if (this.chkBkash.Checked)
+                method = "Bkash";
 
             try
             {
 
-                // update stock, add to sales and saledetails
+                // insert into sales 
                 string sql = $@"INSERT INTO Sales VALUES ('{id}', '{saleDateTime}', '{currentUser["UserId"].ToString()}',
                             '{grandTotal.ToString()}', '{givenAmount.ToString()}', 
                             '{changeAmount.ToString()}', '{method}')";
                 int cnt = this.Da.ExecuteDMLQuery(sql);
                 foreach (DataRow row in this.addedProductsTable.Rows)
                 {
-                    DataTable dt = this.Da.ExecuteQueryTable("SELECT MAX(SaleDetailId) FROM SaleDetails");
-                    string[] temp = dt.Rows[0][0].ToString().Split("-");
-                    string saleDetailId = $"SD-{(Convert.ToInt32(temp[1]) + 1).ToString("D3")}";
-                    string inventoryId = row["CInventoryId"].ToString();
-                    string pricePerLitre = row["CPricePerLitre"].ToString();
-                    string quantity = row["CQuantity"].ToString();
-                    string total = row["CTotal"].ToString();
-                    sql = $@"INSERT INTO SaleDetails VALUES ('{saleDetailId}', '{this.lblSaleId.Text}', 
-                            '{inventoryId}', '{pricePerLitre}', '{quantity}', '{total}')";
-                    Math.Min(cnt, this.Da.ExecuteDMLQuery(sql));
-
+                    // insert into sale details
+                    cnt = Math.Min(cnt, this.InsertIntoSaleDetails(row));
                     // update stock
-                    dt = this.Da.ExecuteQueryTable($"SELECT StockQuantity FROM Inventories WHERE InventoryId = '{inventoryId}'");
-                    decimal newStockQuantity = Convert.ToDecimal(dt.Rows[0][0]) - Convert.ToDecimal(quantity);
-                    sql = $@"UPDATE Inventories 
-                            SET StockQuantity = '{newStockQuantity}'
-                            WHERE InventoryId = '{inventoryId}'";
-                    Math.Min(cnt, this.Da.ExecuteDMLQuery(sql));
+                    cnt = Math.Min(cnt, this.UpdateStock(row));
                 }
                 if (cnt > 0)
                 {

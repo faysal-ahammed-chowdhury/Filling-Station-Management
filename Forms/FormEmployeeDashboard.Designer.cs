@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmployeeDashboard));
             panel1 = new Panel();
             label4 = new Label();
             label3 = new Label();
@@ -346,6 +347,7 @@
             Controls.Add(panel7);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "FormEmployeeDashboard";
             StartPosition = FormStartPosition.CenterScreen;

@@ -97,7 +97,7 @@ namespace Forms
             }
         }
 
-        private void bntAdd_Click(object sender, EventArgs e)
+        public bool IsValid()
         {
             string id = this.txtExpenseId.Text;
             string description = this.txtDescription.Text;
@@ -105,7 +105,7 @@ namespace Forms
             if (this.cboCategory.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a category to proceed.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
 
             string category = this.cboCategory.SelectedItem.ToString();
@@ -113,7 +113,7 @@ namespace Forms
             if (description.IsNullOrEmpty())
             {
                 MessageBox.Show("All fields are required. Please complete them.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
 
             decimal amount;
@@ -121,26 +121,36 @@ namespace Forms
             if (!isNumeric)
             {
                 MessageBox.Show("Please enter a valid numerical amount.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
             if (amount <= 0)
             {
                 MessageBox.Show("Amount must be a positive value.", "Invalid Amount", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+        private void bntAdd_Click(object sender, EventArgs e)
+        {
+            if (!this.IsValid())
                 return;
-            }
-
-            string dateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            if (!this.chkCurrentTime.Checked)
-            {
-                string date = dtpDate.Value.ToString("yyyy-MM-dd");
-                string time = dtpTime.Value.ToString("HH:mm:ss");
-                dateTime = $"{date} {time}";
-            }
-
 
             try
             {
+                string id = this.txtExpenseId.Text;
+                string description = this.txtDescription.Text;
+                string category = this.cboCategory.SelectedItem.ToString();
+                decimal amount = Convert.ToDecimal(this.txtAmount.Text);
+                string dateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                if (!this.chkCurrentTime.Checked)
+                {
+                    string date = dtpDate.Value.ToString("yyyy-MM-dd");
+                    string time = dtpTime.Value.ToString("HH:mm:ss");
+                    dateTime = $"{date} {time}";
+                }
+
                 string sql = $"INSERT INTO Expenses VALUES ('{id}', '{amount}', '{category}', '{dateTime}', '{description}', '{currentUser["UserId"].ToString()}')";
                 int cnt = this.Da.ExecuteDMLQuery(sql);
                 if (cnt > 0)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsers));
             pictureBox5 = new PictureBox();
             btnExpense = new Button();
             pictureBox8 = new PictureBox();
@@ -553,6 +554,7 @@
             Controls.Add(panel2);
             Controls.Add(panel6);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "FormUsers";
             StartPosition = FormStartPosition.CenterScreen;
