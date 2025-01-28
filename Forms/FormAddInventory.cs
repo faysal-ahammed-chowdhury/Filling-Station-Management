@@ -95,6 +95,12 @@ namespace Forms
                 return false;
             }
 
+            if (fuelName.Length > 20)
+            {
+                MessageBox.Show("Fuel Name cannot exceed 20 characters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             return true;
         }
 

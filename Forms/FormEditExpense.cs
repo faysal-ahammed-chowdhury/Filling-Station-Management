@@ -89,6 +89,12 @@ namespace Forms
                 return false;
             }
 
+            if (description.Length > 100)
+            {
+                MessageBox.Show("Description cannot exceed 100 characters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             return true;
         }
 

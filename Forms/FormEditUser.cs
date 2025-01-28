@@ -81,6 +81,24 @@ namespace Forms
                 return false;
             }
 
+            if (name.Length > 50)
+            {
+                MessageBox.Show("Name cannot exceed 50 characters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (phone.Length > 15)
+            {
+                MessageBox.Show("Phone cannot exceed 15 characters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (password.Length > 32)
+            {
+                MessageBox.Show("Password cannot exceed 32 characters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             return true;
         }
 
