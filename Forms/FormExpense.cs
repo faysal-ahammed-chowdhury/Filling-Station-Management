@@ -57,9 +57,7 @@ namespace Forms
             string endDate = dtpEndDate.Value.ToString("yyyy-MM-dd 23:59:59");
             string part = "";
             if (!this.txtSearch.Text.IsNullOrEmpty())
-            {
                 part = $"Category LIKE '%{this.txtSearch.Text}%' AND ";
-            }
             string query = $"SELECT * FROM Expenses WHERE {part} DateTime BETWEEN '{startDate}' AND '{endDate}' ORDER BY DateTime DESC;";
             this.PopulateGridView(query);
         }

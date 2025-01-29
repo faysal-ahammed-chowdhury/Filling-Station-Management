@@ -55,9 +55,7 @@ namespace Forms
             string endDate = dtpEndDate.Value.ToString("yyyy-MM-dd 23:59:59");
             string part = "";
             if (!this.txtSearch.Text.IsNullOrEmpty())
-            {
                 part = $"SaleId LIKE '%{this.txtSearch.Text}%' AND ";
-            }
             string query = $"SELECT * FROM Sales WHERE {part} SaleDateTime BETWEEN '{startDate}' AND '{endDate}'  ORDER BY SaleDateTime DESC;";
             this.PopulateGridView(query);
         }
