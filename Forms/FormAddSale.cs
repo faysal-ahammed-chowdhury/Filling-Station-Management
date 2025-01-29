@@ -186,8 +186,20 @@ namespace Forms
                         string productName = this.dgvInventory.CurrentRow.Cells[1].Value.ToString();
                         decimal productPrice = Convert.ToDecimal(this.dgvInventory.CurrentRow.Cells[2].Value.ToString());
                         decimal avaiableQuantity = Convert.ToDecimal(this.dgvInventory.CurrentRow.Cells[3].Value.ToString());
-                        decimal addedQuantity = Convert.ToDecimal(this.dgvInventory.CurrentRow.Cells[4].Value.ToString);
-                     
+                        string selectedQuantityStr = "";
+                        if (this.dgvInventory.CurrentRow.Cells[4].Value != null)
+                            selectedQuantityStr = this.dgvInventory.CurrentRow.Cells[4].Value.ToString();
+                        decimal addedQuantity = 0;
+                        if (selectedQuantityStr.IsNullOrEmpty())
+                        {
+                            this.dgvInventory.CurrentRow.Cells[4].Value = "1";
+                            addedQuantity = 1;
+                        }
+                        else
+                        {
+                            addedQuantity = Convert.ToDecimal(selectedQuantityStr);
+                        }
+
                         decimal productTotal = addedQuantity * productPrice;
 
                         DataRow existingRow = null;

@@ -133,12 +133,12 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.BackColor = Color.IndianRed;
-            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = SystemColors.ButtonHighlight;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Segoe UI Black", 10.25F, FontStyle.Bold);
+            label7.ForeColor = Color.Red;
             label7.Location = new Point(13, 521);
             label7.Name = "label7";
-            label7.Size = new Size(640, 20);
+            label7.Size = new Size(688, 19);
             label7.TabIndex = 5;
             label7.Text = "Instruction: Double-click on the 'Quantity' column to select the desired quantity, then click 'Add'.";
             // 

@@ -44,7 +44,6 @@
             lblWlcName = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             panel7 = new Panel();
-            lblAmount = new Label();
             label2 = new Label();
             dgvMySale = new DataGridView();
             SaleId = new DataGridViewTextBoxColumn();
@@ -56,11 +55,15 @@
             Details = new DataGridViewButtonColumn();
             btnViewSales = new Button();
             label9 = new Label();
+            panel3 = new Panel();
+            lblAmount = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconLogOut).BeginInit();
             panel2.SuspendLayout();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMySale).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -219,31 +222,21 @@
             // panel7
             // 
             panel7.BackColor = Color.White;
-            panel7.Controls.Add(lblAmount);
             panel7.Controls.Add(label2);
             panel7.Controls.Add(dgvMySale);
             panel7.Controls.Add(btnViewSales);
             panel7.Controls.Add(label9);
+            panel7.Controls.Add(panel3);
             panel7.Location = new Point(394, 77);
             panel7.Name = "panel7";
             panel7.Size = new Size(779, 616);
             panel7.TabIndex = 12;
             // 
-            // lblAmount
-            // 
-            lblAmount.AutoSize = true;
-            lblAmount.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAmount.Location = new Point(613, 17);
-            lblAmount.Name = "lblAmount";
-            lblAmount.Size = new Size(150, 29);
-            lblAmount.TabIndex = 5;
-            lblAmount.Text = "14000.00 TK";
-            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(506, 17);
+            label2.Location = new Point(476, 17);
             label2.Name = "label2";
             label2.Size = new Size(111, 29);
             label2.TabIndex = 4;
@@ -339,6 +332,33 @@
             label9.TabIndex = 1;
             label9.Text = "Your Total Sales for Today";
             // 
+            // panel3
+            // 
+            panel3.Controls.Add(lblAmount);
+            panel3.Controls.Add(flowLayoutPanel1);
+            panel3.Location = new Point(593, 17);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(170, 53);
+            panel3.TabIndex = 6;
+            // 
+            // lblAmount
+            // 
+            lblAmount.AutoSize = true;
+            lblAmount.Dock = DockStyle.Right;
+            lblAmount.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAmount.Location = new Point(20, 0);
+            lblAmount.Name = "lblAmount";
+            lblAmount.Size = new Size(150, 29);
+            lblAmount.TabIndex = 5;
+            lblAmount.Text = "14000.00 TK";
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Location = new Point(106, 40);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(200, 100);
+            flowLayoutPanel1.TabIndex = 0;
+            // 
             // FormEmployeeDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -362,6 +382,8 @@
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMySale).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -381,7 +403,6 @@
         private DataGridView dgvMySale;
         private Button btnViewSales;
         private Label label9;
-        private Label lblAmount;
         private Label label2;
         private DataGridViewTextBoxColumn SaleId;
         private DataGridViewTextBoxColumn SaleTimeDate;
@@ -392,5 +413,8 @@
         private DataGridViewButtonColumn Details;
         private Label label3;
         private Label label4;
+        private Panel panel3;
+        private Label lblAmount;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

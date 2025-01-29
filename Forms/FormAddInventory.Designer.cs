@@ -151,9 +151,9 @@
             asrer.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             asrer.Location = new Point(396, 198);
             asrer.Name = "asrer";
-            asrer.Size = new Size(114, 21);
+            asrer.Size = new Size(176, 21);
             asrer.TabIndex = 7;
-            asrer.Text = "Stock Quantity:";
+            asrer.Text = "Stock Quantity (In Litre):";
             // 
             // txtPricePerLitre
             // 

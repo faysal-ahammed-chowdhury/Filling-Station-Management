@@ -89,7 +89,7 @@ namespace Forms
                 return false;
             }
 
-            if (stockQuantity <= 0)
+            if (stockQuantity < 0)
             {
                 MessageBox.Show("Stock quantity must be a valid number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
