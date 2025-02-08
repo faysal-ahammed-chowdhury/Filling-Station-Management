@@ -47,6 +47,11 @@
             lblGrand = new Label();
             label5 = new Label();
             dgvSaleDetail = new DataGridView();
+            SaleDetailId = new DataGridViewTextBoxColumn();
+            InventoryName = new DataGridViewTextBoxColumn();
+            PricePerLitre = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            Total = new DataGridViewTextBoxColumn();
             lblTime = new Label();
             label4 = new Label();
             lblSaleId = new Label();
@@ -54,11 +59,6 @@
             label2 = new Label();
             label1 = new Label();
             label9 = new Label();
-            SaleDetailId = new DataGridViewTextBoxColumn();
-            InventoryName = new DataGridViewTextBoxColumn();
-            PricePerLitre = new DataGridViewTextBoxColumn();
-            Quantity = new DataGridViewTextBoxColumn();
-            Total = new DataGridViewTextBoxColumn();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
@@ -278,6 +278,46 @@
             dgvSaleDetail.Size = new Size(899, 281);
             dgvSaleDetail.TabIndex = 0;
             // 
+            // SaleDetailId
+            // 
+            SaleDetailId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            SaleDetailId.DataPropertyName = "SaleDetailId";
+            SaleDetailId.HeaderText = "Sale Details ID";
+            SaleDetailId.Name = "SaleDetailId";
+            SaleDetailId.ReadOnly = true;
+            // 
+            // InventoryName
+            // 
+            InventoryName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            InventoryName.DataPropertyName = "InventoryName";
+            InventoryName.HeaderText = "Inventory";
+            InventoryName.Name = "InventoryName";
+            InventoryName.ReadOnly = true;
+            // 
+            // PricePerLitre
+            // 
+            PricePerLitre.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            PricePerLitre.DataPropertyName = "PricePerLitre";
+            PricePerLitre.HeaderText = "Price Per Litre";
+            PricePerLitre.Name = "PricePerLitre";
+            PricePerLitre.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            Quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Quantity.DataPropertyName = "Quantity";
+            Quantity.HeaderText = "Quantity (In Litre)";
+            Quantity.Name = "Quantity";
+            Quantity.ReadOnly = true;
+            // 
+            // Total
+            // 
+            Total.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Total.DataPropertyName = "Total";
+            Total.HeaderText = "Total";
+            Total.Name = "Total";
+            Total.ReadOnly = true;
+            // 
             // lblTime
             // 
             lblTime.AutoSize = true;
@@ -352,46 +392,6 @@
             label9.Size = new Size(144, 38);
             label9.TabIndex = 1;
             label9.Text = "INVOICE";
-            // 
-            // SaleDetailId
-            // 
-            SaleDetailId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            SaleDetailId.DataPropertyName = "SaleDetailId";
-            SaleDetailId.HeaderText = "Sale Details ID";
-            SaleDetailId.Name = "SaleDetailId";
-            SaleDetailId.ReadOnly = true;
-            // 
-            // InventoryName
-            // 
-            InventoryName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            InventoryName.DataPropertyName = "InventoryName";
-            InventoryName.HeaderText = "Inventory";
-            InventoryName.Name = "InventoryName";
-            InventoryName.ReadOnly = true;
-            // 
-            // PricePerLitre
-            // 
-            PricePerLitre.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            PricePerLitre.DataPropertyName = "PricePerLitre";
-            PricePerLitre.HeaderText = "Price Per Litre";
-            PricePerLitre.Name = "PricePerLitre";
-            PricePerLitre.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            Quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Quantity.DataPropertyName = "Quantity";
-            Quantity.HeaderText = "Quantity (In Litre)";
-            Quantity.Name = "Quantity";
-            Quantity.ReadOnly = true;
-            // 
-            // Total
-            // 
-            Total.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Total.DataPropertyName = "Total";
-            Total.HeaderText = "Total";
-            Total.Name = "Total";
-            Total.ReadOnly = true;
             // 
             // FormSaleDetails
             // 

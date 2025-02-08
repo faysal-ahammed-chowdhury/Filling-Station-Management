@@ -34,6 +34,12 @@
             label1 = new Label();
             panel6 = new Panel();
             dgvInventory = new DataGridView();
+            InventoryID = new DataGridViewTextBoxColumn();
+            FuelName = new DataGridViewTextBoxColumn();
+            PricePerLitre = new DataGridViewTextBoxColumn();
+            StockQuantity = new DataGridViewTextBoxColumn();
+            EditAction = new DataGridViewButtonColumn();
+            DeleteAction = new DataGridViewButtonColumn();
             panel12 = new Panel();
             btnAdd = new Button();
             txtSearch = new TextBox();
@@ -54,12 +60,6 @@
             panel5 = new Panel();
             lblWlcName = new Label();
             label4 = new Label();
-            InventoryID = new DataGridViewTextBoxColumn();
-            FuelName = new DataGridViewTextBoxColumn();
-            PricePerLitre = new DataGridViewTextBoxColumn();
-            StockQuantity = new DataGridViewTextBoxColumn();
-            EditAction = new DataGridViewButtonColumn();
-            DeleteAction = new DataGridViewButtonColumn();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInventory).BeginInit();
@@ -129,6 +129,58 @@
             dgvInventory.Size = new Size(935, 507);
             dgvInventory.TabIndex = 0;
             dgvInventory.CellContentClick += dgvInventory_CellContentClick;
+            // 
+            // InventoryID
+            // 
+            InventoryID.DataPropertyName = "InventoryId";
+            InventoryID.HeaderText = "Inventory ID";
+            InventoryID.Name = "InventoryID";
+            InventoryID.ReadOnly = true;
+            // 
+            // FuelName
+            // 
+            FuelName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            FuelName.DataPropertyName = "FuelName";
+            FuelName.HeaderText = "Fuel Name";
+            FuelName.Name = "FuelName";
+            FuelName.ReadOnly = true;
+            // 
+            // PricePerLitre
+            // 
+            PricePerLitre.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            PricePerLitre.DataPropertyName = "PricePerLitre";
+            PricePerLitre.HeaderText = "Price (Per Litre)";
+            PricePerLitre.Name = "PricePerLitre";
+            PricePerLitre.ReadOnly = true;
+            // 
+            // StockQuantity
+            // 
+            StockQuantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            StockQuantity.DataPropertyName = "StockQuantity";
+            StockQuantity.HeaderText = "Stock Quantity (In Litre)";
+            StockQuantity.Name = "StockQuantity";
+            StockQuantity.ReadOnly = true;
+            // 
+            // EditAction
+            // 
+            EditAction.HeaderText = "";
+            EditAction.Name = "EditAction";
+            EditAction.ReadOnly = true;
+            EditAction.Resizable = DataGridViewTriState.True;
+            EditAction.SortMode = DataGridViewColumnSortMode.Automatic;
+            EditAction.Text = "Edit";
+            EditAction.UseColumnTextForButtonValue = true;
+            // 
+            // DeleteAction
+            // 
+            DeleteAction.HeaderText = "";
+            DeleteAction.Name = "DeleteAction";
+            DeleteAction.ReadOnly = true;
+            DeleteAction.Resizable = DataGridViewTriState.True;
+            DeleteAction.SortMode = DataGridViewColumnSortMode.Automatic;
+            DeleteAction.Text = "Delete";
+            DeleteAction.UseColumnTextForButtonValue = true;
+            DeleteAction.Width = 116;
             // 
             // panel12
             // 
@@ -388,58 +440,6 @@
             label4.Size = new Size(167, 37);
             label4.TabIndex = 24;
             label4.Text = "Inventories";
-            // 
-            // InventoryID
-            // 
-            InventoryID.DataPropertyName = "InventoryId";
-            InventoryID.HeaderText = "Inventory ID";
-            InventoryID.Name = "InventoryID";
-            InventoryID.ReadOnly = true;
-            // 
-            // FuelName
-            // 
-            FuelName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            FuelName.DataPropertyName = "FuelName";
-            FuelName.HeaderText = "Fuel Name";
-            FuelName.Name = "FuelName";
-            FuelName.ReadOnly = true;
-            // 
-            // PricePerLitre
-            // 
-            PricePerLitre.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            PricePerLitre.DataPropertyName = "PricePerLitre";
-            PricePerLitre.HeaderText = "Price (Per Litre)";
-            PricePerLitre.Name = "PricePerLitre";
-            PricePerLitre.ReadOnly = true;
-            // 
-            // StockQuantity
-            // 
-            StockQuantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            StockQuantity.DataPropertyName = "StockQuantity";
-            StockQuantity.HeaderText = "Stock Quantity (In Litre)";
-            StockQuantity.Name = "StockQuantity";
-            StockQuantity.ReadOnly = true;
-            // 
-            // EditAction
-            // 
-            EditAction.HeaderText = "";
-            EditAction.Name = "EditAction";
-            EditAction.ReadOnly = true;
-            EditAction.Resizable = DataGridViewTriState.True;
-            EditAction.SortMode = DataGridViewColumnSortMode.Automatic;
-            EditAction.Text = "Edit";
-            EditAction.UseColumnTextForButtonValue = true;
-            // 
-            // DeleteAction
-            // 
-            DeleteAction.HeaderText = "";
-            DeleteAction.Name = "DeleteAction";
-            DeleteAction.ReadOnly = true;
-            DeleteAction.Resizable = DataGridViewTriState.True;
-            DeleteAction.SortMode = DataGridViewColumnSortMode.Automatic;
-            DeleteAction.Text = "Delete";
-            DeleteAction.UseColumnTextForButtonValue = true;
-            DeleteAction.Width = 116;
             // 
             // FormInventory
             // 
